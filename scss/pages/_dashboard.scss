@@ -160,11 +160,12 @@
     }
 
     // 이미지는 절대배치로 우측에 고정 — 히어로 높이는 텍스트가 결정, 넘치는 만큼 크롭
+    // 살짝 위로 끌어올려 배치 (위로 나간 만큼 아래에서 크롭)
     &__img {
       position: absolute;
-      top: 0;
+      top: -12px;
       right: 0;
-      height: 100%;
+      height: calc(100% + 12px);
       width: 270px;
       object-fit: cover;
       object-position: right top;
