@@ -44,7 +44,10 @@
 | 简体中文 | `zh-Hans` | Noto Sans SC |
 | 繁體中文 | `zh-Hant` | Noto Sans TC |
 
-아이콘: Material Symbols Rounded (가변 폰트 1파일)
+아이콘: Material Symbols Rounded (가변 폰트 1파일).
+`<span class="msr msr-20">home</span>` 형태로 쓰며, 크기 유틸리티(`msr-{px}`)는
+[scss/components/_icon.scss](scss/components/_icon.scss)의 목록에 있는 값만 생성된다 —
+새 크기를 쓰려면 그 목록에 추가할 것.
 
 ## 개발
 
