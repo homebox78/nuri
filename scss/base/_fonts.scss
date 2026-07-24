@@ -11,9 +11,7 @@ $font-dir: '../assets/fonts';
 
 // (패밀리명, 파일 접두어) 목록 — 웨이트별 woff2를 일괄 선언
 $families: (
-  ('Noto Sans',    'noto-sans-v42-latin'),
   ('Noto Sans KR', 'noto-sans-kr-v39-korean_latin'),
-  ('Noto Sans JP', 'noto-sans-jp-v56-japanese_latin'),
   ('Noto Sans SC', 'noto-sans-sc-v40-chinese-simplified_latin'),
   ('Noto Sans TC', 'noto-sans-tc-v39-chinese-traditional_latin'),
 );
@@ -35,6 +33,28 @@ $weights: (
       font-display: swap;
       src: url('#{$font-dir}/#{$prefix}-#{$suffix}.woff2') format('woff2');
     }
+  }
+}
+
+// ── English 전용: Roboto (400/500/700/800) ──
+@each $weight, $suffix in ((400, 'regular'), (500, '500'), (700, '700'), (800, '800')) {
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url('#{$font-dir}/roboto-v51-latin-#{$suffix}.woff2') format('woff2');
+  }
+}
+
+// ── 日本語 전용: M PLUS 1p (400/500/700) ──
+@each $weight, $suffix in ((400, 'regular'), (500, '500'), (700, '700')) {
+  @font-face {
+    font-family: 'M PLUS 1p';
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url('#{$font-dir}/m-plus-1p-v33-japanese_latin-#{$suffix}.woff2') format('woff2');
   }
 }
 

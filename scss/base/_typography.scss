@@ -11,11 +11,11 @@ html[lang='ko'] {
 }
 
 html[lang='en'] {
-  --font-sans: 'Noto Sans', 'Noto Sans KR', -apple-system, system-ui, sans-serif;
+  --font-sans: 'Roboto', 'Noto Sans KR', -apple-system, system-ui, sans-serif;
 }
 
 html[lang='ja'] {
-  --font-sans: 'Noto Sans JP', 'Noto Sans KR', -apple-system, system-ui, sans-serif;
+  --font-sans: 'M PLUS 1p', 'Noto Sans KR', -apple-system, system-ui, sans-serif;
 }
 
 html[lang='zh-Hans'] {
@@ -34,7 +34,7 @@ html[lang='ko'] body,
 
 // 개별 언어 텍스트를 강제 지정할 때 (예: 자막 언어 탭)
 .font-ko { font-family: 'Noto Sans KR', sans-serif; }
-.font-en { font-family: 'Noto Sans', sans-serif; }
-.font-ja { font-family: 'Noto Sans JP', sans-serif; }
+.font-en { font-family: 'Roboto', sans-serif; }
+.font-ja { font-family: 'M PLUS 1p', sans-serif; }
 .font-zh-hans { font-family: 'Noto Sans SC', sans-serif; }
 .font-zh-hant { font-family: 'Noto Sans TC', sans-serif; }
