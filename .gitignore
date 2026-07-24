@@ -5,3 +5,6 @@ config/
 node_modules/
 .playwright-mcp/
 .sass-cache/
+
+# 시안 참조용 원본 폴더 (배포 대상 아님)
+LIVE CLASS 교사용 화면/
