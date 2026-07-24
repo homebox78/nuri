@@ -58,4 +58,21 @@
       head.classList.toggle('is-open');
     });
   });
+
+  /* ── 다크모드 토글 (문서 루트의 data-theme + 헤더 로고 교체) ── */
+  var themeBtn = document.querySelector('[data-ds-theme]');
+  if (themeBtn) {
+    var themeIcon = themeBtn.querySelector('[data-ds-theme-ic]');
+    var headerLogo = document.querySelector('[data-ds-logo]');
+
+    themeBtn.addEventListener('click', function () {
+      var toDark = document.documentElement.getAttribute('data-theme') !== 'dark';
+
+      if (toDark) document.documentElement.setAttribute('data-theme', 'dark');
+      else document.documentElement.removeAttribute('data-theme');
+
+      if (themeIcon) themeIcon.textContent = toDark ? 'light_mode' : 'dark_mode';
+      if (headerLogo) headerLogo.src = toDark ? 'uploads/logo-dark.png' : 'uploads/logo.png';
+    });
+  }
 })();

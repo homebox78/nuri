@@ -24,14 +24,49 @@
 
   <!-- ═══════════ 헤더 ═══════════ -->
   <header class="ds-header">
-    <img src="uploads/logo.png" alt="NURI">
+    <img src="uploads/logo.png" alt="NURI" data-ds-logo>
     <div class="ds-header__title">
       <h1>DESIGN SYSTEM</h1>
     </div>
+    <button class="ds-theme-btn" data-ds-theme title="다크모드 전환" aria-label="다크모드 전환">
+      <span class="msr msr-20" data-ds-theme-ic>dark_mode</span>
+    </button>
   </header>
   <p class="ds-lead">누리 플랫폼의 색·타이포·컴포넌트·인터랙션 규칙입니다. 모든 화면은 이 토큰과 상태 규칙을 따릅니다.</p>
 
   <main>
+
+  <!-- ═══════════ 00 · 브랜딩 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>00 · 브랜딩</h2><span class="ds-section__sub">로고 · 앱 아이콘 · 사용 규칙</span></div>
+    <div class="ds-brand">
+
+      <!-- 밝은 배경 로고 -->
+      <div class="ds-brand__card">
+        <div class="ds-brand__label">LOGO · LIGHT BG</div>
+        <div class="ds-brand__stage"><img src="uploads/logo.png" alt="NURI 로고" class="ds-brand__logo"></div>
+        <p class="ds-brand__desc">밝은 배경 기본 로고. 최소 높이 24px, 로고 높이의 1/2 이상 여백 확보.</p>
+      </div>
+
+      <!-- 어두운 배경 로고 -->
+      <div class="ds-brand__card">
+        <div class="ds-brand__label">LOGO · DARK BG</div>
+        <div class="ds-brand__stage ds-brand__stage--violet"><img src="uploads/logo-dark.png" alt="NURI 로고 (어두운 배경)" class="ds-brand__logo"></div>
+        <p class="ds-brand__desc">어두운 배경·바이올렛 사이드바 전용 화이트 로고. 색 변형 금지.</p>
+      </div>
+
+      <!-- 앱 아이콘 -->
+      <div class="ds-brand__card">
+        <div class="ds-brand__label">APP ICON</div>
+        <div class="ds-brand__stage ds-brand__stage--icons">
+          <img src="uploads/icon.png" alt="앱 아이콘 64px" class="ds-brand__icon ds-brand__icon--64">
+          <img src="uploads/icon.png" alt="앱 아이콘 40px" class="ds-brand__icon ds-brand__icon--40">
+          <img src="uploads/icon.png" alt="앱 아이콘 24px" class="ds-brand__icon ds-brand__icon--24">
+        </div>
+        <p class="ds-brand__desc">파비콘 · PWA 설치 · 바탕화면 바로가기 공용. 라운드는 플랫폼 기본값 사용.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════ 01 · 컬러 ═══════════ -->
   <section class="ds-section">

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="icon" type="image/png" href="uploads/icon.png">
+<link rel="apple-touch-icon" href="uploads/icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#f1eefb;--card:#fff;--card2:#f7f6fe;--line:rgba(28,22,58,.09);--text:#1f1b32;--muted:#6c6885;--faint:#9d99b6;--v:#7c5cfc;--v2:#6a45f0;--vl:#ece7ff;--vll:#f6f3ff;--red:#f5476b}
+body{margin:0;font-family:'Noto Sans KR',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:var(--text)}
+a{color:var(--v);text-decoration:none}a:hover{color:var(--v2)}
+button,input,select,textarea{font-family:inherit}
+font-display:swap}
+@keyframes blobA{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-60px,40px) scale(1.15)}100%{transform:translate(0,0) scale(1)}}
+@keyframes blobB{0%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,-45px) scale(1.12)}100%{transform:translate(0,0) scale(1)}}
+@keyframes blobC{0%{transform:translate(-50%,0) scale(1)}50%{transform:translate(-42%,30px) scale(1.2)}100%{transform:translate(-50%,0) scale(1)}}
+@media (prefers-reduced-motion:reduce){[data-blob]{animation:none!important}}
+</style>
+</helmet>
+
+<div data-root style="min-height:100vh;background:radial-gradient(1200px 500px at 85% 8%,var(--vl),transparent),radial-gradient(900px 500px at 5% 95%,#e7e0fb,transparent),var(--bg);display:flex;flex-direction:column;position:relative;overflow:hidden">
+  <div data-blob style="position:absolute;top:-90px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#c9b8ff,#a689ff);opacity:.5;filter:blur(30px);animation:blobB 16s ease-in-out infinite;will-change:transform"></div>
+  <div data-blob style="position:absolute;bottom:-70px;left:-50px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#d6c8ff,#b49bff);opacity:.5;filter:blur(30px);animation:blobA 20s ease-in-out infinite;will-change:transform"></div>
+  <div data-blob style="position:absolute;top:38%;left:50%;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 45% 40%,#bfa9ff,transparent 68%);opacity:.35;filter:blur(50px);animation:blobC 24s ease-in-out infinite;will-change:transform"></div>
+
+  <header style="position:relative;display:flex;align-items:center;padding:26px 40px">
+    <img src="uploads/LOGO.png" alt="NURI" style="height:38px;width:auto">
+  </header>
+
+  <main style="position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 40px 40px">
+    <div style="display:flex;gap:28px;align-items:stretch;width:100%;max-width:800px">
+
+      <!-- LEFT · illustration -->
+      <div style="flex:1;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <img src="uploads/Cleanly_remove_the_background_from_the_provided_il-1784816419704.png" alt="번역 수업 일러스트" style="width:100%;max-width:362px;aspect-ratio:1/1;object-fit:contain">
+        <div data-i18n="headline" style="font-family:'Noto Sans KR',sans-serif;font-size:25px;font-weight:800;word-break:keep-all;margin-top:-14px;letter-spacing:.01em">선생님의 수업을,<br>학생의 언어로.</div>
+        <div data-i18n="hsub" style="font-size:13.5px;color:var(--muted);margin-top:9px">국제학교 실시간 번역 수업 시스템</div>
+      </div>
+
+      <!-- RIGHT · form -->
+      <div style="flex:1.25;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px 38px;box-shadow:0 24px 56px rgba(28,22,58,.1);display:flex;flex-direction:column;justify-content:center">
+        <span style="align-self:flex-start;padding:6px 13px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:12px;font-weight:800;letter-spacing:.04em">NURI · LIVE CLASS</span>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:16px 0 28px"><div data-i18n="title" style="font-size:32px;font-weight:800">로그인</div><div data-i18n="sub" style="font-size:14px;color:var(--muted)">오늘의 수업이 기다리고 있습니다</div></div>
+
+        <div data-i18n="id" style="font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:8px">아이디</div>
+        <input data-i18n-ph="idph" placeholder="아이디 입력" style="width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:var(--card);font-family:inherit;font-size:14px;color:var(--text);outline:none;margin-bottom:18px;transition:all .15s ease" style-focus="border-color:var(--v);box-shadow:0 0 0 3px var(--vl)">
+
+        <div data-i18n="pw" style="font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:8px">비밀번호</div>
+        <div style="display:flex;align-items:center;padding:0 16px;border:1px solid var(--line);border-radius:13px;background:var(--card);margin-bottom:20px;transition:all .15s ease" data-field><input data-pw data-i18n-ph="pwph" type="password" placeholder="비밀번호 입력" style="flex:1;min-width:0;padding:14px 0;border:none;background:transparent;font-family:inherit;font-size:14px;color:var(--text);outline:none"><span data-eye style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:var(--faint);cursor:pointer">visibility_off</span></div>
+
+        <label style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:24px"><span data-chk="1" style="width:20px;height:20px;border-radius:6px;background:var(--v);display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:14px;line-height:1;color:#fff">check</span></span><span data-i18n="save">아이디·비밀번호 저장</span></label>
+
+        <button data-i18n="login" style="width:100%;padding:16px;border:none;border-radius:14px;background:var(--v);color:#fff;font-family:inherit;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 12px 26px rgba(124,92,252,.42);transition:all .15s ease" style-hover="background:var(--v2);transform:translateY(-1px);box-shadow:0 16px 30px rgba(124,92,252,.5)" style-active="transform:translateY(0)">로그인</button>
+        <p data-i18n="help" style="font-size:12.5px;color:var(--faint);text-align:center;margin:16px 0 0">계정이 없으면 담임 선생님 또는 관리자에게 문의하세요</p>
+      </div>
+    </div>
+
+    <!-- LANGUAGE ROW -->
+    <div data-langrow style="display:flex;align-items:center;gap:14px;margin-top:26px;font-size:13.5px">
+      <span data-lang="ko" style="font-weight:800;color:var(--v2);cursor:pointer">한국어</span>
+      <span style="color:var(--faint)">·</span>
+      <span data-lang="en" style="font-weight:600;color:var(--muted);cursor:pointer">English</span>
+      <span style="color:var(--faint)">·</span>
+      <span data-lang="ja" style="font-weight:600;color:var(--muted);cursor:pointer">日本語</span>
+      <span style="color:var(--faint)">·</span>
+      <span data-lang="cn" style="font-weight:600;color:var(--muted);cursor:pointer">简体中文</span>
+      <span style="color:var(--faint)">·</span>
+      <span data-lang="tw" style="font-weight:600;color:var(--muted);cursor:pointer">繁體中文</span>
+    </div>
+  </main>
+
+  <div style="position:relative;text-align:center;font-size:12px;color:var(--faint);padding:0 0 24px">© 2026 군서미래국제학교 · 누리 NURI</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const $$=s=>Array.from(document.querySelectorAll(s));
+    const T={
+      ko:{headline:'선생님의 수업을,<br>학생의 언어로.',hsub:'국제학교 실시간 번역 수업 시스템',title:'로그인',sub:'오늘의 수업이 기다리고 있습니다',id:'아이디',idph:'아이디 입력',pw:'비밀번호',pwph:'비밀번호 입력',save:'아이디·비밀번호 저장',login:'로그인',help:'계정이 없으면 담임 선생님 또는 관리자에게 문의하세요'},
+      en:{headline:"Every lesson, in every student's language.",hsub:'Real-time translated classes for international schools',title:'Log in',sub:'Your class is waiting for you today',id:'ID',idph:'Enter your ID',pw:'Password',pwph:'Enter your password',save:'Save ID & password',login:'Log in',help:'No account? Please contact your homeroom teacher or admin.'},
+      ja:{headline:'先生の授業を、生徒の言語で。',hsub:'国際学校 リアルタイム翻訳授業システム',title:'ログイン',sub:'今日の授業が待っています',id:'ID',idph:'IDを入力',pw:'パスワード',pwph:'パスワードを入力',save:'IDとパスワードを保存',login:'ログイン',help:'アカウントがない場合は担任または管理者にお問い合わせください'},
+      cn:{headline:'让老师的课，走进每位学生的语言。',hsub:'国际学校实时翻译授课系统',title:'登录',sub:'今天的课程正在等您',id:'账号',idph:'输入账号',pw:'密码',pwph:'输入密码',save:'记住账号和密码',login:'登录',help:'没有账号？请联系班主任或管理员'},
+      tw:{headline:'讓老師的課，走進每位學生的語言。',hsub:'國際學校即時翻譯授課系統',title:'登入',sub:'今天的課程正在等您',id:'帳號',idph:'輸入帳號',pw:'密碼',pwph:'輸入密碼',save:'記住帳號和密碼',login:'登入',help:'沒有帳號？請聯絡班導師或管理員'}
+    };
+    const F={ko:"'Noto Sans KR',sans-serif",en:"'Noto Sans','Noto Sans KR',sans-serif",ja:"'Noto Sans JP','Noto Sans KR',sans-serif",cn:"'Noto Sans SC','Noto Sans KR',sans-serif",tw:"'Noto Sans TC','Noto Sans KR',sans-serif"};
+    const apply=(l)=>{const t=T[l];if(!t)return;const rt=document.querySelector('[data-root]');if(rt)rt.style.fontFamily=F[l];const hl=document.querySelector('[data-i18n=headline]');if(hl)hl.style.fontFamily=F[l];$$('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(t[k]!=null){if(k==='headline')e.innerHTML=t[k];else e.textContent=t[k];}});$$('[data-i18n-ph]').forEach(e=>{const k=e.getAttribute('data-i18n-ph');if(t[k]!=null)e.placeholder=t[k];});};
+    const row=document.querySelector('[data-langrow]');
+    if(row){const items=Array.from(row.querySelectorAll('[data-lang]'));items.forEach(it=>{it.addEventListener('click',()=>{items.forEach(o=>{o.style.color='var(--muted)';o.style.fontWeight='600';});it.style.color='var(--v2)';it.style.fontWeight='800';apply(it.getAttribute('data-lang'));});});}
+    $$('[data-chk]').forEach(el=>{el.style.cursor='pointer';el.addEventListener('click',e=>{e.preventDefault();const on=el.getAttribute('data-chk')==='1';el.setAttribute('data-chk',on?'0':'1');el.style.background=on?'var(--card2)':'var(--v)';el.style.border=on?'1.5px solid var(--line)':'none';el.textContent='';if(!on){const s=document.createElement('span');s.style.fontFamily='Material Symbols Rounded';s.style.fontSize='14px';s.style.lineHeight='1';s.style.color='#fff';s.textContent='check';el.appendChild(s);}});});
+    const eye=document.querySelector('[data-eye]');const pw=document.querySelector('[data-pw]');
+    if(eye&&pw){eye.addEventListener('click',()=>{const s=pw.type==='password';pw.type=s?'text':'password';eye.textContent=s?'visibility':'visibility_off';});}
+    const f=document.querySelector('[data-field]');
+    if(f&&pw){pw.addEventListener('focus',()=>{f.style.borderColor='var(--v)';f.style.boxShadow='0 0 0 3px var(--vl)';});pw.addEventListener('blur',()=>{f.style.borderColor='var(--line)';f.style.boxShadow='none';});}
+  }
+}
+</script>
+</body>
+</html>
