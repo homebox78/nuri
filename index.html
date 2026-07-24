@@ -54,13 +54,14 @@
         <form id="login-form" autocomplete="on" novalidate>
           <!-- 아이디 -->
           <div class="login-field">
-            
+            <label class="form-label" for="login-id" data-i18n="id">아이디</label>
             <input class="input" id="login-id" name="id" placeholder="아이디 입력" data-i18n-ph="idph">
             <p class="form-error" id="id-error"><span class="msr">error</span><span data-i18n="iderr">아이디를 입력하세요</span></p>
           </div>
 
           <!-- 비밀번호 (보기 토글 포함) -->
           <div class="login-field login-field--pw">
+            <label class="form-label" for="login-pw" data-i18n="pw">비밀번호</label>
             <div class="input-group" id="pw-field">
               <input id="login-pw" name="password" type="password" placeholder="비밀번호 입력" data-i18n-ph="pwph">
               <span class="msr msr-20 input-group__icon" id="pw-eye" role="button" aria-label="비밀번호 표시">visibility_off</span>
