@@ -99,15 +99,14 @@
     img {
       width: 100%;
       max-width: 362px;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
+      height: auto;
     }
 
     .login-intro__headline {
       font-size: 25px;
       font-weight: 800;
       word-break: keep-all;
-      margin-top: -14px;
+      margin-top: 22px;
       letter-spacing: .01em;
     }
 
