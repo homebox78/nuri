@@ -269,6 +269,12 @@
   .topbar {
     padding: 0 14px;
 
+    // 헤더 내부 요소 간격 8px 통일 (모바일 밀도)
+    .topbar__group,
+    .topbar__group--right {
+      gap: 8px;
+    }
+
     .topbar__search {
       display: none;
     }

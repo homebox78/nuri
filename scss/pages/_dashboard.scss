@@ -2718,6 +2718,25 @@
 
     .dash-page {
       padding: 14px;
+      gap: 14px;
+    }
+
+    // ── 공통 · 페이지 머리: 세로 스택 (제목 폭 확보, 우측 액션 아래로) ──
+    .dash-pagehead {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    // 좁은 화면에서 제목이 한 글자씩 쪼개지지 않도록
+    .dash-pagehead__title {
+      word-break: keep-all;
+    }
+
+    // 우측 액션(용어 추가 · 학생 수)은 좌측 정렬로 자연스럽게
+    .dash-students__count,
+    .dash-glossary__add {
+      align-self: flex-start;
     }
 
     // ── 히어로: 세로 스택 (텍스트 위, CTA 아래 전체폭) ──
@@ -2736,6 +2755,7 @@
       margin: 0;
       align-self: stretch;
       justify-content: center;
+      min-height: 46px; // 터치 타깃
     }
 
     .dash-feat {
@@ -2747,13 +2767,244 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    // ── 오늘의 수업: 표를 가로 스크롤로 (컬럼 뭉개짐 방지) ──
+    // ═══ 오늘의 수업: 가로 스크롤 제거 → 각 행을 2줄 카드로 ═══
     .dash-today {
-      overflow-x: auto;
+      overflow: hidden;
+      padding: 16px 16px 8px;
     }
 
-    .dash-today__cols {
-      min-width: 520px;
+    // 헤더행은 모바일에서 숨김 (카드 레이아웃에 불필요)
+    .dash-today__thead {
+      display: none;
+    }
+
+    .dash-today__row {
+      grid-template-columns: auto auto 1fr;
+      grid-template-areas:
+        "period time  status"
+        "topic  topic start";
+      gap: 6px 8px;
+      text-align: left;
+      padding: 13px 4px;
+      align-items: center;
+    }
+
+    .dash-today__period { grid-area: period; }
+    .dash-today__time   { grid-area: time; }
+    .dash-today__topic  { grid-area: topic; }
+
+    // 상태 태그(4번째)·작업 버튼(5번째)은 우측 정렬
+    .dash-today__row > :nth-child(4) {
+      grid-area: status;
+      justify-self: end;
+    }
+
+    .dash-today__row > :nth-child(5) {
+      grid-area: start;
+      justify-self: end;
+    }
+
+    .dash-today__start {
+      padding: 9px 16px; // 터치 타깃 확대
+    }
+
+    // ═══ 용어집: 가로 스크롤 제거 → 각 행을 2줄 카드로 ═══
+    .dash-gtable {
+      overflow: hidden;
+    }
+
+    .dash-gtable__inner {
+      min-width: 0;
+    }
+
+    .dash-gtable__thead {
+      display: none;
+    }
+
+    .dash-gtable__row {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        "term  scope cat"
+        "trans trans actions";
+      gap: 7px 10px;
+      text-align: left;
+      padding: 14px 16px;
+      align-items: center;
+    }
+
+    .dash-gtable__term { grid-area: term; }
+
+    // 범위 칩(2번째 셀)
+    .dash-gtable__row > :nth-child(2) {
+      grid-area: scope;
+      justify-self: start;
+    }
+
+    .dash-gtable__cat {
+      grid-area: cat;
+      justify-self: end;
+    }
+
+    // 번역: 모바일에서는 말줄임 대신 자연 줄바꿈으로 전문 노출
+    .dash-gtable__trans {
+      grid-area: trans;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+      line-height: 1.5;
+    }
+
+    .dash-gtable__actions {
+      grid-area: actions;
+      justify-self: end;
+    }
+
+    .dash-gtable__edit,
+    .dash-gtable__del {
+      padding: 8px 14px; // 터치 타깃 확대
+    }
+
+    // ═══ 학생 관리: 아바타+이름 / 언어 / 버튼을 3줄로 ═══
+    .dash-srow {
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 10px;
+      padding: 14px 16px;
+
+      // 이름·아이디 블록은 아바타 옆 나머지 폭 전부 차지 → 첫 줄
+      .dash-srow__who {
+        min-width: calc(100% - 54px);
+        flex: 1 1 auto;
+      }
+
+      // 언어 셀렉트: 둘째 줄 전체폭
+      .dash-langsel--row {
+        flex: 1 1 100%;
+        width: auto;
+        height: 42px;
+      }
+
+      // 이름·비번·활성 버튼: 셋째 줄 균등 3분할, 터치 타깃 42px
+      .dash-srow__btn,
+      .dash-active-btn {
+        flex: 1 1 0;
+        height: 42px;
+        padding: 0 10px;
+        text-align: center;
+      }
+    }
+
+    // 학생 추가 폼: 아이디·언어·버튼은 전체폭, 비번·이름은 2열
+    .dash-sform__row {
+      > * {
+        flex: 1 1 calc(50% - 5px);
+        min-width: calc(50% - 5px);
+      }
+
+      .dash-sform__id {
+        flex: 1 1 100%;
+      }
+
+      .dash-langsel {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+
+      > button {
+        flex: 1 1 100%;
+        min-height: 46px;
+      }
+    }
+
+    // ═══ 다시보기: 좌우 2열 → 세로 스택 (플레이어 위, 패널 아래) ═══
+    // 고정 높이/overflow 제거로 자연스러운 세로 흐름
+    .dash-page[data-page='replay'] {
+      height: auto;
+      overflow: visible;
+    }
+
+    .dash-replay {
+      gap: 14px; // 방향은 1180 미디어쿼리에서 이미 column
+    }
+
+    .dash-replay__main {
+      max-width: 100%;
+      width: 100%;
+      overflow: visible;
+    }
+
+    // 세로 검은 막대 방지: 고정 height 폐기, 16:9 비율 유지
+    .dash-player {
+      height: auto;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+    }
+
+    .dash-rpanel {
+      min-width: 0;
+      width: 100%;
+      max-height: 68vh; // 자막/요약이 길면 패널 내부 스크롤
+    }
+
+    // ═══ 라이브 수업 ═══
+    .dash-page--live {
+      padding: 14px;
+    }
+
+    // 상단 헤더: 뭉개짐 방지 → 줄바꿈
+    .dash-live__head {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dash-live__meta {
+      flex-wrap: wrap;
+      gap: 8px;
+      row-gap: 6px;
+      min-width: 0;
+    }
+
+    .dash-live__actions {
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 8px;
+    }
+
+    .dash-live__btn {
+      flex: 1 1 auto;
+      justify-content: center;
+      min-height: 44px; // 터치 타깃
+      padding: 9px 12px;
+    }
+
+    // 카메라 스테이지: 폭 100% · 16:9
+    .dash-stagebox {
+      aspect-ratio: 16 / 9;
+      min-height: 200px;
+    }
+
+    // 툴바 6개: 줄바꿈으로 두 줄 정돈
+    .dash-livebar {
+      padding: 12px;
+    }
+
+    .dash-livebar__tools {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 14px;
+    }
+
+    // 툴 패널(자료공유·참여자·언어): 화면 폭 안으로 + 내부 스크롤
+    .dash-panel--share,
+    .dash-panel--people,
+    .dash-panel--lang {
+      left: 12px;
+      right: 12px;
+      width: auto;
+      max-width: calc(100vw - 24px);
+      max-height: calc(100vh - 170px);
+      overflow: auto;
     }
 
     // 판서 바: JS가 넣는 인라인 위치를 무시하고 화면 폭에 맞춤
@@ -2766,34 +3017,73 @@
       justify-content: center;
       row-gap: 8px;
     }
+  }
+}
 
-    .dash-gtable {
-      overflow-x: auto;
-
-      .dash-gtable__inner {
-        min-width: 720px;
-      }
+// ── 세부 조정: 소형 폰 ──
+@media (max-width: 480px) {
+  .page-dashboard {
+    .dash-page {
+      padding: 12px;
     }
 
-    .dash-srow {
-      flex-wrap: wrap;
-      row-gap: 10px;
-
-      > :nth-child(2) {
-        min-width: calc(100% - 54px);
-        flex: 1 1 auto;
-      }
+    .dash-hero {
+      padding: 18px 18px;
     }
 
-    .dash-sform__row {
-      > * {
-        flex: 1 1 calc(50% - 5px);
-        min-width: calc(50% - 5px);
-      }
+    .dash-hero__title {
+      font-size: 22px;
+    }
 
-      > button {
-        flex: 1 1 100%;
-      }
+    .dash-hero__sub {
+      font-size: 14px;
+    }
+
+    .dash-quick__grid {
+      gap: 6px;
+    }
+
+    // 용어집 카드: 여백·폰트 소폭 축소
+    .dash-gtable__row {
+      padding: 12px 13px;
+    }
+
+    .dash-gtable__trans {
+      font-size: 12.5px;
+    }
+
+    // 오늘의 수업 카드 여백 소폭 축소
+    .dash-today__row {
+      padding: 12px 3px;
+    }
+
+    // 페이지 머리 설명은 한 줄 더 촘촘히
+    .dash-pagehead__sub {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .page-dashboard {
+    // 라이브 액션 버튼 라벨 축소 (아이콘 + 짧은 텍스트)
+    .dash-live__btn {
+      font-size: 12px;
+      padding: 9px 10px;
+    }
+
+    // 용어집 작업 버튼이 좁을 때 겹치지 않도록 살짝 축소
+    .dash-gtable__edit,
+    .dash-gtable__del {
+      padding: 7px 11px;
+      font-size: 11.5px;
+    }
+
+    // 학생 행 버튼 라벨 축소
+    .dash-srow__btn,
+    .dash-active-btn {
+      font-size: 12px;
+      padding: 0 8px;
     }
   }
 }

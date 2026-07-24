@@ -2619,6 +2619,116 @@
       }
     }
   }
+
+  // ══════════ 모바일 재정비 ══════════
+  // 태블릿 — 다열 grid를 2열로
+  @media (max-width: 860px) {
+    .ds-swatches,
+    .ds-semantic,
+    .ds-lang-grid,
+    .ds-grid-3,
+    .ds-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ds-panel--grid3,
+    .ds-panel--grid2,
+    .ds-panel--grid3-16,
+    .ds-panel--grid3-20 {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .ds-stage-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // 모바일 — 전체 10% 축소 + 단일 열 + 여백 정리
+  @media (max-width: 720px) {
+    .ds-container {
+      padding: 24px 16px 48px;
+      zoom: .9;
+    }
+
+    // 헤더: 요소 간격 8px, 좁으면 줄바꿈
+    .ds-header {
+      gap: 8px;
+      flex-wrap: wrap;
+
+      img {
+        height: 34px;
+      }
+
+      .ds-header__title {
+        padding-left: 10px;
+
+        h1 {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .ds-lead {
+      font-size: 13.5px;
+      margin-bottom: 28px;
+    }
+
+    // 섹션 제목 간격 축소
+    .ds-section {
+      margin-bottom: 28px;
+    }
+
+    // 모든 다열 grid를 1열로 (가로 스크롤 방지)
+    .ds-swatches,
+    .ds-semantic,
+    .ds-lang-grid,
+    .ds-grid-2,
+    .ds-grid-3,
+    .ds-grid-4,
+    .ds-panel--grid3,
+    .ds-panel--grid2,
+    .ds-panel--grid3-16,
+    .ds-panel--grid3-20 {
+      grid-template-columns: 1fr;
+    }
+
+    // 인라인 flex 패널(도크·사이드)도 세로로
+    .ds-panel--side {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+    }
+
+    // 하단 도크 시연: 버튼 그룹 간격 축소해 넘침 방지
+    .ds-dock {
+      gap: 10px;
+
+      .ds-dock__group {
+        gap: 10px;
+      }
+    }
+
+    // 캘린더 요일/날짜는 7열 유지하되 gap·폰트 축소
+    .ds-cal__dow,
+    .ds-cal__grid {
+      gap: 3px;
+      font-size: 11px;
+    }
+
+    // 좁은 화면에서 넘칠 수 있는 표는 세로로
+    .ds-table__head,
+    .ds-table__row {
+      grid-template-columns: 52px 1fr 72px;
+    }
+  }
+
+  // 소형 단말
+  @media (max-width: 400px) {
+    .ds-container {
+      padding: 20px 12px 40px;
+    }
+  }
 }
 
 // ══════════ 키프레임 (스피너·스켈레톤) ══════════
