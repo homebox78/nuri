@@ -130,7 +130,7 @@
     }
 
     &__title {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 800;
       letter-spacing: .01em;
       word-break: keep-all;
@@ -149,7 +149,7 @@
     }
 
     // 이미지가 우측을 차지하므로 콘텐츠 영역은 그만큼 안쪽으로
-    padding-right: calc(360px + 34px);
+    padding-right: calc(270px + 34px);
 
     // CTA — 세로 스택에서 빼내 이미지 왼쪽에 배치 (히어로 높이 절감)
     &__cta {
@@ -165,7 +165,7 @@
       top: 0;
       right: 0;
       height: 100%;
-      width: 360px;
+      width: 270px;
       object-fit: cover;
       object-position: right top;
     }
