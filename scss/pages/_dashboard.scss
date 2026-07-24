@@ -1180,7 +1180,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 13px 16px;
+    padding: 13px 0;
     border-bottom: 1px solid var(--line);
     cursor: pointer;
     transition: background .15s ease;
@@ -1254,12 +1254,14 @@
       border-bottom: 1px solid var(--line);
     }
 
+    // 모든 탭 pane의 콘텐츠 좌우 여백을 16px로 통일 (탭 헤더와 동일)
+    // → pane 좌우 padding 0, 내부 아이템 좌우 padding 16
     &__cap {
       flex: 1;
       display: none;
       flex-direction: column;
       overflow: auto;
-      padding: 8px;
+      padding: 8px 15px;
       gap: 2px;
 
       &.is-active {
@@ -1272,7 +1274,7 @@
       display: none;
       flex-direction: column;
       gap: 12px;
-      padding: 16px;
+      padding: 16px 15px;
 
       &.is-active {
         display: flex;
@@ -1286,6 +1288,7 @@
       flex-direction: column;
       overflow: auto;
       min-height: 0;
+      padding: 0 15px;
 
       &.is-active {
         display: flex;
@@ -1296,7 +1299,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 16px;
+      padding: 10px 0;
       font-size: 12px;
       color: var(--faint);
       font-weight: 700;
@@ -1313,8 +1316,8 @@
     &__bullet {
       display: flex;
       gap: 8px;
-      padding: 11px 13px;
-      border-radius: 11px;
+      padding: 11px 0;
+      border-radius: 0;
       background: var(--card2);
       border: 1px solid var(--line);
       font-size: 13px;
@@ -1343,6 +1346,11 @@
     cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: color .15s ease, border-color .15s ease;
+
+    // 영문은 라벨이 길어 3개 탭이 넘칠 수 있어 1px 축소
+    html[lang='en'] & {
+      font-size: 12.5px;
+    }
 
     .msr {
       color: var(--faint);
@@ -1390,15 +1398,15 @@
     position: relative;
     display: flex;
     gap: 11px;
-    padding: 11px 12px 11px 16px;
-    border-radius: 11px;
+    padding: 11px 0;
+    border-radius: 0;
     cursor: pointer;
     transition: background .15s ease;
 
     &::before {
       content: '';
       position: absolute;
-      left: 5px;
+      left: -9px;
       top: 12px;
       bottom: 12px;
       width: 3px;
