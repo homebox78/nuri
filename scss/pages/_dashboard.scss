@@ -1043,6 +1043,7 @@
     background: #0f0d1a;
     aspect-ratio: 16 / 9;
     flex: 0 1 auto;
+    width: 95%;
     min-height: 220px;
     border: 1px solid var(--line);
 
@@ -1214,7 +1215,7 @@
 
   // ── 우측 자막/요약 패널 ──
   .dash-rpanel {
-    width: 340px;
+    width: 320px;
     flex: none;
     padding: 0;
     display: flex;
