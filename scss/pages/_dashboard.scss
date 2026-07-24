@@ -727,7 +727,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     &__id {
@@ -807,8 +807,8 @@
     height: 46px;
     padding: 0 15px;
     border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--card);
+    border-radius: 11px;
+    background: var(--card2);
     cursor: pointer;
 
     > .msr {
@@ -816,7 +816,7 @@
     }
 
     &__label {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
       white-space: nowrap;
       overflow: hidden;
@@ -873,7 +873,7 @@
   .dash-srow {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 8px;
     padding: 13px 20px;
     border-bottom: 1px solid var(--line);
 
@@ -985,10 +985,10 @@
   .dash-dd {
     &__btn {
       padding: 9px 14px;
-      border-radius: 10px;
+      border-radius: 11px;
       background: var(--card2);
       border: 1px solid var(--line);
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
@@ -1180,7 +1180,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 13px 0;
+    padding: 13px 10px;
     border-bottom: 1px solid var(--line);
     cursor: pointer;
     transition: background .15s ease;
@@ -1252,6 +1252,11 @@
       gap: 22px;
       padding: 14px 16px 0;
       border-bottom: 1px solid var(--line);
+
+      // 영문은 라벨이 길어 탭 간격 축소
+      html[lang='en'] & {
+        gap: 14px;
+      }
     }
 
     // 모든 탭 pane의 콘텐츠 좌우 여백을 16px로 통일 (탭 헤더와 동일)
@@ -1299,35 +1304,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 0;
+      padding: 10px 10px;
       font-size: 12px;
       color: var(--faint);
       font-weight: 700;
       border-bottom: 1px solid var(--line);
     }
 
-    &__bullets {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    // 요약 항목을 타일로 (디자인시스템 stat-tile 톤)
-    &__bullet {
-      display: flex;
-      gap: 8px;
-      padding: 11px 0;
-      border-radius: 0;
-      background: var(--card2);
-      border: 1px solid var(--line);
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-
-      > span:first-child {
-        color: var(--v);
-        font-weight: 800;
-      }
+    // 강의 요약 — 한 덩어리 서술형 (안쪽 좌우 10px)
+    .dash-rsum__text {
+      margin: 0;
+      padding: 0 10px;
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.75;
+      word-break: keep-all;
     }
   }
 
@@ -1398,7 +1389,7 @@
     position: relative;
     display: flex;
     gap: 11px;
-    padding: 11px 0;
+    padding: 11px 10px;
     border-radius: 0;
     cursor: pointer;
     transition: background .15s ease;
@@ -1406,7 +1397,7 @@
     &::before {
       content: '';
       position: absolute;
-      left: -9px;
+      left: 0;
       top: 12px;
       bottom: 12px;
       width: 3px;
@@ -1462,6 +1453,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px;
 
     .chip {
       gap: 4px;
