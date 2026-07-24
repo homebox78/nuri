@@ -1228,10 +1228,11 @@
     overflow: hidden;
     align-self: stretch;
 
+    // 표준 .ds-tabs(밑줄 탭)과 동일한 컨테이너 골격
     &__tabs {
       display: flex;
-      gap: 6px;
-      padding: 14px 16px;
+      gap: 22px;
+      padding: 14px 16px 0;
       border-bottom: 1px solid var(--line);
     }
 
@@ -1309,21 +1310,21 @@
     }
   }
 
+  // 표준 .ds-tabs(밑줄 탭) 스타일 — 활성=보라 텍스트 + 하단 2px 보라 라인
+  // 클래스명/마크업/JS(data-rtab·is-active)는 유지, 스타일만 표준에 맞춤
   .dash-rtab {
-    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 6px;
-    padding: 9px 6px;
-    border-radius: 10px;
+    padding-bottom: 11px;
     background: transparent;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 600;
     white-space: nowrap;
     cursor: pointer;
-    transition: all .15s ease;
+    border-bottom: 2px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
 
     .msr {
       color: var(--faint);
@@ -1331,7 +1332,6 @@
     }
 
     &:hover {
-      background: var(--vll);
       color: var(--v2);
 
       .msr {
@@ -1340,17 +1340,16 @@
     }
 
     &.is-active {
-      background: var(--seg);
-      color: #fff;
+      color: var(--v);
       font-weight: 700;
-      box-shadow: 0 4px 12px rgba(28, 22, 58, .22);
+      border-bottom-color: var(--v);
 
       .msr {
-        color: #fff;
+        color: var(--v);
       }
     }
 
-    // 녹화 개수 미니 칩
+    // 녹화 개수 미니 칩 (표준 .chip 톤 — 연보라 배경)
     &__count {
       min-width: 18px;
       padding: 1px 5px;
@@ -1363,7 +1362,7 @@
     }
 
     &.is-active .dash-rtab__count {
-      background: rgba(255, 255, 255, .22);
+      background: var(--v);
       color: #fff;
     }
   }

@@ -107,11 +107,12 @@
   pw.addEventListener('focus', function () { pwField.classList.add('is-focused'); });
   pw.addEventListener('blur', function () { pwField.classList.remove('is-focused'); });
 
-  /* ── 아이디·비밀번호 저장 체크박스 ── */
-  var save = $('#save-check');
+  /* ── 아이디·비밀번호 저장 스위치 ── */
+  var save = $('#save-switch');
+  var saveToggle = save.querySelector('.switch');
   save.addEventListener('click', function (e) {
     e.preventDefault();
-    save.classList.toggle('is-checked');
+    saveToggle.classList.toggle('is-on');
   });
 
   /* ── 입력 검증: 빈 필드에 에러 표시 + 흔들림, 입력 시 해제 ── */
