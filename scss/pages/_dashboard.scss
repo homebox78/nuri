@@ -1009,8 +1009,10 @@
     flex: 1;
     min-height: 0;
 
+    // 좌측 열 — 폭은 플레이어(16:9)가 결정, 메타 행도 같은 폭으로 정렬
     &__main {
-      flex: 1.5;
+      flex: none;
+      max-width: calc(100% - 336px);
       min-width: 0;
       display: flex;
       flex-direction: column;
@@ -1036,14 +1038,17 @@
   }
 
   // ── 플레이어 (16:9 기준, 화면이 낮으면 세로만 줄어듦) ──
+  // 높이 = 뷰포트 - (톱바70 + 페이지헤드·여백 ≈168) → 폭은 16:9로 산출
   .dash-player {
     position: relative;
     border-radius: 18px;
     overflow: hidden;
     background: #0f0d1a;
     aspect-ratio: 16 / 9;
-    flex: 0 1 auto;
-    width: 95%;
+    flex: none;
+    height: calc(100vh - 238px);
+    width: auto;
+    max-width: 100%;
     min-height: 220px;
     border: 1px solid var(--line);
 
@@ -1215,8 +1220,8 @@
 
   // ── 우측 자막/요약 패널 ──
   .dash-rpanel {
-    width: 320px;
-    flex: none;
+    flex: 1;
+    min-width: 320px;
     padding: 0;
     display: flex;
     flex-direction: column;
