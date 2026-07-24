@@ -34,17 +34,17 @@
   // ── 페이지 공통 (라우터가 .is-active 토글) ──
   .dash-page {
     flex: 1;
-    padding: 18px 28px;
+    padding: 14px 28px;
     display: none;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 
     &.is-active {
       display: flex;
     }
 
     &--home {
-      gap: 15px;
+      gap: 12px;
     }
 
     &--live {
@@ -148,18 +148,26 @@
       }
     }
 
+    // 이미지가 우측을 차지하므로 콘텐츠 영역은 그만큼 안쪽으로
+    padding-right: calc(360px + 34px);
+
+    // CTA — 세로 스택에서 빼내 이미지 왼쪽에 배치 (히어로 높이 절감)
     &__cta {
-      margin-top: 16px;
       gap: 9px;
+      flex: none;
+      align-self: center;
+      margin-left: auto;
     }
 
+    // 이미지는 절대배치로 우측에 고정 — 히어로 높이는 텍스트가 결정, 넘치는 만큼 크롭
     &__img {
-      align-self: stretch;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
       width: 360px;
-      height: auto;
       object-fit: cover;
       object-position: right top;
-      margin: -22px -34px -22px 0;
     }
   }
 
@@ -167,7 +175,7 @@
   .dash-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
 
   // ── 기능 카드 4종 ──
@@ -452,7 +460,7 @@
 
     &__row {
       align-items: center;
-      padding: 16px 6px;
+      padding: 11px 6px;
       text-align: center;
       border-bottom: 1px solid var(--line);
       font-size: 13.5px;
@@ -2592,6 +2600,11 @@
 
     .dash-hero__img {
       display: none;
+    }
+
+    // 이미지가 사라지면 우측 여백도 원복, CTA는 우측 끝으로
+    .dash-hero {
+      padding-right: 34px;
     }
   }
 }
