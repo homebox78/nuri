@@ -451,6 +451,11 @@
       margin-bottom: 16px;
     }
 
+    // 아코디언 본문 래퍼: 데스크탑에서는 투명(레이아웃 무영향), 모바일에서만 접힘 대상
+    &__body {
+      display: contents;
+    }
+
     &__cols {
       display: grid;
       grid-template-columns: 64px 128px 1fr 90px 84px;
@@ -2663,6 +2668,13 @@
       }
     }
   }
+
+  // ── 모바일 아코디언 쉐브론 (데스크탑: 상세부 항상표시 → 쉐브론 숨김) ──
+  .dash-acc-chev {
+    display: none;
+    color: var(--faint);
+    transition: transform .18s ease;
+  }
 }
 
 // ═══════════════════ 반응형 ═══════════════════
@@ -2821,14 +2833,34 @@
     }
 
     .dash-gtable__row {
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto auto 1fr auto;
       grid-template-areas:
-        "term  scope cat"
-        "trans trans actions";
+        "term  scope cat   chev"
+        "trans trans trans actions";
       gap: 7px 10px;
       text-align: left;
       padding: 14px 16px;
       align-items: center;
+      cursor: pointer;
+
+      // 헤더 우측 쉐브론
+      .dash-acc-chev {
+        grid-area: chev;
+        justify-self: end;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      // 상세부(번역·작업)는 기본 접힘
+      .dash-gtable__trans,
+      .dash-gtable__actions { display: none; }
+
+      // 첫 항목 등 .is-open 이면 상세부 표시 + 쉐브론 회전
+      &.is-open {
+        .dash-gtable__trans   { display: block; }
+        .dash-gtable__actions { display: flex; }
+        .dash-acc-chev { transform: rotate(180deg); color: var(--v); }
+      }
     }
 
     .dash-gtable__term { grid-area: term; }
@@ -2869,11 +2901,20 @@
       row-gap: 10px;
       column-gap: 10px;
       padding: 14px 16px;
+      cursor: pointer;
 
       // 이름·아이디 블록은 아바타 옆 나머지 폭 전부 차지 → 첫 줄
       .dash-srow__who {
         min-width: calc(100% - 54px);
         flex: 1 1 auto;
+
+        // 헤더 우측 쉐브론
+        .dash-acc-chev {
+          margin-left: auto;
+          align-self: center;
+          display: inline-flex;
+          align-items: center;
+        }
       }
 
       // 언어 셀렉트: 둘째 줄 전체폭
@@ -2890,6 +2931,19 @@
         height: 42px;
         padding: 0 10px;
         text-align: center;
+      }
+
+      // 상세부(언어 셀렉트·버튼)는 기본 접힘
+      .dash-langsel--row,
+      .dash-srow__btn,
+      .dash-active-btn { display: none; }
+
+      // .is-open 이면 상세부 표시 + 쉐브론 회전
+      &.is-open {
+        .dash-langsel--row { display: flex; }
+        .dash-srow__btn,
+        .dash-active-btn { display: flex; align-items: center; justify-content: center; }
+        .dash-acc-chev { transform: rotate(180deg); color: var(--v); }
       }
     }
 
@@ -3015,6 +3069,56 @@
       flex-wrap: wrap;
       justify-content: center;
       row-gap: 8px;
+    }
+
+    // ═══ 홈 하단 아코디언 (오늘의 수업 · 빠른 실행 · 최근 활동) ═══
+    // 각 카드 제목을 헤더로, 카드 본문을 상세부로. 첫 섹션(오늘의 수업)만 펼침.
+    .dash-today__head,
+    .dash-quick .dash-card-title,
+    .dash-activity__head {
+      cursor: pointer;
+
+      &.is-open .dash-acc-chev { transform: rotate(180deg); color: var(--v); }
+    }
+
+    // 헤더 우측 쉐브론 정렬
+    .dash-today__head .dash-acc-chev,
+    .dash-quick .dash-card-title .dash-acc-chev { margin-left: auto; display: inline-flex; }
+
+    .dash-activity__head {
+      .dash-activity__more { margin-left: auto; }
+      .dash-acc-chev { margin-left: 8px; display: inline-flex; }
+    }
+
+    // 오늘의 수업: 본문 래퍼 접힘
+    .dash-today__body { display: none; }
+    .dash-today__head.is-open + .dash-today__body { display: block; }
+
+    // 빠른 실행: 그리드 본문 접힘
+    .dash-quick__grid { display: none; }
+    .dash-quick .dash-card-title.is-open + .dash-quick__grid { display: grid; }
+
+    // 최근 활동: 리스트 본문 접힘
+    .dash-activity__list { display: none; }
+    .dash-activity__head.is-open + .dash-activity__list { display: flex; }
+
+    // ═══ 라이브 언어 설정 패널 아코디언 (발화 언어 · 자막 번역 언어) ═══
+    // 첫 섹션(내 발화 언어)만 펼침. 각 섹션 라벨을 헤더로, 옵션 목록을 상세부로.
+    .dash-panel--lang {
+      .dash-panel__seclabel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .dash-acc-chev { display: inline-flex; margin-left: 8px; }
+
+        &.is-open .dash-acc-chev { transform: rotate(180deg); color: var(--v); }
+      }
+
+      // 옵션 목록은 기본 접힘, 헤더 .is-open 일 때만 표시
+      .dash-panel__seclabel + .dash-panel__opts { display: none; }
+      .dash-panel__seclabel.is-open + .dash-panel__opts { display: flex; }
     }
   }
 }

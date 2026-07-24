@@ -883,4 +883,20 @@
       emSave.addEventListener('click', function () { editModal.classList.remove('is-open'); });
     }
   }
+
+  /* ══════════════════════════════════════════════
+   *  N. 모바일 아코디언 — [data-acc] 헤더 클릭 시 is-open 토글
+   *     · design-system.js 의 data-acc 패턴을 그대로 사용
+   *     · 데스크탑(>780px)에서는 CSS가 상세부를 항상 표시하므로
+   *       is-open 토글은 시각적으로 무해 (쉐브론도 CSS로 숨김)
+   *     · 상세부의 인터랙션 요소(버튼·수정·삭제·언어 셀렉트) 클릭은
+   *       각자의 동작만 수행하고 아코디언 토글은 일으키지 않음
+   * ══════════════════════════════════════════════ */
+  var ACC_SKIP = 'button, a, input, select, [data-edit], [data-active-btn], [data-glossary-edit], [data-gdel], [data-langsel]';
+  $$('[data-acc]').forEach(function (head) {
+    head.addEventListener('click', function (e) {
+      if (e.target.closest(ACC_SKIP)) return;
+      head.classList.toggle('is-open');
+    });
+  });
 })();

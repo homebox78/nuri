@@ -206,9 +206,11 @@
 
           <!-- 오늘의 수업 -->
           <div class="card dash-today">
-            <div class="dash-today__head">
+            <div class="dash-today__head is-open" data-acc>
               <div class="dash-card-title"><span class="msr msr-20">calendar_month</span>오늘의 수업</div>
+              <span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span>
             </div>
+            <div class="dash-today__body">
             <div class="dash-today__cols dash-today__thead"><div>교시</div><div>시간</div><div>수업 주제</div><div>상태</div><div>작업</div></div>
             <div class="dash-today__cols dash-today__row">
               <div class="dash-today__period">1교시</div>
@@ -246,6 +248,7 @@
               <div><span class="dash-today__start is-locked" data-locked>시작</span></div>
             </div>
             <div class="dash-today__more" data-goto="soon"><span class="msr msr-18">event</span>전체 시간표 보기</div>
+            </div>
           </div>
 
           <!-- 우측 열 -->
@@ -253,7 +256,7 @@
 
             <!-- 빠른 실행 -->
             <div class="card dash-quick">
-              <div class="dash-card-title"><span class="msr msr-20">bolt</span>빠른 실행</div>
+              <div class="dash-card-title" data-acc><span class="msr msr-20">bolt</span>빠른 실행<span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
               <div class="dash-quick__grid">
                 <div class="dash-quick__tile" data-quick="live"><span class="dash-quick__icon"><span class="msr msr-19">mic</span></span><span class="dash-quick__label">마이크 테스트</span></div>
                 <div class="dash-quick__tile" data-quick="live"><span class="dash-quick__icon dash-quick__icon--blue"><span class="msr msr-19">co_present</span></span><span class="dash-quick__label">학생 발표</span></div>
@@ -264,9 +267,10 @@
 
             <!-- 최근 활동 -->
             <div class="card dash-activity">
-              <div class="dash-activity__head">
+              <div class="dash-activity__head" data-acc>
                 <div class="dash-card-title"><span class="msr msr-20">history</span>최근 활동</div>
                 <span class="dash-activity__more">더보기</span>
+                <span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span>
               </div>
               <div class="dash-activity__list">
                 <div class="dash-activity__item">
@@ -316,57 +320,57 @@
       <!-- 학생 목록 -->
       <div class="card dash-slist">
         <div class="dash-slist__head"><span class="msr msr-20">groups</span><span>학생 7명</span></div>
-        <div class="dash-srow" data-srow data-name="김하늘" data-id="s103">
+        <div class="dash-srow is-open" data-srow data-acc data-name="김하늘" data-id="s103">
           <img class="dash-srow__avatar" src="uploads/avatar-student-01.png" alt="김하늘">
-          <div class="dash-srow__who"><span class="dash-srow__name">김하늘</span><span class="dash-srow__id">s103</span></div>
+          <div class="dash-srow__who"><span class="dash-srow__name">김하늘</span><span class="dash-srow__id">s103</span><span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
           <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>한국어</span><span class="msr msr-17">expand_more</span></div>
           <button class="dash-srow__btn" data-edit="name">이름</button>
           <button class="dash-srow__btn" data-edit="pw">비번</button>
           <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
         </div>
-        <div class="dash-srow" data-srow data-name="미국학생" data-id="c103">
+        <div class="dash-srow" data-srow data-acc data-name="미국학생" data-id="c103">
           <span class="dash-srow__initial">미</span>
-          <div class="dash-srow__who"><span class="dash-srow__name">미국학생</span><span class="dash-srow__id">c103</span></div>
+          <div class="dash-srow__who"><span class="dash-srow__name">미국학생</span><span class="dash-srow__id">c103</span><span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
           <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>영어</span><span class="msr msr-17">expand_more</span></div>
           <button class="dash-srow__btn" data-edit="name">이름</button>
           <button class="dash-srow__btn" data-edit="pw">비번</button>
           <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
         </div>
-        <div class="dash-srow" data-srow data-name="왕리우" data-id="s101">
+        <div class="dash-srow" data-srow data-acc data-name="왕리우" data-id="s101">
           <img class="dash-srow__avatar" src="uploads/avatar-student-02.png" alt="왕리우">
-          <div class="dash-srow__who"><span class="dash-srow__name">왕리우</span><span class="dash-srow__id">s101</span></div>
+          <div class="dash-srow__who"><span class="dash-srow__name">왕리우</span><span class="dash-srow__id">s101</span><span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
           <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>중국어(간체)</span><span class="msr msr-17">expand_more</span></div>
           <button class="dash-srow__btn" data-edit="name">이름</button>
           <button class="dash-srow__btn" data-edit="pw">비번</button>
           <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
         </div>
-        <div class="dash-srow" data-srow data-name="응우옌투안" data-id="s102">
+        <div class="dash-srow" data-srow data-acc data-name="응우옌투안" data-id="s102">
           <span class="dash-srow__initial">응</span>
-          <div class="dash-srow__who"><span class="dash-srow__name">응우옌투안</span><span class="dash-srow__id">s102</span></div>
+          <div class="dash-srow__who"><span class="dash-srow__name">응우옌투안</span><span class="dash-srow__id">s102</span><span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
           <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>베트남어</span><span class="msr msr-17">expand_more</span></div>
           <button class="dash-srow__btn" data-edit="name">이름</button>
           <button class="dash-srow__btn" data-edit="pw">비번</button>
           <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
         </div>
-        <div class="dash-srow" data-srow data-name="중국학생" data-id="c101">
+        <div class="dash-srow" data-srow data-acc data-name="중국학생" data-id="c101">
           <span class="dash-srow__initial">중</span>
-          <div class="dash-srow__who"><span class="dash-srow__name">중국학생</span><span class="dash-srow__id">c101</span></div>
+          <div class="dash-srow__who"><span class="dash-srow__name">중국학생</span><span class="dash-srow__id">c101</span><span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
           <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>중국어(간체)</span><span class="msr msr-17">expand_more</span></div>
           <button class="dash-srow__btn" data-edit="name">이름</button>
           <button class="dash-srow__btn" data-edit="pw">비번</button>
           <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
         </div>
-        <div class="dash-srow" data-srow data-name="첸시아" data-id="s104">
+        <div class="dash-srow" data-srow data-acc data-name="첸시아" data-id="s104">
           <span class="dash-srow__initial">첸</span>
-          <div class="dash-srow__who"><span class="dash-srow__name">첸시아</span><span class="dash-srow__id">s104</span></div>
+          <div class="dash-srow__who"><span class="dash-srow__name">첸시아</span><span class="dash-srow__id">s104</span><span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
           <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>일본어</span><span class="msr msr-17">expand_more</span></div>
           <button class="dash-srow__btn" data-edit="name">이름</button>
           <button class="dash-srow__btn" data-edit="pw">비번</button>
           <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
         </div>
-        <div class="dash-srow is-inactive is-locked" data-srow data-name="테스트학생" data-id="s105">
+        <div class="dash-srow is-inactive is-locked" data-srow data-acc data-name="테스트학생" data-id="s105">
           <span class="dash-srow__initial">테</span>
-          <div class="dash-srow__who"><span class="dash-srow__name">테스트학생</span><span class="dash-srow__id">s105</span></div>
+          <div class="dash-srow__who"><span class="dash-srow__name">테스트학생</span><span class="dash-srow__id">s105</span><span class="dash-acc-chev msr msr-20" aria-hidden="true">expand_more</span></div>
           <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>태국어</span><span class="msr msr-17">expand_more</span></div>
           <button class="dash-srow__btn" data-edit="name">이름</button>
           <button class="dash-srow__btn" data-edit="pw">비번</button>
@@ -472,75 +476,85 @@
       <div class="card dash-gtable">
         <div class="dash-gtable__inner">
           <div class="dash-gtable__cols dash-gtable__thead"><div>원문</div><div>범위</div><div>번역</div><div>분류</div><div>작업</div></div>
-          <div class="dash-gtable__cols dash-gtable__row" data-grow>
+          <div class="dash-gtable__cols dash-gtable__row is-open" data-grow data-acc>
             <div class="dash-gtable__term">광합성</div>
             <div><span class="dash-tag dash-tag--violet">전역</span></div>
             <div class="dash-gtable__trans">영어 <b>Photosynthesis</b> · 중국어 <b>光合作用</b></div>
             <div class="dash-gtable__cat">과학</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">엽록체</div>
             <div><span class="dash-tag dash-tag--orange">이 학급</span></div>
             <div class="dash-gtable__trans">영어 <b>Chloroplast</b> · 일본어 <b>葉緑体</b></div>
             <div class="dash-gtable__cat">과학</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">명반응</div>
             <div><span class="dash-tag dash-tag--violet">전역</span></div>
             <div class="dash-gtable__trans">영어 <b>Light reaction</b> · 베트남어 <b>Phản ứng sáng</b></div>
             <div class="dash-gtable__cat">과학</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">세포막</div>
             <div><span class="dash-tag dash-tag--violet">전역</span></div>
             <div class="dash-gtable__trans">영어 <b>Cell membrane</b> · 중국어 <b>细胞膜</b></div>
             <div class="dash-gtable__cat">과학</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">삼투압</div>
             <div><span class="dash-tag dash-tag--violet">전역</span></div>
             <div class="dash-gtable__trans">영어 <b>Osmotic pressure</b> · 일본어 <b>浸透圧</b></div>
             <div class="dash-gtable__cat">과학</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">분수</div>
             <div><span class="dash-tag dash-tag--violet">전역</span></div>
             <div class="dash-gtable__trans">영어 <b>Fraction</b> · 베트남어 <b>Phân số</b></div>
             <div class="dash-gtable__cat">수학</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">방정식</div>
             <div><span class="dash-tag dash-tag--orange">이 학급</span></div>
             <div class="dash-gtable__trans">영어 <b>Equation</b> · 중국어 <b>方程式</b></div>
             <div class="dash-gtable__cat">수학</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">광복절</div>
             <div><span class="dash-tag dash-tag--violet">전역</span></div>
             <div class="dash-gtable__trans">영어 <b>Liberation Day</b> · 일본어 <b>光復節</b></div>
             <div class="dash-gtable__cat">사회</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">민주주의</div>
             <div><span class="dash-tag dash-tag--violet">전역</span></div>
             <div class="dash-gtable__trans">영어 <b>Democracy</b> · 베트남어 <b>Dân chủ</b></div>
             <div class="dash-gtable__cat">사회</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
-          <div class="dash-gtable__cols dash-gtable__row">
+          <div class="dash-gtable__cols dash-gtable__row" data-acc>
             <div class="dash-gtable__term">관용어</div>
             <div><span class="dash-tag dash-tag--orange">이 학급</span></div>
             <div class="dash-gtable__trans">영어 <b>Idiom</b> · 중국어 <b>惯用语</b></div>
             <div class="dash-gtable__cat">국어</div>
             <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+            <span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span>
           </div>
         </div>
       </div>
@@ -648,7 +662,7 @@
           <!-- 패널 · 언어 설정 -->
           <div class="dash-panel dash-panel--lang" data-panel="lang">
             <div class="dash-panel__langhead"><div class="dash-panel__title"><span class="msr msr-19">language</span>언어 설정</div><span class="msr msr-20 dash-panel__close" data-close="lang">close</span></div>
-            <div class="dash-panel__seclabel">내 발화 언어 (음성 인식)</div>
+            <div class="dash-panel__seclabel is-open" data-acc>내 발화 언어 (음성 인식)<span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span></div>
             <div class="dash-panel__opts dash-panel__opts--sp" data-splang>
               <span class="dash-opt is-active" data-opt>한국어</span>
               <span class="dash-opt" data-opt>English</span>
@@ -657,7 +671,7 @@
               <span class="dash-opt" data-opt>日本語</span>
               <span class="dash-opt" data-opt>자동 감지</span>
             </div>
-            <div class="dash-panel__seclabel">자막 번역 언어</div>
+            <div class="dash-panel__seclabel" data-acc>자막 번역 언어<span class="dash-acc-chev msr msr-18" aria-hidden="true">expand_more</span></div>
             <div class="dash-panel__opts" data-sublang>
               <span class="dash-opt is-active" data-opt data-on="1">영어</span>
               <span class="dash-opt is-active" data-opt data-on="1">일본어</span>
