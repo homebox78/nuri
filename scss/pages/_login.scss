@@ -86,36 +86,24 @@
     max-width: 838px;
   }
 
-  // 좌측 · 일러스트 + 헤드라인 (일러스트 폭 확보용으로 비율 상향)
+  // 좌측 · 일러스트 + 헤드라인 (우측 카드와 대칭인 카드로 감쌈)
+  // 배경은 GIF 배경색(#ece9f4)과 동일 → 일러스트 사각 경계가 카드 안에서 안 보임
   .login-intro {
-    position: relative;
     flex: 1.18;
-    padding: 20px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-
-    // 일러스트 뒤 배경을 GIF 배경색(#ece9f4)과 맞춰 사각 경계를 없앰
-    // 가장자리는 페이지 배경으로 부드럽게 페이드
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(115% 78% at 50% 34%, #ece9f4 0%, #ece9f4 52%, transparent 78%);
-      z-index: 0;
-    }
-
-    > * {
-      position: relative;
-      z-index: 1;
-    }
+    background: #ece9f4;
+    border: 1px solid var(--line);
+    border-radius: 28px;
 
     // ── 애니메이션 일러스트 (login_img.gif) ──
     .login-art {
       width: 100%;
-      max-width: 416px;
+      max-width: 380px;
       height: auto;
     }
 
