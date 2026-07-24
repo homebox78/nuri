@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ── SEO ── -->
+<title>디자인 시스템 · 누리 NURI</title>
+<meta name="description" content="누리(NURI) 플랫폼의 디자인 시스템입니다. 색·타이포그래피·컴포넌트·인터랙션 규칙을 정의합니다.">
+<meta property="og:title" content="디자인 시스템 · 누리 NURI">
+<meta property="og:description" content="누리 플랫폼의 색·타이포·컴포넌트·인터랙션 규칙">
+<meta property="og:type" content="website">
+<meta property="og:image" content="uploads/logo.png">
+
+<!-- ── 아이콘 · 스타일 ── -->
+<link rel="icon" type="image/png" href="uploads/icon.png">
+<link rel="apple-touch-icon" href="uploads/icon.png">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="page-ds">
+<div class="ds-container">
+
+  <!-- ═══════════ 헤더 ═══════════ -->
+  <header class="ds-header">
+    <img src="uploads/logo.png" alt="NURI">
+    <div class="ds-header__title">
+      <h1>DESIGN SYSTEM</h1>
+    </div>
+  </header>
+  <p class="ds-lead">누리 플랫폼의 색·타이포·컴포넌트·인터랙션 규칙입니다. 모든 화면은 이 토큰과 상태 규칙을 따릅니다.</p>
+
+  <main>
+
+  <!-- ═══════════ 01 · 컬러 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>01 · 컬러</h2><span class="ds-section__sub">Primary / Neutral / Semantic</span></div>
+
+    <div class="ds-group-label">PRIMARY — 바이올렛</div>
+    <div class="ds-swatches">
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--v3"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Violet 700</div><div class="ds-swatch__code">#5A33DC · --v3</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--v2"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Violet 600</div><div class="ds-swatch__code">#6A45F0 · --v2</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--v"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Violet 500</div><div class="ds-swatch__code">#7C5CFC · --v</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--vl"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Violet 100</div><div class="ds-swatch__code">#ECE7FF · --vl</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--vll"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Violet 50</div><div class="ds-swatch__code">#F6F3FF · --vll</div></div></div>
+    </div>
+
+    <div class="ds-group-label">NEUTRAL</div>
+    <div class="ds-swatches ds-swatches--neutral">
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--text"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Text</div><div class="ds-swatch__code">#1F1B32</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--muted"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Muted</div><div class="ds-swatch__code">#6C6885</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--faint"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Faint</div><div class="ds-swatch__code">#9D99B6</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--card2"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Surface 2</div><div class="ds-swatch__code">#F7F6FE</div></div></div>
+      <div class="ds-swatch"><div class="ds-swatch__chip ds-swatch__chip--bg"></div><div class="ds-swatch__meta"><div class="ds-swatch__name">Background</div><div class="ds-swatch__code">#F4F2FD</div></div></div>
+    </div>
+
+    <div class="ds-group-label">SEMANTIC — 상태·강조</div>
+    <div class="ds-semantic">
+      <div class="ds-semantic__item"><span class="ds-semantic__dot ds-semantic__dot--green"></span><div><div class="ds-semantic__name">Success</div><div class="ds-semantic__desc">이동 수업·완료</div></div></div>
+      <div class="ds-semantic__item"><span class="ds-semantic__dot ds-semantic__dot--orange"></span><div><div class="ds-semantic__name">Warning</div><div class="ds-semantic__desc">중요·자료</div></div></div>
+      <div class="ds-semantic__item"><span class="ds-semantic__dot ds-semantic__dot--blue"></span><div><div class="ds-semantic__name">Info</div><div class="ds-semantic__desc">발표·영상</div></div></div>
+      <div class="ds-semantic__item"><span class="ds-semantic__dot ds-semantic__dot--pink"></span><div><div class="ds-semantic__name">Accent</div><div class="ds-semantic__desc">모드·강조</div></div></div>
+      <div class="ds-semantic__item"><span class="ds-semantic__dot ds-semantic__dot--red"></span><div><div class="ds-semantic__name">Danger</div><div class="ds-semantic__desc">알림·삭제</div></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 02 · 타이포그래피 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>02 · 타이포그래피</h2><span class="ds-section__sub">언어별 Noto Sans · 로컬 서빙 (assets/fonts)</span></div>
+    <div class="ds-grid-2">
+      <div class="ds-typo-card">
+        <div class="ds-typo-card__tag">DISPLAY</div>
+        <div class="ds-typo-display font-ko">안녕하세요 김민정 선생님 👋</div>
+        <div class="ds-typo-note">히어로 인사말 등 감성 헤드라인에만 사용</div>
+      </div>
+      <div class="ds-typo-card">
+        <div class="ds-typo-card__tag">UI · NOTO SANS KR</div>
+        <div class="ds-typo-rows">
+          <div class="ds-typo-row"><span class="ds-typo-row__name">Heading / 800</span><span class="ds-typo-row__sample ds-typo-row__sample--heading">오늘의 수업</span></div>
+          <div class="ds-typo-row"><span class="ds-typo-row__name">Title / 700</span><span class="ds-typo-row__sample ds-typo-row__sample--title">내 수업 카드</span></div>
+          <div class="ds-typo-row"><span class="ds-typo-row__name">Body / 500</span><span class="ds-typo-row__sample ds-typo-row__sample--body">본문 텍스트 예시입니다.</span></div>
+          <div class="ds-typo-row"><span class="ds-typo-row__name">Caption / 600</span><span class="ds-typo-row__sample ds-typo-row__sample--caption">보조 라벨 · 시간</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ds-lang-label">언어별 폰트 · 선택 언어에 따라 자동 전환 · 모두 assets/fonts 로컬 서빙</div>
+    <div class="ds-lang-grid">
+      <div class="ds-lang-card"><div class="ds-lang-card__tag">한국어 · Noto Sans KR</div><div class="ds-lang-card__big font-ko" lang="ko">안녕하세요</div><div class="ds-lang-card__small font-ko" lang="ko">오늘의 수업</div></div>
+      <div class="ds-lang-card"><div class="ds-lang-card__tag">English · Noto Sans</div><div class="ds-lang-card__big font-en" lang="en">Hello</div><div class="ds-lang-card__small font-en" lang="en">Today's class</div></div>
+      <div class="ds-lang-card"><div class="ds-lang-card__tag">日本語 · Noto Sans JP</div><div class="ds-lang-card__big font-ja" lang="ja">こんにちは</div><div class="ds-lang-card__small font-ja" lang="ja">今日の授業</div></div>
+      <div class="ds-lang-card"><div class="ds-lang-card__tag">简体中文 · Noto Sans SC</div><div class="ds-lang-card__big font-zh-hans" lang="zh-Hans">你好</div><div class="ds-lang-card__small font-zh-hans" lang="zh-Hans">今天的课程</div></div>
+      <div class="ds-lang-card"><div class="ds-lang-card__tag">繁體中文 · Noto Sans TC</div><div class="ds-lang-card__big font-zh-hant" lang="zh-Hant">你好</div><div class="ds-lang-card__small font-zh-hant" lang="zh-Hant">今天的課程</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 03 · 버튼 · 상태 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>03 · 버튼 · 상태</h2><span class="ds-section__sub">Primary · Soft(3색) · Ghost · Danger · Small · Segmented · Icon · Tile · Quick · 직접 호버</span></div>
+    <div class="ds-panel">
+      <div class="ds-specimens">
+
+        <div class="ds-specimen"><span class="ds-label">PRIMARY</span>
+          <button class="ds-btn ds-btn--primary" type="button"><span class="msr msr-20">play_arrow</span>수업 시작</button>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">SOFT</span>
+          <button class="ds-btn ds-btn--soft" type="button">교실 입장</button>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">GHOST</span>
+          <button class="ds-btn ds-btn--ghost" type="button">전체 시간표</button>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">DANGER</span>
+          <button class="ds-btn ds-btn--danger" type="button">수업 종료</button>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">ICON</span>
+          <button class="ds-icon-btn" type="button"><span class="msr msr-22">notifications</span></button>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">DISABLED</span>
+          <button class="ds-btn" type="button" disabled>비활성</button>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">SOFT · 컬러별 (카드 CTA)</span>
+          <div class="ds-row-8">
+            <button class="ds-cta ds-cta--violet" type="button">교실 입장</button>
+            <button class="ds-cta ds-cta--green" type="button">이동 입장</button>
+            <button class="ds-cta ds-cta--orange" type="button">자료 관리</button>
+          </div>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">SMALL · 표 액션</span>
+          <button class="ds-btn-sm" type="button">시작</button>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">SEGMENTED · 테마 토글</span>
+          <div class="ds-theme-seg" data-single="pill">
+            <span class="ds-theme-seg__btn is-active"><span class="msr msr-19">light_mode</span></span>
+            <span class="ds-theme-seg__btn"><span class="msr msr-18">dark_mode</span></span>
+          </div>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">ICON · 뱃지</span>
+          <span class="ds-icon-btn"><span class="msr msr-22">notifications</span><span class="count-dot">3</span></span>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">TILE / CHIP · 4상태</span>
+          <div class="ds-row-8">
+            <span class="ds-tile">기본</span>
+            <span class="ds-tile ds-tile--selected">선택</span>
+            <span class="ds-tile ds-tile--soft">소프트</span>
+            <span class="ds-tile ds-tile--dashed">점선</span>
+          </div>
+        </div>
+
+        <div class="ds-specimen"><span class="ds-label">QUICK · 타일</span>
+          <div class="ds-quick"><span class="ds-quick__icon"><span class="msr msr-20">mic</span></span><span class="ds-quick__name">마이크 테스트</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 04 · 배지 · 상태 칩 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>04 · 배지 · 상태 칩</h2><span class="ds-section__sub">Soft 배경 + 짙은 텍스트, radius 999</span></div>
+    <div class="ds-panel ds-badges">
+      <span class="chip chip--green"><span class="ds-chip-dot ds-chip-dot--green"></span>진행 중</span>
+      <span class="chip">예정</span>
+      <span class="chip chip--orange">진행 전</span>
+      <span class="chip chip--orange">중요</span>
+      <span class="chip chip--red"><span class="ds-chip-dot ds-chip-dot--red"></span>LIVE</span>
+      <span class="chip ds-chip-sm">중국어(간체)</span>
+      <span class="chip chip--blue">영상 준비</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ 05 · 카드 · 엘리베이션 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>05 · 카드 · 엘리베이션</h2><span class="ds-section__sub">radius 18 · 3단계 그림자</span></div>
+    <div class="ds-grid-3">
+      <div class="ds-elev ds-elev--sm"><div class="ds-elev__name">Level 1 · SM</div><div class="ds-elev__desc">기본 정보 카드 · 리스트</div></div>
+      <div class="ds-elev ds-elev--md"><div class="ds-elev__name">Level 2 · MD</div><div class="ds-elev__desc">주요 액션 카드 · 대시보드</div></div>
+      <div class="ds-elev ds-elev--lg"><div class="ds-elev__name">Level 3 · LG</div><div class="ds-elev__desc">히어로 · 강조 배너</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 06 · 폼 컨트롤 (기본) ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>06 · 폼 컨트롤</h2><span class="ds-section__sub">포커스 시 바이올렛 보더</span></div>
+    <div class="ds-panel ds-panel--grid3-16">
+      <div><div class="ds-field-label">인풋</div><input class="ds-input" placeholder="학생 이름 입력"></div>
+      <div><div class="ds-field-label">검색</div><div class="ds-fake-input"><span class="msr msr-18">search</span>수업·학생 검색</div></div>
+      <div><div class="ds-field-label">셀렉트</div><div class="ds-fake-select">한국어<span class="msr msr-18">expand_more</span></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 07 · 인터랙션 원칙 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>07 · 인터랙션 원칙</h2></div>
+    <div class="ds-grid-4">
+      <div class="ds-motion-card"><div class="ds-motion-card__value">.15s</div><div class="ds-motion-card__name">트랜지션</div><div class="ds-motion-card__desc">all · ease. 호버·포커스 공통 속도.</div></div>
+      <div class="ds-motion-card"><div class="ds-motion-card__value">−1px</div><div class="ds-motion-card__name">호버 상승</div><div class="ds-motion-card__desc">주요 버튼·카드는 살짝 떠오름.</div></div>
+      <div class="ds-motion-card"><div class="ds-motion-card__value">1단계</div><div class="ds-motion-card__name">색 강도</div><div class="ds-motion-card__desc">호버 시 배경을 한 톤만 진하게.</div></div>
+      <div class="ds-motion-card"><div class="ds-motion-card__value">3px</div><div class="ds-motion-card__name">포커스 링</div><div class="ds-motion-card__desc">바이올렛 100(--vl) 링으로 접근성.</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 08 · 폼 컨트롤 (확장) ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>08 · 폼 컨트롤</h2><span class="ds-section__sub">Checkbox · Radio · Switch · Toggle · Slider · Textarea · OTP</span></div>
+    <div class="ds-panel ds-panel--grid3">
+      <div><div class="ds-label">CHECKBOX</div><div class="ds-stack-11">
+        <label class="checkbox is-checked" data-chk><span class="checkbox__box"><span class="msr">check</span></span><span>전체 학생 선택</span></label>
+        <label class="checkbox is-checked" data-chk><span class="checkbox__box"><span class="ds-check-dash"></span></span><span>일부 선택됨</span></label>
+        <label class="checkbox" data-chk><span class="checkbox__box"><span class="msr">check</span></span><span>미선택</span></label>
+      </div></div>
+      <div><div class="ds-label">RADIO</div><div class="ds-radio-group" data-single="radio">
+        <label class="ds-radio is-active"><span class="ds-radio__circle"></span><span>한국어</span></label>
+        <label class="ds-radio"><span class="ds-radio__circle"></span><span>English</span></label>
+        <label class="ds-radio"><span class="ds-radio__circle"></span><span>中文</span></label>
+      </div></div>
+      <div><div class="ds-label">SWITCH</div><div class="ds-stack-12">
+        <label class="ds-switch-row"><span class="ds-switch is-on" data-sw><span class="ds-switch__knob"></span></span><span>자막 자동 번역</span></label>
+        <label class="ds-switch-row ds-switch-row--muted"><span class="ds-switch" data-sw><span class="ds-switch__knob"></span></span><span>녹화 자동 시작</span></label>
+      </div></div>
+      <div><div class="ds-label">TOGGLE GROUP</div><div class="ds-toggle-group" data-single="pill"><span class="ds-toggle-group__btn is-active">월</span><span class="ds-toggle-group__btn">주</span><span class="ds-toggle-group__btn">월간</span></div></div>
+      <div><div class="ds-label">SLIDER</div><div class="ds-slider"><div class="ds-slider__track"><div class="ds-slider__fill"></div><div class="ds-slider__knob"></div></div></div></div>
+      <div><div class="ds-label">INPUT OTP</div><div class="ds-otp">
+        <span class="ds-otp__cell ds-otp__cell--active">7</span>
+        <span class="ds-otp__cell">2</span>
+        <span class="ds-otp__cell ds-otp__cell--empty">•</span>
+        <span class="ds-otp__cell ds-otp__cell--empty">•</span>
+      </div></div>
+      <div class="ds-span-2"><div class="ds-label">TEXTAREA · FIELD (오류 상태)</div><textarea class="ds-textarea ds-textarea--error" placeholder="공지 내용을 입력하세요"></textarea><div class="ds-error-msg">필수 항목입니다.</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 09 · 데이터 표시 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>09 · 데이터 표시</h2><span class="ds-section__sub">Avatar · Progress · Table · Pagination · Tooltip · Kbd</span></div>
+    <div class="ds-panel ds-panel--grid3">
+      <div><div class="ds-label">AVATAR</div><div class="ds-avatar-row">
+        <span class="ds-avatar">김<span class="ds-avatar__dot"></span></span>
+        <div class="ds-avatar-stack"><span class="ds-avatar-stack__item ds-avatar-stack__item--violet">미</span><span class="ds-avatar-stack__item ds-avatar-stack__item--teal">왕</span><span class="ds-avatar-stack__item ds-avatar-stack__item--more">+6</span></div>
+      </div></div>
+      <div><div class="ds-label">PROGRESS</div><div class="ds-progress-row"><div class="ds-progress-row__bar"><div class="ds-progress"><div class="ds-progress__fill"></div></div><div class="ds-progress-row__caption">번역 정확도 68%</div></div><svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="19" fill="none" stroke="var(--vl)" stroke-width="6"/><circle cx="23" cy="23" r="19" fill="none" stroke="var(--v)" stroke-width="6" stroke-linecap="round" stroke-dasharray="119.4" stroke-dashoffset="38" transform="rotate(-90 23 23)"/></svg></div></div>
+      <div><div class="ds-label">KBD · TOOLTIP</div><div class="ds-kbd-row"><span class="ds-kbds"><kbd class="ds-kbd">⌘</kbd><kbd class="ds-kbd">K</kbd></span><span class="ds-tooltip">수업 시작<span class="ds-tooltip__arrow"></span></span></div></div>
+      <div class="ds-span-2"><div class="ds-label">TABLE</div><div class="ds-table">
+        <div class="ds-table__head"><span>교시</span><span>수업 주제</span><span>상태</span></div>
+        <div class="ds-table__row"><span class="ds-table__period">1교시</span><span>자기소개 표현</span><span><span class="chip">예정</span></span></div>
+        <div class="ds-table__row"><span class="ds-table__period">3교시</span><span>가족 소개하기</span><span><span class="chip chip--green">진행 중</span></span></div>
+      </div></div>
+      <div><div class="ds-label">PAGINATION</div><div class="ds-pagination" data-single="pill">
+        <span class="ds-page ds-page--nav" data-skip><span class="msr msr-18">chevron_left</span></span>
+        <span class="ds-page is-active">1</span>
+        <span class="ds-page">2</span>
+        <span class="ds-page">3</span>
+        <span class="ds-page ds-page--nav" data-skip><span class="msr msr-18">chevron_right</span></span>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 10 · 피드백 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>10 · 피드백</h2><span class="ds-section__sub">Alert · Toast · Empty · Skeleton · Spinner</span></div>
+    <div class="ds-grid-2">
+      <div class="ds-stack-11">
+        <div class="ds-alert ds-alert--info"><span class="msr msr-22">info</span><div><div class="ds-alert__title">안내</div><div class="ds-alert__desc">학생 등록 언어에 따라 자막이 자동 설정됩니다.</div></div></div>
+        <div class="ds-alert ds-alert--success"><span class="msr msr-22">check_circle</span><div><div class="ds-alert__title">완료</div><div class="ds-alert__desc">수업 영상이 성공적으로 저장되었습니다.</div></div></div>
+        <div class="ds-alert ds-alert--warning"><span class="msr msr-22">warning</span><div><div class="ds-alert__title">주의</div><div class="ds-alert__desc">카메라를 시작하지 못해 카메라 없이 수업을 시작했습니다.</div></div></div>
+      </div>
+      <div class="ds-stack-16">
+        <div class="ds-toast"><span class="ds-toast__icon"><span class="msr msr-19">check</span></span><div class="ds-toast__body"><div class="ds-toast__title">자료 업로드 완료</div><div class="ds-toast__sub">가족소개_표현.pdf</div></div><span class="ds-toast__close">×</span></div>
+        <div class="ds-loading"><div class="ds-spinner"></div><div class="ds-loading__lines"><div class="ds-skeleton ds-skeleton--w70"></div><div class="ds-skeleton ds-skeleton--w45"></div></div></div>
+        <div class="ds-empty"><div class="ds-empty__icon"><span class="msr msr-24">groups</span></div><div class="ds-empty__title">아직 입장한 학생이 없습니다</div><div class="ds-empty__desc">학생이 입장하면 여기에 표시됩니다.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 11 · 내비게이션 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>11 · 내비게이션</h2><span class="ds-section__sub">Tabs · Breadcrumb · Accordion · Stepper</span></div>
+    <div class="ds-panel ds-panel--grid2">
+      <div><div class="ds-label">TABS</div>
+        <div class="ds-tabs" data-single="tab"><span class="ds-tabs__item is-active">개요</span><span class="ds-tabs__item">학생</span><span class="ds-tabs__item">자료</span><span class="ds-tabs__item">활동</span></div>
+        <div class="ds-mt-16"><div class="ds-label">BREADCRUMB</div><nav class="ds-breadcrumb" aria-label="현재 위치"><span>홈</span><span class="ds-breadcrumb__sep">/</span><span>학생 관리</span><span class="ds-breadcrumb__sep">/</span><span class="ds-breadcrumb__current">김하늘</span></nav></div>
+        <div class="ds-mt-20"><div class="ds-label">STEPPER</div><div class="ds-stepper"><span class="ds-stepper__dot ds-stepper__dot--done">✓</span><span class="ds-stepper__bar ds-stepper__bar--done"></span><span class="ds-stepper__dot ds-stepper__dot--done">2</span><span class="ds-stepper__bar"></span><span class="ds-stepper__dot">3</span></div></div>
+      </div>
+      <div><div class="ds-label">ACCORDION</div>
+        <div class="ds-acc">
+          <div class="ds-acc__head is-open" data-acc><span class="ds-acc__title">수업은 어떻게 시작하나요?</span><span class="msr msr-18" data-chev>expand_more</span></div>
+          <div class="ds-acc__body">홈에서 [수업 시작]을 누르면 카메라와 녹화가 시작되고, 학생에게 실시간 자막이 전송됩니다.</div>
+          <div class="ds-acc__head" data-acc><span class="ds-acc__title">자막 언어는 어떻게 바꾸나요?</span><span class="msr msr-18" data-chev>expand_more</span></div>
+          <div class="ds-acc__body">상단 언어 메뉴 또는 수업 하단 [언어] 버튼에서 발화 언어와 자막 번역 언어를 선택합니다.</div>
+          <div class="ds-acc__head" data-acc><span class="ds-acc__title">용어집은 어디서 관리하나요?</span><span class="msr msr-18" data-chev>expand_more</span></div>
+          <div class="ds-acc__body">상단 [용어집] 메뉴에서 교과 전문용어의 번역을 등록·수정하면 수업 자막에 그대로 반영됩니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 12 · 오버레이 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>12 · 오버레이</h2><span class="ds-section__sub">Dialog · Dropdown · Popover · Command</span></div>
+    <div class="ds-panel ds-panel--grid3-20">
+      <div><div class="ds-label">DIALOG</div><div class="ds-dialog"><div class="ds-dialog__title">수업을 종료할까요?</div><div class="ds-dialog__sub">녹화가 저장되고 학생 화면이 종료됩니다.</div><div class="ds-dialog__actions"><button class="ds-dialog__btn" type="button">취소</button><button class="ds-dialog__btn ds-dialog__btn--danger" type="button">종료</button></div></div></div>
+      <div><div class="ds-label">DROPDOWN MENU</div><div class="ds-menu"><div class="ds-menu__item ds-menu__item--active">내 프로필</div><div class="ds-menu__item">환경 설정</div><div class="ds-menu__item">사용 가이드</div><div class="ds-menu__sep"></div><div class="ds-menu__item ds-menu__item--danger">로그아웃</div></div></div>
+      <div><div class="ds-label">COMMAND</div><div class="ds-command"><div class="ds-command__search"><span class="msr msr-17">search</span>명령 검색…</div><div class="ds-command__list"><div class="ds-command__item ds-command__item--active">▶ 수업 시작</div><div class="ds-command__item">＋ 학생 추가</div><div class="ds-command__item">🌐 자막 언어</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 13 · 커뮤니케이션 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>13 · 커뮤니케이션</h2><span class="ds-section__sub">Message · Calendar</span></div>
+    <div class="ds-panel ds-panel--grid2">
+      <div><div class="ds-label">MESSAGE · 자막 버블</div><div class="ds-msgs">
+        <div class="ds-msg"><span class="ds-msg__avatar">김</span><div class="ds-msg__wrap"><div class="ds-bubble">오늘은 광합성의 원리를 배워봅시다.</div><div class="ds-msg__meta">선생님 · 09:02</div></div></div>
+        <div class="ds-msg ds-msg--right"><div class="ds-msg__wrap"><div class="ds-bubble ds-bubble--sent" lang="zh-Hans">今天我们来学习光合作用。</div><div class="ds-msg__meta ds-msg__meta--right">중국어 자막 · 09:02</div></div></div>
+      </div></div>
+      <div><div class="ds-label">CALENDAR</div><div class="ds-cal">
+        <div class="ds-cal__head"><span class="ds-cal__title">2025년 7월</span><div class="ds-cal__nav"><span>‹</span><span>›</span></div></div>
+        <div class="ds-cal__dow"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+        <div class="ds-cal__days">
+          <span class="ds-cal__day ds-cal__day--dim">20</span><span class="ds-cal__day">21</span><span class="ds-cal__day">22</span><span class="ds-cal__day ds-cal__day--today">23</span><span class="ds-cal__day">24</span><span class="ds-cal__day">25</span><span class="ds-cal__day ds-cal__day--holiday">26</span>
+          <span class="ds-cal__day">27</span><span class="ds-cal__day">28</span><span class="ds-cal__day">29</span><span class="ds-cal__day">30</span><span class="ds-cal__day">31</span><span class="ds-cal__day ds-cal__day--dim">1</span><span class="ds-cal__day ds-cal__day--dim">2</span>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 14 · 앱 · 컨트롤 & 미디어 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>14 · 앱 · 컨트롤 & 미디어</h2><span class="ds-section__sub">Control Dock · Media Stage · 상태</span></div>
+    <div class="ds-stack-16">
+      <div class="ds-panel ds-panel--dock">
+        <div class="ds-label ds-label--mb14">CONTROL DOCK · 수업 하단 툴바</div>
+        <div class="ds-dock">
+          <div class="ds-dock__group">
+            <div class="ds-dock__btn ds-dock__btn--danger"><span class="ds-dock__circle"><span class="msr msr-24">mic_off</span></span><span class="ds-dock__name">음소거 해제</span></div>
+            <div class="ds-dock__btn"><span class="ds-dock__circle"><span class="msr msr-24">videocam</span></span><span class="ds-dock__name">비디오</span></div>
+            <div class="ds-dock__btn"><span class="ds-dock__circle"><span class="msr msr-24">screen_share</span></span><span class="ds-dock__name">자료 공유</span></div>
+            <div class="ds-dock__btn ds-dock__btn--active"><span class="ds-dock__circle"><span class="msr msr-24">edit</span></span><span class="ds-dock__name">판서</span></div>
+            <div class="ds-dock__btn"><span class="ds-dock__circle"><span class="msr msr-24">group</span></span><span class="ds-dock__name">참여자</span></div>
+            <div class="ds-dock__btn"><span class="ds-dock__circle"><span class="msr msr-24">language</span></span><span class="ds-dock__name">언어</span></div>
+          </div>
+          <button class="ds-dock__cta" type="button"><span class="msr msr-20">play_arrow</span>수업 시작</button>
+        </div>
+      </div>
+      <div class="ds-stage-grid">
+        <div class="ds-stage"><span class="msr msr-34">videocam</span><div class="ds-stage__title">수업 시작을 누르면 카메라와 녹화가 시작됩니다</div><div class="ds-stage__sub">MEDIA STAGE · 빈 상태</div></div>
+        <div class="ds-stack-12">
+          <div class="ds-rec-card"><span class="ds-rec-chip"><span class="ds-chip-dot ds-chip-dot--red"></span>REC</span><span class="ds-rec-card__text">연결 끊김</span></div>
+          <button class="ds-leave-btn" type="button"><span class="msr msr-18">logout</span>나가기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 15 · 앱 · 언어 & 오버레이 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>15 · 앱 · 언어 & 오버레이</h2><span class="ds-section__sub">Settings Modal · 언어 칩 · Dropdown · Segmented</span></div>
+    <div class="ds-grid-2 ds-grid-2--start">
+      <div class="ds-lang-modal">
+        <div class="ds-lang-modal__head"><div class="ds-lang-modal__title"><span class="msr msr-20">language</span>언어 설정</div><span class="ds-lang-modal__close">×</span></div>
+        <div class="ds-group-label">내 발화 언어 (음성 인식)</div>
+        <div class="ds-lang-chips ds-lang-chips--mb18" data-single="pill">
+          <span class="ds-lang-chip is-active">한국어</span>
+          <span class="ds-lang-chip">English</span>
+          <span class="ds-lang-chip">中文</span>
+          <span class="ds-lang-chip">자동 감지</span>
+        </div>
+        <div class="ds-group-label">자막 번역 언어</div>
+        <div class="ds-lang-chips" data-multi="soft">
+          <span class="ds-lang-chip ds-lang-chip--soft is-active">영어 ✓</span>
+          <span class="ds-lang-chip ds-lang-chip--soft is-active">일본어 ✓</span>
+          <span class="ds-lang-chip ds-lang-chip--soft is-active">베트남어 ✓</span>
+          <span class="ds-lang-chip ds-lang-chip--soft is-active">중국어(간체) ✓</span>
+        </div>
+        <div class="ds-lang-modal__note">학생 등록 언어에 따라 자동 설정됩니다</div>
+      </div>
+      <div class="ds-stack-16">
+        <div class="ds-panel ds-panel--p20"><div class="ds-label">SEGMENTED · 탭 토글</div>
+          <div class="ds-cc-seg" data-single="pill"><span class="ds-cc-seg__btn is-active"><span class="msr msr-18">closed_caption</span>자막</span><span class="ds-cc-seg__btn">강의 요약</span></div>
+          <div class="ds-dark-seg" data-single="dark"><span class="ds-dark-seg__btn">원문</span><span class="ds-dark-seg__btn is-active">영어</span></div>
+        </div>
+        <div class="ds-panel ds-panel--p20"><div class="ds-label">LANGUAGE DROPDOWN</div>
+          <div class="ds-lang-list" data-single="list"><div class="ds-lang-list__item is-active">한국어</div><div class="ds-lang-list__item">English</div><div class="ds-lang-list__item">日本語</div><div class="ds-lang-list__item">简体中文</div><div class="ds-lang-list__item">繁體中文</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 16 · 앱 · 리스트 & 로우 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>16 · 앱 · 리스트 & 로우</h2><span class="ds-section__sub">자막 · 녹화 · 학생 · 서브페이지 헤더</span></div>
+    <div class="ds-grid-2 ds-grid-2--start">
+
+      <div class="ds-panel ds-panel--p18"><div class="ds-label">TRANSCRIPT · 자막 행</div>
+        <div class="ds-stack-2">
+          <div class="ds-transcript ds-transcript--active"><span class="ds-transcript__time">00:03</span><div><div class="ds-transcript__name">선생님</div><div class="ds-transcript__text">안녕하세요</div></div></div>
+          <div class="ds-transcript"><span class="ds-transcript__time">00:11</span><div><div class="ds-transcript__name">선생님</div><div class="ds-transcript__text">도사로 시작했습니다</div></div></div>
+          <div class="ds-transcript"><span class="ds-transcript__time">00:25</span><div><div class="ds-transcript__name">선생님</div><div class="ds-transcript__text">조사도 시작했습니다.</div></div></div>
+        </div>
+      </div>
+
+      <div class="ds-panel ds-panel--p18"><div class="ds-label">RECORDING · 녹화 행</div>
+        <div class="ds-rec-list">
+          <div class="ds-rec-row"><span class="ds-rec-row__icon"><span class="msr msr-18">play_arrow</span></span><div class="ds-rec-row__body"><div class="ds-rec-row__title">1학년 1반 수업</div><div class="ds-rec-row__meta">2026-07-23 10:39 · 김민정 · 3.4MB</div></div><span class="msr msr-20 ds-rec-row__chev">chevron_right</span></div>
+          <div class="ds-rec-row"><span class="ds-rec-row__icon"><span class="msr msr-18">play_arrow</span></span><div class="ds-rec-row__body"><div class="ds-rec-row__title">1학년 1반 수업</div><div class="ds-rec-row__meta">2026-07-23 08:27 · 김민정 · 6.8MB</div></div><span class="msr msr-20 ds-rec-row__chev">chevron_right</span></div>
+        </div>
+      </div>
+
+      <div class="ds-span-2 ds-panel ds-panel--p18"><div class="ds-label">STUDENT ROW · 학생 관리 행</div>
+        <div class="ds-stack-2">
+          <div class="ds-student"><span class="ds-student__avatar">김</span><div class="ds-student__id-group"><span class="ds-student__name">김하늘</span><span class="ds-student__code">s103</span></div><div class="ds-student__select">한국어<span class="msr msr-16">expand_more</span></div><button class="ds-row-btn" type="button">이름</button><button class="ds-row-btn" type="button">비번</button><button class="ds-row-btn ds-row-btn--danger" type="button">비활성</button></div>
+          <div class="ds-student ds-student--disabled"><span class="ds-student__avatar">테</span><div class="ds-student__id-group"><span class="ds-student__name">테스트학생</span><span class="ds-student__code">s105</span></div><div class="ds-student__select">태국어<span class="msr msr-16">expand_more</span></div><span class="ds-student__ghost-action">이름</span><span class="ds-student__ghost-action">비번</span><button class="ds-student__activate" type="button">활성화</button></div>
+        </div>
+      </div>
+
+      <div class="ds-span-2 ds-panel ds-panel--flush"><div class="ds-label ds-label--pad18">SUB-PAGE HEADER · 서브페이지 상단바 & 추가 폼</div>
+        <div class="ds-subheader">
+          <div class="ds-subheader__left"><span class="ds-subheader__back"><span class="msr msr-15">arrow_back_ios_new</span>돌아가기</span><span class="ds-subheader__sep">|</span><span class="ds-subheader__crumb">학생 관리</span></div>
+          <div class="ds-subheader__right"><span class="ds-subheader__lang">🌐 한국어</span><span class="ds-subheader__logout">로그아웃</span></div>
+        </div>
+        <div class="ds-add-form">
+          <div class="ds-add-form__id"><span>발급 아이디</span>10101</div>
+          <input class="ds-input ds-input--lg" placeholder="비밀번호">
+          <input class="ds-input ds-input--lg" placeholder="이름">
+          <div class="ds-fake-select ds-fake-select--placeholder">모국어(필수)<span class="msr msr-17">expand_more</span></div>
+          <button class="ds-add-form__submit" type="button">추가</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ 17 · 파일 업로드 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>17 · 파일 업로드</h2><span class="ds-section__sub">Dropzone · 업로드 목록 · 상태</span></div>
+    <div class="ds-grid-2 ds-grid-2--start">
+
+      <div><div class="ds-label">DROPZONE</div>
+        <div class="ds-dropzone">
+          <span class="ds-dropzone__icon"><span class="msr msr-28">upload_file</span></span>
+          <div class="ds-dropzone__title">파일을 끌어다 놓거나 <span>클릭해 업로드</span></div>
+          <div class="ds-dropzone__note">PPT · PDF · 한글 · 동영상 · 최대 200MB</div>
+        </div>
+      </div>
+
+      <div><div class="ds-label">UPLOAD LIST · 진행 · 완료 · 오류</div>
+        <div class="ds-stack-10">
+          <div class="ds-upload"><span class="ds-upload__icon ds-upload__icon--orange"><span class="msr msr-21">picture_as_pdf</span></span><div class="ds-upload__body"><div class="ds-upload__head"><span class="ds-upload__name">가족소개_표현.pdf</span><span class="ds-upload__pct">64%</span></div><div class="ds-upload__bar"><div class="ds-upload__fill"></div></div></div></div>
+          <div class="ds-upload"><span class="ds-upload__icon ds-upload__icon--blue"><span class="msr msr-21">slideshow</span></span><div class="ds-upload__body"><div class="ds-upload__name">광합성_수업.pptx</div><div class="ds-upload__status ds-upload__status--done">업로드 완료 · 12.4MB</div></div><span class="ds-upload__check"><span class="msr msr-22">check_circle</span></span></div>
+          <div class="ds-upload ds-upload--error"><span class="ds-upload__icon ds-upload__icon--error"><span class="msr msr-21">error</span></span><div class="ds-upload__body"><div class="ds-upload__name">대용량영상.mp4</div><div class="ds-upload__status ds-upload__status--error">용량 초과 · 다시 시도</div></div><span class="ds-upload__close"><span class="msr msr-20">close</span></span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ 18 · 추가 컴포넌트 ═══════════ -->
+  <section class="ds-section">
+    <div class="ds-section__head"><h2>18 · 추가 컴포넌트</h2><span class="ds-section__sub">Banner · Tag · Stepper · KPI · Rating · Divider · Notification</span></div>
+
+    <div class="ds-stack-16">
+
+      <!-- 배너 -->
+      <div class="ds-banner"><span class="ds-banner__icon"><span class="msr msr-20">campaign</span></span><div class="ds-banner__text"><strong>새 학기 시간표가 업데이트되었습니다.</strong> <span>지금 확인해 보세요.</span></div><button class="ds-banner__btn" type="button">확인</button><span class="ds-banner__close"><span class="msr msr-20">close</span></span></div>
+
+      <div class="ds-panel ds-panel--grid3">
+
+        <div><div class="ds-label">TAG · 삭제 가능</div>
+          <div class="ds-row-8 ds-row-8--wrap">
+            <span class="ds-tag ds-tag--violet">영어<span class="msr msr-15">close</span></span>
+            <span class="ds-tag ds-tag--green">일본어<span class="msr msr-15">close</span></span>
+            <span class="ds-tag ds-tag--blue">베트남어<span class="msr msr-15">close</span></span>
+          </div>
+        </div>
+
+        <div><div class="ds-label">TAG INPUT</div>
+          <div class="ds-tag-input"><span class="ds-tag ds-tag--violet ds-tag--sm">광합성<span class="msr msr-14">close</span></span><span class="ds-tag-input__placeholder">용어 추가…</span></div>
+        </div>
+
+        <div><div class="ds-label">NUMBER STEPPER</div>
+          <div class="ds-num-stepper"><span class="ds-num-stepper__btn"><span class="msr msr-20">remove</span></span><span class="ds-num-stepper__value">12</span><span class="ds-num-stepper__btn"><span class="msr msr-20">add</span></span></div>
+        </div>
+
+        <div><div class="ds-label">KPI · 추세</div>
+          <div class="ds-kpi-row">
+            <div class="ds-kpi"><div class="ds-kpi__label">실시간 자막</div><div class="ds-kpi__value-row"><span class="ds-kpi__value">1,240</span><span class="ds-kpi__trend ds-kpi__trend--up"><span class="msr msr-15">arrow_upward</span>12%</span></div></div>
+            <div class="ds-kpi"><div class="ds-kpi__label">번역 요청</div><div class="ds-kpi__value-row"><span class="ds-kpi__value">5</span><span class="ds-kpi__trend ds-kpi__trend--down"><span class="msr msr-15">arrow_downward</span>3%</span></div></div>
+          </div>
+        </div>
+
+        <div><div class="ds-label">RATING</div>
+          <div class="ds-rating"><span class="msr msr-26">star</span><span class="msr msr-26">star</span><span class="msr msr-26">star</span><span class="msr msr-26">star</span><span class="msr msr-26 ds-rating__empty">star</span></div>
+        </div>
+
+        <div><div class="ds-label">DIVIDER · 라벨</div>
+          <div class="ds-divider"><span class="ds-divider__line"></span><span class="ds-divider__label">또는</span><span class="ds-divider__line"></span></div>
+        </div>
+
+      </div>
+
+      <div class="ds-panel ds-panel--p18"><div class="ds-label">NOTIFICATION · 알림 아이템</div>
+        <div class="ds-stack-2">
+          <div class="ds-notif ds-notif--unread"><span class="ds-notif__icon ds-notif__icon--violet"><span class="msr msr-20">translate</span></span><div class="ds-notif__body"><div class="ds-notif__title">김민수 학생이 번역 요청을 보냈습니다.</div><div class="ds-notif__time">방금 전</div></div><span class="ds-notif__dot"></span></div>
+          <div class="ds-notif"><span class="ds-notif__icon ds-notif__icon--blue"><span class="msr msr-20">play_circle</span></span><div class="ds-notif__body"><div class="ds-notif__title">2교시 수업 영상이 준비되었습니다.</div><div class="ds-notif__time">1시간 전</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ 19 · 사이드바 토글 ═══════════ -->
+  <section class="ds-section ds-section--last">
+    <div class="ds-section__head"><h2>19 · 사이드바 토글</h2><span class="ds-section__sub">펼침 ↔ 접힘 · 토글 버튼</span></div>
+    <div class="ds-panel ds-panel--side">
+
+      <div class="ds-specimen"><span class="ds-label">TOGGLE 버튼</span>
+        <button class="ds-icon-btn" type="button"><span class="msr msr-24">menu_open</span></button>
+      </div>
+
+      <div class="ds-specimen"><span class="ds-label">펼침 · 246px</span>
+        <div class="ds-side">
+          <div class="ds-side__item is-active"><span class="msr msr-18">home</span>홈</div>
+          <div class="ds-side__item"><span class="msr msr-18">cast_for_education</span>내 교실</div>
+          <div class="ds-side__item"><span class="msr msr-18">swap_horiz</span>이동 수업</div>
+        </div>
+      </div>
+
+      <div class="ds-specimen"><span class="ds-label">접힘 · 78px</span>
+        <div class="ds-side ds-side--collapsed">
+          <div class="ds-side__item is-active"><span class="msr msr-18">home</span></div>
+          <div class="ds-side__item"><span class="msr msr-18">cast_for_education</span></div>
+          <div class="ds-side__item"><span class="msr msr-18">swap_horiz</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  </main>
+</div>
+</div>
+
+<script src="js/design-system.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+// ============================================================
+//  버튼
+//  .btn          공통 골격 (아이콘+라벨 인라인 플렉스)
+//  .btn--primary 보라 채움 (CTA)
+//  .btn--soft    연보라 채움 (카드 내부 액션)
+//  .btn--green   연초록 채움
+//  .btn--ghost   투명 + 외곽선
+//  .btn--danger  빨강 계열
+// ============================================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 13px;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.btn--primary {
+  background: var(--v);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(124, 92, 252, .4);
+
+  &:hover {
+    background: var(--v2);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(124, 92, 252, .48);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn--soft {
+  background: var(--vll);
+  color: var(--v2);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 11px;
+  border-radius: 11px;
+
+  &:hover {
+    background: var(--vl);
+  }
+}
+
+.btn--green {
+  background: var(--greenbg);
+  color: var(--green);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 11px;
+  border-radius: 11px;
+
+  &:hover {
+    background: var(--greenbg2);
+  }
+}
+
+.btn--ghost {
+  background: var(--card2);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+
+  &:hover {
+    background: var(--vl);
+    color: var(--v2);
+  }
+}
+
+.btn--danger {
+  background: var(--red);
+  color: #fff;
+
+  &:hover {
+    filter: brightness(.94);
+  }
+}
+
+// 40×40 정사각 아이콘 버튼 (톱바)
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: var(--card2);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s ease;
+
+  &:hover {
+    background: var(--vl);
+    color: var(--v2);
+  }
+}

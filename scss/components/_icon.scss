@@ -1,0 +1,26 @@
+// ============================================================
+//  아이콘 — Material Symbols Rounded
+//  <span class="msr">home</span>  (크기는 .msr-{px} 유틸리티로)
+// ============================================================
+
+.msr {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  font-variation-settings: 'opsz' 24, 'wght' 400, 'FILL' 0, 'GRAD' 0;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+// 원본 디자인에서 쓰이는 크기들
+@each $size in 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 28, 30, 32, 36, 40, 44, 48 {
+  .msr-#{$size} { font-size: #{$size}px; }
+}

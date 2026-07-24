@@ -1,0 +1,55 @@
+// ============================================================
+//  배지·칩 (pill)
+// ============================================================
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--vl);
+  color: var(--v2);
+
+  &--green  { background: var(--greenbg);  color: var(--green); }
+  &--orange { background: var(--orangebg); color: var(--orange); }
+  &--blue   { background: var(--bluebg);   color: var(--blue); }
+  &--pink   { background: var(--pinkbg);   color: var(--pink); }
+  &--red    { background: var(--redbg);    color: var(--red); }
+  &--muted  { background: var(--card2);    color: var(--muted); border: 1px solid var(--line); }
+}
+
+// 라벨형 사각 배지 (예: "중요")
+.tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  &--orange { background: var(--orangebg); color: var(--orange); }
+  &--violet { background: var(--vl);       color: var(--v2); }
+}
+
+// 빨간 알림 점 카운터
+.count-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--red);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--card);
+}

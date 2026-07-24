@@ -1,0 +1,48 @@
+// ============================================================
+//  드롭다운 메뉴 (언어 선택·셀렉트류 공용)
+//  .dropdown(포지셔닝 기준) > .dropdown__menu > .dropdown__item
+// ============================================================
+
+.dropdown {
+  position: relative;
+
+  .dropdown__menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 100%;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 6px;
+    display: none;
+    z-index: 120;
+    max-height: 260px;
+    overflow: auto;
+
+    &.is-open {
+      display: block;
+    }
+
+    // 위로 펼치기
+    &.opens-up {
+      top: auto;
+      bottom: calc(100% + 6px);
+    }
+  }
+
+  .dropdown__item {
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--vll);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+// ============================================================
+//  누리 NURI — 메인 스타일시트 엔트리
+//  빌드: npm run build  →  css/main.css
+//
+//  구조
+//  ├─ abstracts : 디자인 토큰(CSS 변수)·믹스인 (CSS 미출력)
+//  ├─ base      : 폰트·리셋·타이포그래피·공통 요소
+//  ├─ components: 재사용 UI 조각 (버튼·카드·배지·폼…)
+//  ├─ layout    : 페이지 골격 (사이드바·톱바)
+//  └─ pages     : 페이지 전용 스타일 (login·dashboard·design-system)
+// ============================================================
+
+@use 'abstracts/tokens';
+@use 'base/fonts';
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'components/icon';
+@use 'components/button';
+@use 'components/card';
+@use 'components/badge';
+@use 'components/form';
+@use 'components/dropdown';
+@use 'components/modal';
+@use 'components/segmented';
+@use 'components/avatar';
+@use 'components/loaders';
+
+@use 'layout/sidebar';
+@use 'layout/topbar';
+
+@use 'pages/login';
+@use 'pages/dashboard';
+@use 'pages/design-system';

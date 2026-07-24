@@ -1,0 +1,106 @@
+// ============================================================
+//  폼 요소 — 라벨·인풋·비밀번호 필드·체크박스
+// ============================================================
+
+.form-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--card);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: all .15s ease;
+
+  &::placeholder {
+    color: var(--faint);
+  }
+
+  &:focus {
+    border-color: var(--v);
+    box-shadow: 0 0 0 3px var(--vl);
+  }
+}
+
+// 인풋 + 우측 아이콘(비밀번호 보기 등) 래퍼
+.input-group {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--card);
+  transition: all .15s ease;
+
+  &.is-focused {
+    border-color: var(--v);
+    box-shadow: 0 0 0 3px var(--vl);
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 0;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+
+    &::placeholder {
+      color: var(--faint);
+    }
+  }
+
+  .input-group__icon {
+    color: var(--faint);
+    cursor: pointer;
+  }
+}
+
+// 커스텀 체크박스 (label.checkbox > .checkbox__box + 텍스트)
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+
+  .checkbox__box {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background: var(--card2);
+    border: 1.5px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .msr {
+      display: none;
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+
+  &.is-checked .checkbox__box {
+    background: var(--v);
+    border: none;
+
+    .msr {
+      display: block;
+    }
+  }
+}

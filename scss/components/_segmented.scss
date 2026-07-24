@@ -1,0 +1,30 @@
+// ============================================================
+//  세그먼트 컨트롤 (탭·언어 전환 버튼 그룹)
+//  .seg > .seg__btn(.is-active)
+// ============================================================
+
+.seg {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  .seg__btn {
+    padding: 7px 13px;
+    border-radius: 9px;
+    background: var(--card2);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .15s ease;
+
+    &.is-active {
+      background: var(--seg);
+      border-color: transparent;
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+}

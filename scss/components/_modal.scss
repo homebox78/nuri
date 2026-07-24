@@ -1,0 +1,46 @@
+// ============================================================
+//  모달 — .modal(오버레이) > .modal__panel
+// ============================================================
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 13, 26, .55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  padding: 20px;
+
+  &.is-open {
+    display: flex;
+  }
+
+  .modal__panel {
+    width: 100%;
+    max-width: 460px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, .35);
+    padding: 24px;
+  }
+
+  .modal__title {
+    font-size: 17px;
+    font-weight: 800;
+  }
+
+  .modal__sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .modal__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+  }
+}

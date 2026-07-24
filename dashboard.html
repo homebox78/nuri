@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ── SEO ── -->
+<title>대시보드 · 누리 NURI</title>
+<meta name="description" content="누리(NURI) 선생님 대시보드 — 라이브 수업, 수업 다시보기, 용어집, 학생 관리를 한 곳에서. 실시간 번역 수업 시스템.">
+<meta property="og:title" content="대시보드 · 누리 NURI">
+<meta property="og:description" content="선생님의 수업을, 학생의 언어로. 국제학교 실시간 번역 수업 시스템">
+<meta property="og:type" content="website">
+<meta property="og:image" content="uploads/logo.png">
+
+<!-- ── 아이콘 · 스타일 ── -->
+<link rel="icon" type="image/png" href="uploads/icon.png">
+<link rel="apple-touch-icon" href="uploads/icon.png">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="page-dashboard">
+
+  <!-- ═══════════ 사이드바 ═══════════ -->
+  <aside class="sidebar" data-sidebar>
+    <div class="sidebar__logo">
+      <img src="uploads/logo-dark.png" alt="NURI">
+    </div>
+
+    <!-- 내비게이션 -->
+    <nav class="sidebar__nav" data-nav>
+      <div class="sidebar__item is-active" data-goto="home"><span class="msr msr-20">home</span><span>홈</span></div>
+      <div class="sidebar__item" data-startclass><span class="msr msr-20">cast_for_education</span><span>내 교실</span></div>
+      <div class="sidebar__item" data-goto="move"><span class="msr msr-20">swap_horiz</span><span>이동 수업</span></div>
+      <div class="sidebar__item" data-goto="replay"><span class="msr msr-20">play_circle</span><span>수업 다시보기</span></div>
+      <div class="sidebar__item" data-goto="materials"><span class="msr msr-20">folder</span><span>수업자료</span></div>
+      <div class="sidebar__item" data-goto="students"><span class="msr msr-20">group_add</span><span>학생 관리</span></div>
+      <div class="sidebar__item" data-goto="notice"><span class="msr msr-20">campaign</span><span>공지사항</span></div>
+      <div class="sidebar__item" data-goto="settings"><span class="msr msr-20">settings</span><span>환경 설정</span></div>
+    </nav>
+
+    <!-- 하단 · 언어 선택(위로 펼침) + 가이드 -->
+    <div class="sidebar__bottom" data-sb-bottom>
+      <div class="sidebar__lang dropdown" data-sb-lang>
+        <span class="sidebar__lang-label"><span class="msr msr-18">language</span><span data-sb-lang-label>한국어</span></span>
+        <span class="msr msr-16">expand_more</span>
+        <div class="dropdown__menu opens-up" data-sb-lang-menu>
+          <div class="dropdown__item" data-lang-name="한국어">한국어</div>
+          <div class="dropdown__item" data-lang-name="English">English</div>
+          <div class="dropdown__item" data-lang-name="日本語">日本語</div>
+          <div class="dropdown__item" data-lang-name="简体中文">简体中文</div>
+          <div class="dropdown__item" data-lang-name="繁體中文">繁體中文</div>
+        </div>
+      </div>
+      <div class="sidebar__guide"><span class="msr msr-18">help</span><span>사용 가이드</span></div>
+    </div>
+  </aside>
+
+  <!-- 모바일 드로어 배경 -->
+  <div class="sidebar-backdrop" data-sb-backdrop></div>
+
+  <!-- ═══════════ 본문 ═══════════ -->
+  <div class="dash-main">
+
+    <!-- ═══════════ 톱바 ═══════════ -->
+    <header class="topbar">
+      <div class="topbar__group">
+        <button class="icon-btn" data-toggle-sidebar aria-label="사이드바 접기"><span class="msr msr-22">menu_open</span></button>
+        <span class="topbar__badge">선생님 화면</span>
+        <div class="topbar__search"><span class="msr msr-18">search</span>수업·학생·자료 검색</div>
+      </div>
+      <div class="topbar__group topbar__group--right">
+        <button class="topbar__action" data-goto="glossary"><span class="msr msr-19">menu_book</span>용어집</button>
+        <div class="icon-btn topbar__bell" role="button" aria-label="알림"><span class="msr msr-20">notifications</span><span class="count-dot">3</span></div>
+        <button class="icon-btn topbar__theme" data-theme-toggle aria-label="다크 모드 전환"><span class="msr msr-19">dark_mode</span></button>
+        <div class="topbar__divider"></div>
+
+        <!-- 유저 메뉴 -->
+        <div class="topbar__user" data-usermenu>
+          <img class="avatar" src="uploads/avatar-teacher.png" alt="김민정">
+          <div class="topbar__user-info">
+            <div class="topbar__user-name">김민정 선생님</div>
+            <div class="topbar__user-role">1학년 1반 담임</div>
+          </div>
+          <span class="msr msr-17 topbar__user-caret">expand_more</span>
+
+          <!-- 팝업 -->
+          <div class="topbar__pop" data-usermenu-pop>
+            <div class="topbar__pop-profile">
+              <img class="avatar avatar--lg" src="uploads/avatar-teacher.png" alt="김민정">
+              <div>
+                <div class="topbar__pop-name"><span>김민정 선생님</span><span class="topbar__pop-chip">담임</span></div>
+                <div class="topbar__pop-mail">kim.mj@gunseo.hs.kr</div>
+              </div>
+            </div>
+            <div class="topbar__pop-divider"></div>
+            <div class="topbar__pop-item" data-goto="soon"><span class="msr msr-20">manage_accounts</span>내 정보 수정</div>
+            <div class="topbar__pop-item" data-goto="students"><span class="msr msr-20">group</span>학생 관리</div>
+            <div class="topbar__pop-divider"></div>
+            <div class="topbar__pop-item topbar__pop-item--static"><span class="topbar__pop-main"><span class="msr msr-20">dark_mode</span>화면 모드</span><span class="topbar__pop-val">라이트</span></div>
+            <div class="topbar__pop-item topbar__pop-item--row" data-um-lang><span class="topbar__pop-main"><span class="msr msr-20">language</span>언어</span><span class="topbar__pop-langval" data-um-langval>한국어</span></div>
+            <div class="topbar__pop-divider"></div>
+            <div class="topbar__pop-item topbar__pop-item--danger" data-logout><span class="msr msr-20">logout</span>로그아웃</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════ 페이지 · 홈 ═══════════ -->
+    <section class="dash-page dash-page--home is-active" data-page="home">
+
+      <!-- 히어로 -->
+      <div class="dash-hero">
+        <div class="dash-hero__content">
+          <div class="dash-hero__date">2025.07.23 (수)</div>
+          <h1 class="dash-hero__title">안녕하세요 김민정 선생님 👋</h1>
+          <p class="dash-hero__sub">오늘 수업 <b>3개</b> · 총 학생 <b>28명</b> · 오늘도 즐거운 수업을 시작해 보세요.</p>
+          <button class="btn btn--primary dash-hero__cta" data-startclass><span class="msr msr-20">play_arrow</span>수업 시작</button>
+        </div>
+        <img class="dash-hero__img" src="uploads/dashboard-mockup.png" alt="누리 대시보드 목업">
+      </div>
+
+      <!-- 본문 그리드 -->
+      <div class="dash-grid">
+
+        <!-- 기능 카드 4종 -->
+        <div class="dash-feat">
+
+          <!-- 내 수업 -->
+          <div class="card is-hoverable dash-feat__card">
+            <span class="msr msr-20 dash-feat__star">star</span>
+            <div class="dash-feat__head dash-feat__head--lg">
+              <span class="dash-feat__icon"><span class="msr msr-23">groups</span></span>
+              <span class="dash-feat__title">내 수업</span>
+            </div>
+            <div class="dash-feat__row">
+              <span class="dash-feat__class">1학년 1반</span>
+              <span class="chip">중국어(간체)</span>
+            </div>
+            <div class="dash-feat__stats">
+              <div class="stat-tile stat-tile--accent"><div class="stat-tile__label">학생 수</div><div class="stat-tile__value">28<small> 명</small></div></div>
+              <div class="stat-tile"><div class="stat-tile__label">오늘 수업</div><div class="stat-tile__value">3<small> 개</small></div></div>
+            </div>
+            <div class="btn btn--soft dash-feat__cta" data-startclass>교실 입장 <span class="msr msr-18">arrow_forward</span></div>
+          </div>
+
+          <!-- 이동 수업 -->
+          <div class="card is-hoverable dash-feat__card">
+            <div class="dash-feat__toprow">
+              <div class="dash-feat__head">
+                <span class="dash-feat__icon dash-feat__icon--green"><span class="msr msr-23">swap_horiz</span></span>
+                <span class="dash-feat__title">이동 수업</span>
+              </div>
+              <span class="tag tag--orange">중요</span>
+            </div>
+            <div class="dash-feat__desc">다른 반에 입장해 수업을 진행할 수 있어요</div>
+            <div class="dash-feat__slots" data-choice>
+              <span class="dash-feat__slot">1학년 2반</span>
+              <span class="dash-feat__slot">1학년 3반</span>
+              <span class="dash-feat__slot">2학년 1반</span>
+              <span class="dash-feat__slot">2학년 2반</span>
+            </div>
+            <div class="btn btn--green dash-feat__cta" data-goto="move">이동 수업 입장 <span class="msr msr-18">arrow_forward</span></div>
+          </div>
+
+          <!-- 수업 다시보기 -->
+          <div class="card is-hoverable dash-feat__card">
+            <div class="dash-feat__head">
+              <span class="dash-feat__icon"><span class="msr msr-23">calendar_month</span></span>
+              <span class="dash-feat__title">수업 다시보기</span>
+            </div>
+            <div class="dash-feat__desc">날짜·교시별로 수업 영상을 다시 볼 수 있어요</div>
+            <div class="dash-feat__days" data-choice>
+              <span class="dash-feat__day">7/21 (월)</span>
+              <span class="dash-feat__day">7/22 (화)</span>
+              <span class="dash-feat__day is-active">7/23 (수)</span>
+            </div>
+            <div class="dash-feat__periods" data-choice>
+              <span class="dash-feat__period is-active">1교시</span>
+              <span class="dash-feat__period">2교시</span>
+              <span class="dash-feat__period">3교시</span>
+              <span class="dash-feat__period">4교시</span>
+            </div>
+            <div class="btn btn--soft dash-feat__cta" data-goto="replay">다시보기 열기 <span class="msr msr-18">arrow_forward</span></div>
+          </div>
+
+          <!-- 수업자료 -->
+          <div class="card is-hoverable dash-feat__card">
+            <div class="dash-feat__head">
+              <span class="dash-feat__icon dash-feat__icon--orange"><span class="msr msr-23">folder</span></span>
+              <span class="dash-feat__title">수업자료</span>
+            </div>
+            <div class="dash-feat__desc">수업 자료를 업로드하고 학생과 공유하세요</div>
+            <div class="dash-feat__types">
+              <div class="dash-feat__type dash-feat__type--ppt"><span class="msr msr-22">description</span><span>PPT</span></div>
+              <div class="dash-feat__type dash-feat__type--pdf"><span class="msr msr-22">description</span><span>PDF</span></div>
+              <div class="dash-feat__type dash-feat__type--video"><span class="msr msr-22">movie</span><span>동영상</span></div>
+              <div class="dash-feat__type dash-feat__type--etc"><span class="msr msr-22">insert_drive_file</span><span>기타</span></div>
+            </div>
+            <div class="btn dash-feat__cta dash-feat__cta--orange" data-goto="materials">자료 관리 <span class="msr msr-18">arrow_forward</span></div>
+          </div>
+        </div>
+
+        <!-- 하단 2열 -->
+        <div class="dash-bottom">
+
+          <!-- 오늘의 수업 -->
+          <div class="card dash-today">
+            <div class="dash-today__head">
+              <div class="dash-card-title"><span class="msr msr-20">calendar_month</span>오늘의 수업</div>
+            </div>
+            <div class="dash-today__cols dash-today__thead"><div>교시</div><div>시간</div><div>수업 주제</div><div>상태</div><div>작업</div></div>
+            <div class="dash-today__cols dash-today__row">
+              <div class="dash-today__period">1교시</div>
+              <div class="dash-today__time">09:00 ~ 09:40</div>
+              <div class="dash-today__topic">자기소개 표현 익히기</div>
+              <div><span class="dash-tag dash-tag--green">수업중</span></div>
+              <div><span class="dash-today__start" data-startclass>시작</span></div>
+            </div>
+            <div class="dash-today__cols dash-today__row">
+              <div class="dash-today__period">2교시</div>
+              <div class="dash-today__time">10:00 ~ 10:40</div>
+              <div class="dash-today__topic">인사말 배우기</div>
+              <div><span class="dash-tag dash-tag--orange">진행 전</span></div>
+              <div><span class="dash-today__start is-locked" data-locked>시작</span></div>
+            </div>
+            <div class="dash-today__cols dash-today__row">
+              <div class="dash-today__period">3교시</div>
+              <div class="dash-today__time">11:00 ~ 11:40</div>
+              <div class="dash-today__topic">가족 소개하기</div>
+              <div><span class="dash-tag dash-tag--violet">예정</span></div>
+              <div><span class="dash-today__start is-locked" data-locked>시작</span></div>
+            </div>
+            <div class="dash-today__cols dash-today__row">
+              <div class="dash-today__period">4교시</div>
+              <div class="dash-today__time">13:00 ~ 13:40</div>
+              <div class="dash-today__topic">숫자와 시간 표현</div>
+              <div><span class="dash-tag dash-tag--violet">예정</span></div>
+              <div><span class="dash-today__start is-locked" data-locked>시작</span></div>
+            </div>
+            <div class="dash-today__cols dash-today__row">
+              <div class="dash-today__period">5교시</div>
+              <div class="dash-today__time">14:00 ~ 14:40</div>
+              <div class="dash-today__topic">일상 대화 연습</div>
+              <div><span class="dash-tag dash-tag--violet">예정</span></div>
+              <div><span class="dash-today__start is-locked" data-locked>시작</span></div>
+            </div>
+            <div class="dash-today__more" data-goto="soon"><span class="msr msr-18">event</span>전체 시간표 보기</div>
+          </div>
+
+          <!-- 우측 열 -->
+          <div class="dash-side">
+
+            <!-- 빠른 실행 -->
+            <div class="card dash-quick">
+              <div class="dash-card-title"><span class="msr msr-20">bolt</span>빠른 실행</div>
+              <div class="dash-quick__grid">
+                <div class="dash-quick__tile" data-quick="live"><span class="dash-quick__icon"><span class="msr msr-19">mic</span></span><span class="dash-quick__label">마이크 테스트</span></div>
+                <div class="dash-quick__tile" data-quick="live"><span class="dash-quick__icon dash-quick__icon--blue"><span class="msr msr-19">co_present</span></span><span class="dash-quick__label">학생 발표</span></div>
+                <div class="dash-quick__tile" data-quick="live"><span class="dash-quick__icon dash-quick__icon--green"><span class="msr msr-19">translate</span></span><span class="dash-quick__label">자막 언어</span></div>
+                <div class="dash-quick__tile" data-quick="theme"><span class="dash-quick__icon dash-quick__icon--pink"><span class="msr msr-19">dark_mode</span></span><span class="dash-quick__label">다크모드</span></div>
+              </div>
+            </div>
+
+            <!-- 최근 활동 -->
+            <div class="card dash-activity">
+              <div class="dash-activity__head">
+                <div class="dash-card-title"><span class="msr msr-20">history</span>최근 활동</div>
+                <span class="dash-activity__more">더보기</span>
+              </div>
+              <div class="dash-activity__list">
+                <div class="dash-activity__item">
+                  <div class="dash-activity__rail"><span class="dash-activity__dot dash-activity__dot--green"></span><span class="dash-activity__line"></span></div>
+                  <div class="dash-activity__body"><div class="dash-activity__text">수업자료 '가족소개_표현.pdf' 업로드</div><div class="dash-activity__time">오늘 09:15</div></div>
+                </div>
+                <div class="dash-activity__item">
+                  <div class="dash-activity__rail"><span class="dash-activity__dot"></span><span class="dash-activity__line"></span></div>
+                  <div class="dash-activity__body"><div class="dash-activity__text">1학년 1반 2교시 수업 영상이 준비되었습니다.</div><div class="dash-activity__time">어제 14:42</div></div>
+                </div>
+                <div class="dash-activity__item">
+                  <div class="dash-activity__rail"><span class="dash-activity__dot dash-activity__dot--blue"></span></div>
+                  <div class="dash-activity__body"><div class="dash-activity__text">김민수 학생이 번역 요청을 보냈습니다.</div><div class="dash-activity__time">어제 11:08</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="dash-footer">© 2025 군서미래국제학교 · 누리 NURI</footer>
+    </section>
+
+    <!-- ═══════════ 페이지 · 학생 관리 ═══════════ -->
+    <section class="dash-page" data-page="students">
+      <div class="dash-pagehead">
+        <div>
+          <div class="dash-pagehead__eyebrow">STUDENTS</div>
+          <h2 class="dash-pagehead__title">학생 관리</h2>
+          <p class="dash-pagehead__sub">담당 학급 학생을 추가하고 이름·모국어(자막 언어)를 관리합니다.</p>
+        </div>
+        <div class="dash-students__count"><span class="msr msr-18">group</span>학생 9명</div>
+      </div>
+
+      <!-- 학생 추가 폼 -->
+      <div class="card dash-sform">
+        <div class="dash-sform__titlerow"><span class="msr msr-20">person_add</span><span>학생 추가</span></div>
+        <div class="dash-sform__hint">아이디는 학년·반·순번으로 자동 발급됩니다 (수정 불가)</div>
+        <div class="dash-sform__row">
+          <div class="dash-sform__id"><span class="dash-sform__id-label">발급 아이디</span><span class="dash-sform__id-val">10101</span></div>
+          <input class="dash-sform__input" placeholder="비밀번호">
+          <input class="dash-sform__input" placeholder="이름">
+          <div class="dash-langsel dropdown" data-langsel><span class="dash-langsel__label is-placeholder" data-lsel-label>모국어(필수)</span><span class="msr msr-18">expand_more</span></div>
+          <button class="dash-sform__add"><span class="msr msr-20">add</span>추가</button>
+        </div>
+      </div>
+
+      <!-- 학생 목록 -->
+      <div class="card dash-slist">
+        <div class="dash-slist__head"><span class="msr msr-20">groups</span><span>학생 9명</span></div>
+        <div class="dash-srow" data-srow data-name="김하늘" data-id="s103">
+          <img class="dash-srow__avatar" src="uploads/avatar-student-01.png" alt="김하늘">
+          <div class="dash-srow__who"><span class="dash-srow__name">김하늘</span><span class="dash-srow__id">s103</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>한국어</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+        <div class="dash-srow" data-srow data-name="미국학생" data-id="c103">
+          <span class="dash-srow__initial">미</span>
+          <div class="dash-srow__who"><span class="dash-srow__name">미국학생</span><span class="dash-srow__id">c103</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>영어</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+        <div class="dash-srow" data-srow data-name="왕리우" data-id="s101">
+          <span class="dash-srow__initial">왕</span>
+          <div class="dash-srow__who"><span class="dash-srow__name">왕리우</span><span class="dash-srow__id">s101</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>중국어(간체)</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+        <div class="dash-srow" data-srow data-name="응우옌투안" data-id="s102">
+          <span class="dash-srow__initial">응</span>
+          <div class="dash-srow__who"><span class="dash-srow__name">응우옌투안</span><span class="dash-srow__id">s102</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>베트남어</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+        <div class="dash-srow" data-srow data-name="이강" data-id="s1011">
+          <img class="dash-srow__avatar" src="uploads/avatar-student-02.png" alt="이강">
+          <div class="dash-srow__who"><span class="dash-srow__name">이강</span><span class="dash-srow__id">s1011</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>베트남어</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+        <div class="dash-srow" data-srow data-name="중국학생" data-id="c101">
+          <span class="dash-srow__initial">중</span>
+          <div class="dash-srow__who"><span class="dash-srow__name">중국학생</span><span class="dash-srow__id">c101</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>중국어(간체)</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+        <div class="dash-srow" data-srow data-name="첸시아" data-id="s104">
+          <span class="dash-srow__initial">첸</span>
+          <div class="dash-srow__who"><span class="dash-srow__name">첸시아</span><span class="dash-srow__id">s104</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>일본어</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+        <div class="dash-srow is-inactive is-locked" data-srow data-name="테스트학생" data-id="s105">
+          <span class="dash-srow__initial">테</span>
+          <div class="dash-srow__who"><span class="dash-srow__name">테스트학생</span><span class="dash-srow__id">s105</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>태국어</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn is-off" data-active-btn data-on="0">활성화</button>
+        </div>
+        <div class="dash-srow" data-srow data-name="필리핀학생" data-id="c102">
+          <span class="dash-srow__initial">필</span>
+          <div class="dash-srow__who"><span class="dash-srow__name">필리핀학생</span><span class="dash-srow__id">c102</span></div>
+          <div class="dash-langsel dash-langsel--row dropdown" data-langsel><span class="dash-langsel__label" data-lsel-label>베트남어</span><span class="msr msr-17">expand_more</span></div>
+          <button class="dash-srow__btn" data-edit="name">이름</button>
+          <button class="dash-srow__btn" data-edit="pw">비번</button>
+          <button class="dash-active-btn" data-active-btn data-on="1">비활성</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 페이지 · 수업 다시보기 ═══════════ -->
+    <section class="dash-page" data-page="replay">
+      <div class="dash-pagehead">
+        <div>
+          <div class="dash-pagehead__eyebrow">REPLAY</div>
+          <h2 class="dash-pagehead__title">수업 다시보기</h2>
+          <p class="dash-pagehead__sub">날짜·교시별로 수업 영상과 자막을 다시 볼 수 있습니다.</p>
+        </div>
+        <div class="dash-replay__filters">
+          <div class="dropdown dash-dd" data-dd>
+            <span class="dash-dd__btn" data-dd-btn><span class="msr msr-17">calendar_month</span><span data-dd-label>2026-07-23</span><span class="msr msr-16 dash-dd__caret">expand_more</span></span>
+            <div class="dropdown__menu" data-dd-menu>
+              <div class="dropdown__item" data-dd-opt>2026-07-23</div>
+              <div class="dropdown__item" data-dd-opt>2026-07-22</div>
+              <div class="dropdown__item" data-dd-opt>2026-07-21</div>
+            </div>
+          </div>
+          <div class="dropdown dash-dd" data-dd>
+            <span class="dash-dd__btn" data-dd-btn><span class="msr msr-17">filter_list</span><span data-dd-label>1학년 1반</span><span class="msr msr-16 dash-dd__caret">expand_more</span></span>
+            <div class="dropdown__menu dropdown__menu--right" data-dd-menu>
+              <div class="dropdown__item" data-dd-opt>1학년 1반</div>
+              <div class="dropdown__item" data-dd-opt>1학년 2반</div>
+              <div class="dropdown__item" data-dd-opt>1학년 3반</div>
+              <div class="dropdown__item" data-dd-opt>2학년 1반</div>
+              <div class="dropdown__item" data-dd-opt>2학년 2반</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-replay">
+        <!-- 좌측 · 플레이어 + 녹화 목록 -->
+        <div class="dash-replay__main">
+          <div class="dash-player">
+            <div class="dash-player__scrim"><span class="dash-player__playbig"><span class="msr">play_arrow</span></span></div>
+            <div class="dash-player__caption">김민정: 오늘은 광합성의 원리를 배워봅시다.</div>
+            <div class="dash-player__bar"><span class="msr msr-22">play_arrow</span><div class="dash-player__track"><div class="dash-player__fill"></div></div><span class="dash-player__time">03:12 / 09:40</span></div>
+          </div>
+          <div class="dash-replay__meta">
+            <div class="dash-replay__title">1학년 1반 · 2026-07-23 11:41</div>
+            <div class="dash-replay__langs">
+              <span class="dash-langpill is-active" data-rlang="ko">원문</span>
+              <span class="dash-langpill" data-rlang="en">영어</span>
+            </div>
+          </div>
+          <div class="card dash-recbox">
+            <div class="dash-recbox__head"><div class="dash-recbox__title"><span class="msr msr-18">history</span>녹화된 수업</div><span class="dash-recbox__count">35건</span></div>
+            <div class="dash-recbox__scroll">
+              <div class="dash-rec is-active" data-rec><span class="dash-rec__play"><span class="msr msr-18">play_arrow</span></span><div class="dash-rec__info"><div class="dash-rec__name">1학년 1반 수업</div><div class="dash-rec__meta">2026-07-23 11:41 · 김민정 · 13.3MB</div></div><span class="msr msr-18 dash-rec__chev">chevron_right</span></div>
+              <div class="dash-rec" data-rec><span class="dash-rec__play"><span class="msr msr-18">play_arrow</span></span><div class="dash-rec__info"><div class="dash-rec__name">1학년 1반 수업</div><div class="dash-rec__meta">2026-07-23 10:39 · 김민정 · 3.4MB</div></div><span class="msr msr-18 dash-rec__chev">chevron_right</span></div>
+              <div class="dash-rec" data-rec><span class="dash-rec__play"><span class="msr msr-18">play_arrow</span></span><div class="dash-rec__info"><div class="dash-rec__name">1학년 1반 수업</div><div class="dash-rec__meta">2026-07-23 08:32 · 김민정 · 6.8MB</div></div><span class="msr msr-18 dash-rec__chev">chevron_right</span></div>
+              <div class="dash-rec" data-rec><span class="dash-rec__play"><span class="msr msr-18">play_arrow</span></span><div class="dash-rec__info"><div class="dash-rec__name">1학년 1반 수업</div><div class="dash-rec__meta">2026-07-23 08:27 · 김민정 · 3.5MB</div></div><span class="msr msr-18 dash-rec__chev">chevron_right</span></div>
+              <div class="dash-rec" data-rec><span class="dash-rec__play"><span class="msr msr-18">play_arrow</span></span><div class="dash-rec__info"><div class="dash-rec__name">1학년 1반 수업</div><div class="dash-rec__meta">2026-07-23 08:20 · 김민정 · 20.9MB</div></div><span class="msr msr-18 dash-rec__chev">chevron_right</span></div>
+              <div class="dash-rec" data-rec><span class="dash-rec__play"><span class="msr msr-18">play_arrow</span></span><div class="dash-rec__info"><div class="dash-rec__name">1학년 1반 수업</div><div class="dash-rec__meta">2026-07-23 07:44 · 김민정 · 0.5MB</div></div><span class="msr msr-18 dash-rec__chev">chevron_right</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 우측 · 자막/요약 패널 -->
+        <div class="card dash-rpanel">
+          <div class="dash-rpanel__tabs">
+            <span class="dash-rtab is-active" data-rtab="cap">자막</span>
+            <span class="dash-rtab" data-rtab="sum">강의 요약</span>
+          </div>
+          <div class="dash-rpanel__cap is-active" data-rpane="cap">
+            <div class="dash-seek is-active" data-seek><span class="dash-seek__time">00:03</span><div><div class="dash-seek__who">선생님</div><div class="dash-seek__text" data-cap data-ko="안녕하세요, 오늘 수업을 시작하겠습니다." data-en="Hello, let's begin today's lesson." data-zh="大家好，今天开始上课。">안녕하세요, 오늘 수업을 시작하겠습니다.</div></div></div>
+            <div class="dash-seek" data-seek><span class="dash-seek__time">00:11</span><div><div class="dash-seek__who">선생님</div><div class="dash-seek__text" data-cap data-ko="오늘은 광합성의 원리를 배워봅시다." data-en="Today, let's learn the principles of photosynthesis." data-zh="今天我们来学习光合作用的原理。">오늘은 광합성의 원리를 배워봅시다.</div></div></div>
+            <div class="dash-seek" data-seek><span class="dash-seek__time">00:19</span><div><div class="dash-seek__who">선생님</div><div class="dash-seek__text" data-cap data-ko="교과서 32페이지를 펴 주세요." data-en="Please open your textbook to page 32." data-zh="请翻到课本第32页。">교과서 32페이지를 펴 주세요.</div></div></div>
+            <div class="dash-seek" data-seek><span class="dash-seek__time">00:27</span><div><div class="dash-seek__who">선생님</div><div class="dash-seek__text" data-cap data-ko="먼저 지난 시간 내용을 복습할게요." data-en="First, let's review the last lesson." data-zh="首先，我们来复习上节课的内容。">먼저 지난 시간 내용을 복습할게요.</div></div></div>
+            <div class="dash-seek" data-seek><span class="dash-seek__time">00:41</span><div><div class="dash-seek__who">선생님</div><div class="dash-seek__text" data-cap data-ko="엽록체가 빛을 흡수하는 과정을 볼까요?" data-en="Shall we look at how chloroplasts absorb light?" data-zh="我们来看看叶绿体吸收光的过程吧。">엽록체가 빛을 흡수하는 과정을 볼까요?</div></div></div>
+          </div>
+          <div class="dash-rpanel__sum" data-rpane="sum">
+            <div class="dash-rpanel__bullets">
+              <div class="dash-rpanel__bullet"><span>•</span>광합성의 기본 원리와 엽록소의 역할을 중심으로 진행되었습니다.</div>
+              <div class="dash-rpanel__bullet"><span>•</span>교과서 32페이지 도식을 함께 살펴보며 명반응·암반응을 설명했습니다.</div>
+              <div class="dash-rpanel__bullet"><span>•</span>다음 차시에는 호흡과의 비교 실험을 예고했습니다.</div>
+            </div>
+            <button class="dash-rsum__btn"><span class="msr msr-18">auto_awesome</span>요약 다시 생성</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 페이지 · 용어집 ═══════════ -->
+    <section class="dash-page" data-page="glossary">
+      <div class="dash-pagehead">
+        <div>
+          <div class="dash-pagehead__eyebrow">GLOSSARY</div>
+          <h2 class="dash-pagehead__title">용어집</h2>
+          <p class="dash-pagehead__sub">교과 전문용어의 번역을 지정하면, 수업 자막에서 그대로 번역됩니다.</p>
+        </div>
+        <button class="dash-glossary__add" data-glossary-add><span class="msr msr-19">add</span>용어 추가</button>
+      </div>
+
+      <div class="card dash-gtable">
+        <div class="dash-gtable__inner">
+          <div class="dash-gtable__cols dash-gtable__thead"><div>원문</div><div>범위</div><div>번역</div><div>분류</div><div>작업</div></div>
+          <div class="dash-gtable__cols dash-gtable__row" data-grow>
+            <div class="dash-gtable__term">광합성</div>
+            <div><span class="dash-tag dash-tag--violet">전역</span></div>
+            <div class="dash-gtable__trans">영어 <b>Photosynthesis</b> · 중국어 <b>光合作用</b></div>
+            <div class="dash-gtable__cat">과학</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">엽록체</div>
+            <div><span class="dash-tag dash-tag--orange">이 학급</span></div>
+            <div class="dash-gtable__trans">영어 <b>Chloroplast</b> · 일본어 <b>葉緑体</b></div>
+            <div class="dash-gtable__cat">과학</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">명반응</div>
+            <div><span class="dash-tag dash-tag--violet">전역</span></div>
+            <div class="dash-gtable__trans">영어 <b>Light reaction</b> · 베트남어 <b>Phản ứng sáng</b></div>
+            <div class="dash-gtable__cat">과학</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">세포막</div>
+            <div><span class="dash-tag dash-tag--violet">전역</span></div>
+            <div class="dash-gtable__trans">영어 <b>Cell membrane</b> · 중국어 <b>细胞膜</b></div>
+            <div class="dash-gtable__cat">과학</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">삼투압</div>
+            <div><span class="dash-tag dash-tag--violet">전역</span></div>
+            <div class="dash-gtable__trans">영어 <b>Osmotic pressure</b> · 일본어 <b>浸透圧</b></div>
+            <div class="dash-gtable__cat">과학</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">분수</div>
+            <div><span class="dash-tag dash-tag--violet">전역</span></div>
+            <div class="dash-gtable__trans">영어 <b>Fraction</b> · 베트남어 <b>Phân số</b></div>
+            <div class="dash-gtable__cat">수학</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">방정식</div>
+            <div><span class="dash-tag dash-tag--orange">이 학급</span></div>
+            <div class="dash-gtable__trans">영어 <b>Equation</b> · 중국어 <b>方程式</b></div>
+            <div class="dash-gtable__cat">수학</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">광복절</div>
+            <div><span class="dash-tag dash-tag--violet">전역</span></div>
+            <div class="dash-gtable__trans">영어 <b>Liberation Day</b> · 일본어 <b>光復節</b></div>
+            <div class="dash-gtable__cat">사회</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">민주주의</div>
+            <div><span class="dash-tag dash-tag--violet">전역</span></div>
+            <div class="dash-gtable__trans">영어 <b>Democracy</b> · 베트남어 <b>Dân chủ</b></div>
+            <div class="dash-gtable__cat">사회</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+          <div class="dash-gtable__cols dash-gtable__row">
+            <div class="dash-gtable__term">관용어</div>
+            <div><span class="dash-tag dash-tag--orange">이 학급</span></div>
+            <div class="dash-gtable__trans">영어 <b>Idiom</b> · 중국어 <b>惯用语</b></div>
+            <div class="dash-gtable__cat">국어</div>
+            <div class="dash-gtable__actions"><span class="dash-gtable__edit" data-glossary-edit>수정</span><span class="dash-gtable__del" data-gdel>삭제</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 페이지 · 준비 중 ═══════════ -->
+    <section class="dash-page dash-page--soon" data-page="soon">
+      <div class="dash-soon__icon"><span class="msr msr-36">construction</span></div>
+      <span class="dots-loader dash-soon__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+      <div class="dash-soon__title">준비 중인 화면입니다</div>
+      <div class="dash-soon__sub">이 메뉴는 곧 대시보드 안에서 제공될 예정이에요.</div>
+    </section>
+
+    <!-- ═══════════ 페이지 · 라이브 수업 ═══════════ -->
+    <section class="dash-page dash-page--live" data-page="live">
+
+      <!-- 상단 · 수업 정보 + 상태 버튼 -->
+      <div class="dash-live__head">
+        <div class="dash-live__meta">
+          <span class="dash-live__eyebrow">LIVE CLASS</span>
+          <span class="dash-live__class">1학년 1반</span>
+          <span class="dash-live__timer"><span class="msr msr-16">schedule</span><span data-timer>00:00</span></span>
+          <span class="dash-rec-badge" data-rec-badge><span class="pulse-ring" aria-hidden="true"><i></i><i></i><i></i></span>REC</span>
+        </div>
+        <div class="dash-live__actions">
+          <button class="dash-live__btn dash-live__btn--start" data-live-start><span class="msr msr-17">play_arrow</span>수업 시작</button>
+          <button class="dash-live__btn dash-live__btn--end is-hidden" data-live-exit><span class="msr msr-17">power_settings_new</span>수업 종료</button>
+          <button class="dash-live__btn dash-live__btn--leave" data-live-leave><span class="msr msr-17">logout</span>나가기</button>
+        </div>
+      </div>
+
+      <div class="dash-live__body">
+        <!-- 스테이지 -->
+        <div class="dash-stage" data-stage>
+          <div class="dash-live__warn"><span class="msr msr-18">warning</span>카메라 없이 수업을 시작했습니다. 아래 [비디오 시작]으로 다시 켤 수 있습니다.</div>
+
+          <div class="dash-stagebox" data-stagebox>
+            <div class="dash-stagebox__cam">
+              <span class="pulse-ring dash-stagebox__pulse" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="msr msr-44">videocam_off</span>
+            </div>
+            <div class="dash-stagebox__label">카메라 꺼짐</div>
+          </div>
+
+          <!-- 하단 툴바 -->
+          <div class="dash-livebar">
+            <div class="dash-livebar__tools">
+              <div class="dash-tool is-off" data-av="mic" data-state="off"><span class="dash-tool__circle"><span class="msr msr-22">mic_off</span></span><span class="dash-tool__label">음소거 해제</span></div>
+              <div class="dash-tool is-off" data-av="cam" data-state="off"><span class="dash-tool__circle"><span class="msr msr-22">videocam_off</span></span><span class="dash-tool__label">비디오 시작</span></div>
+              <div class="dash-tool" data-tool="share"><span class="dash-tool__circle"><span class="msr msr-22">screen_share</span></span><span class="dash-tool__label">자료 공유</span></div>
+              <div class="dash-tool" data-tool="draw"><span class="dash-tool__circle"><span class="msr msr-22">edit</span></span><span class="dash-tool__label">판서</span></div>
+              <div class="dash-tool" data-tool="people"><span class="dash-tool__circle"><span class="msr msr-22">group</span></span><span class="dash-tool__label">참여자</span></div>
+              <div class="dash-tool" data-tool="lang"><span class="dash-tool__circle"><span class="msr msr-22">language</span></span><span class="dash-tool__label">언어</span></div>
+            </div>
+          </div>
+
+          <!-- 패널 · 자료 공유 -->
+          <div class="dash-panel dash-panel--share" data-panel="share">
+            <div class="dash-panel__head"><div class="dash-panel__title"><span class="msr msr-18">screen_share</span>자료 공유</div><span class="msr msr-20 dash-panel__close" data-close="share">close</span></div>
+            <div class="dash-panel__body">
+              <div class="dash-panel__hint">학생에게 전송할 창을 선택하세요</div>
+              <div class="dash-panel__wins">
+                <div class="dash-win" data-win><span class="msr msr-20">desktop_windows</span><span>전체 화면</span></div>
+                <div class="dash-win" data-win><span class="msr msr-20 dash-win__icon--ppt">slideshow</span><span>가족소개_표현.pptx</span></div>
+                <div class="dash-win" data-win><span class="msr msr-20 dash-win__icon--pdf">picture_as_pdf</span><span>검색기(Retriever).pdf</span></div>
+                <div class="dash-win" data-win><span class="msr msr-20 dash-win__icon--web">public</span><span>Chrome — genspark.ai</span></div>
+              </div>
+              <button class="dash-panel__cta" data-close="share">이 창 공유하기</button>
+            </div>
+          </div>
+
+          <!-- 패널 · 판서 도구 -->
+          <div class="dash-panel dash-panel--draw" data-panel="draw">
+            <div class="dash-panel__pens">
+              <span class="dash-pen is-active" data-pen="pen"><span class="msr msr-16">edit</span>펜</span>
+              <span class="dash-pen" data-pen="pencil"><span class="msr msr-16">stylus</span>연필</span>
+              <span class="dash-pen" data-pen="marker"><span class="msr msr-16">brush</span>마커</span>
+              <span class="dash-pen" data-pen="highlight"><span class="msr msr-16">ink_highlighter</span>형광펜</span>
+            </div>
+            <span class="dash-panel__vr"></span>
+            <div class="dash-panel__colors">
+              <span class="dash-color dash-color--red is-active" data-color="#ef4444"></span>
+              <span class="dash-color dash-color--orange" data-color="#f97316"></span>
+              <span class="dash-color dash-color--yellow" data-color="#eab308"></span>
+              <span class="dash-color dash-color--green" data-color="#22c55e"></span>
+              <span class="dash-color dash-color--blue" data-color="#3b82f6"></span>
+              <span class="dash-color dash-color--purple" data-color="#a855f7"></span>
+              <span class="dash-color dash-color--white" data-color="#ffffff"></span>
+            </div>
+            <span class="dash-panel__vr"></span>
+            <div class="dash-panel__dtools">
+              <span class="dash-draw-btn" data-undo title="되돌리기"><span class="msr msr-19">undo</span></span>
+              <span class="dash-draw-btn" data-clear title="지우기"><span class="msr msr-19">delete</span></span>
+              <span class="dash-draw-btn" data-close="draw" title="닫기"><span class="msr msr-19">close</span></span>
+            </div>
+          </div>
+
+          <!-- 패널 · 참여자 -->
+          <div class="dash-panel dash-panel--people" data-panel="people">
+            <div class="dash-panel__head"><div class="dash-panel__title"><span class="msr msr-18">group</span>참여자 0명</div><span class="msr msr-20 dash-panel__close" data-close="people">close</span></div>
+            <span class="dots-loader dash-panel__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <div class="dash-panel__empty">아직 입장한 학생이 없습니다</div>
+          </div>
+
+          <!-- 패널 · 언어 설정 -->
+          <div class="dash-panel dash-panel--lang" data-panel="lang">
+            <div class="dash-panel__langhead"><div class="dash-panel__title"><span class="msr msr-19">language</span>언어 설정</div><span class="msr msr-20 dash-panel__close" data-close="lang">close</span></div>
+            <div class="dash-panel__seclabel">내 발화 언어 (음성 인식)</div>
+            <div class="dash-panel__opts dash-panel__opts--sp" data-splang>
+              <span class="dash-opt is-active" data-opt>한국어</span>
+              <span class="dash-opt" data-opt>English</span>
+              <span class="dash-opt" data-opt>中文</span>
+              <span class="dash-opt" data-opt>Tiếng Việt</span>
+              <span class="dash-opt" data-opt>日本語</span>
+              <span class="dash-opt" data-opt>자동 감지</span>
+            </div>
+            <div class="dash-panel__seclabel">자막 번역 언어</div>
+            <div class="dash-panel__opts" data-sublang>
+              <span class="dash-opt is-active" data-opt data-on="1">영어</span>
+              <span class="dash-opt is-active" data-opt data-on="1">일본어</span>
+              <span class="dash-opt is-active" data-opt data-on="1">베트남어</span>
+              <span class="dash-opt is-active" data-opt data-on="1">중국어(간체)</span>
+            </div>
+            <div class="dash-panel__note">학생 등록 언어에 따라 자동 설정됩니다</div>
+          </div>
+        </div>
+
+        <!-- 실시간 자막 -->
+        <div class="card dash-capbox">
+          <div class="dash-capbox__head"><div class="dash-capbox__title"><span class="msr msr-19">chat</span>실시간 자막</div><span class="dash-capbox__count" data-capcount>0건</span></div>
+          <div class="dash-capbox__body" data-capbody>
+            <div class="dash-cap-empty" data-cap-empty>
+              <span class="dots-loader" aria-hidden="true"><span></span><span></span><span></span></span>
+              수업을 시작하면 음성이 자막으로 변환됩니다
+            </div>
+          </div>
+          <div class="dash-capbox__bar" data-capbar>
+            <span class="dash-langpill dash-langpill--sm is-active" data-cl="ko">원문</span>
+            <span class="dash-langpill dash-langpill--sm" data-cl="en">영어</span>
+            <span class="dash-langpill dash-langpill--sm" data-cl="zh">中文</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════ 모달 · 용어 추가/수정 ═══════════ -->
+  <div class="modal dash-gmodal" data-glossary-modal>
+    <div class="modal__panel">
+      <div class="dash-gmodal__head"><div class="dash-gmodal__title">용어 추가</div><span class="msr msr-22 dash-gmodal__close" data-gm-close>close</span></div>
+      <div class="dash-gmodal__fields">
+        <div><div class="dash-gmodal__label">원문 용어 (한국어)</div><input class="dash-gmodal__input" placeholder="예: 광합성"></div>
+        <div><div class="dash-gmodal__label">분류 (과목)</div><input class="dash-gmodal__input" placeholder="예: 과학"></div>
+        <div>
+          <div class="dash-gmodal__label">적용 범위</div>
+          <div class="dash-gmodal__scopes">
+            <span class="dash-scope is-active" data-gm-scope>전역 (모든 수업)</span>
+            <span class="dash-scope" data-gm-scope>이 학급만</span>
+          </div>
+          <div class="dash-gmodal__class" data-gm-class><span class="dash-gmodal__chip">1학년 1반</span></div>
+        </div>
+        <div>
+          <div class="dash-gmodal__label">언어별 번역</div>
+          <div class="dash-gmodal__langs">
+            <div class="dash-gmodal__langrow"><span>영어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>일본어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>크메르어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>몽골어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>러시아어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>태국어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>타갈로그어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>우즈베크어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>베트남어</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>중국어(간체)</span><input placeholder="번역어 입력"></div>
+            <div class="dash-gmodal__langrow"><span>중국어(번체)</span><input placeholder="번역어 입력"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-gmodal__actions">
+        <button class="dash-gmodal__cancel" data-gm-close>취소</button>
+        <button class="dash-gmodal__save" data-gm-close>저장</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 모달 · 용어 삭제 확인 ═══════════ -->
+  <div class="modal dash-gdel" data-gdel-modal>
+    <div class="modal__panel">
+      <div class="dash-gdel__icon"><span class="msr msr-30">delete</span></div>
+      <div class="dash-gdel__title">이 용어를 삭제할까요?</div>
+      <div class="dash-gdel__text" data-gdel-name>삭제한 용어는 복구할 수 없으며,<br>수업 자막 번역에서도 제외됩니다.</div>
+      <div class="dash-gdel__actions">
+        <button class="dash-gdel__cancel" data-gdel-cancel>취소</button>
+        <button class="dash-gdel__confirm" data-gdel-confirm>삭제</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ 모달 · 잠금 안내 (아직 수업 전) ═══════════ -->
+  <div class="modal dash-info" data-info-modal>
+    <div class="modal__panel">
+      <div class="dash-info__icon"><span class="msr msr-30">schedule</span></div>
+      <div class="dash-info__title">아직 수업 전입니다</div>
+      <div class="dash-info__text">예정된 교시예요. 수업 시간이 되면<br>이 교시를 시작할 수 있습니다.</div>
+      <button class="dash-info__ok" data-info-close>확인</button>
+    </div>
+  </div>
+
+  <!-- ═══════════ 모달 · 이름/비밀번호 수정 ═══════════ -->
+  <div class="modal dash-emodal" data-modal>
+    <div class="modal__panel">
+      <div class="dash-emodal__head"><div class="modal__title" data-modal-title>이름 수정</div><span class="msr msr-22 dash-emodal__close" data-modal-close>close</span></div>
+      <div class="dash-emodal__sub" data-modal-sub>학생: 김하늘 (s103)</div>
+      <input class="dash-emodal__input" data-modal-input placeholder="새 이름">
+      <div class="modal__actions">
+        <button class="dash-emodal__cancel" data-modal-close>취소</button>
+        <button class="dash-emodal__save" data-modal-save>저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

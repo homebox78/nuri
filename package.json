@@ -1,0 +1,19 @@
+{
+  "name": "nuri",
+  "version": "1.0.0",
+  "description": "누리(NURI) — 군서미래국제학교 실시간 번역 수업 시스템 UI",
+  "private": true,
+  "scripts": {
+    "build": "sass scss/main.scss css/main.css --style=compressed --no-source-map",
+    "watch": "sass scss/main.scss css/main.css --watch",
+    "serve": "npx -y serve -l 5173 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/homebox78/nuri.git"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "sass": "^1.101.7"
+  }
+}

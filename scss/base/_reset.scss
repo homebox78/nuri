@@ -1,0 +1,43 @@
+// ============================================================
+//  리셋 + 공통 베이스
+// ============================================================
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--v);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--v2);
+  }
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+// 모션 최소화 환경에서는 장식 애니메이션 제거
+@media (prefers-reduced-motion: reduce) {
+  .blob,
+  .pulse-ring,
+  .dots-loader span {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,78 @@
+// ============================================================
+//  디자인 토큰 — 색·그림자 CSS 변수 (라이트/다크)
+//  세 페이지(로그인·대시보드·디자인시스템)의 :root 값을 통합.
+//  네이밍은 기존 소스의 축약형을 유지한다:
+//    --v  보라 프라이머리   --v2 진한 보라(hover)   --v3 더 진한 보라
+//    --vl 연보라 배경       --vl2 연보라 진한 배경  --vll 아주 연한 보라
+// ============================================================
+
+:root {
+  // 서피스
+  --bg: #f4f2fd;
+  --card: #ffffff;
+  --card2: #f7f6fe;
+  --line: rgba(28, 22, 58, .09);
+
+  // 텍스트
+  --text: #1f1b32;
+  --muted: #6c6885;
+  --faint: #9d99b6;
+
+  // 브랜드 (보라)
+  --v: #7c5cfc;
+  --v2: #6a45f0;
+  --v3: #5a33dc;
+  --vl: #ece7ff;
+  --vl2: #ded3ff;
+  --vll: #f6f3ff;
+
+  // 시맨틱 컬러
+  --green: #16a34a;
+  --greenbg: #e6f7ec;
+  --greenbg2: #d6f0df;
+  --orange: #ea7f2d;
+  --orangebg: #fdf0e3;
+  --orangebg2: #fbe3cd;
+  --blue: #3b74f4;
+  --bluebg: #e7effe;
+  --pink: #e0489a;
+  --pinkbg: #fce6f2;
+  --red: #f5476b;
+  --redbg: #fde7ec;
+
+  // 세그먼트 컨트롤 활성 배경
+  --seg: #1f1b32;
+
+  // 그림자
+  --shadow-sm: 0 1px 2px rgba(28, 22, 58, .06);
+  --shadow: 0 1px 2px rgba(28, 22, 58, .05), 0 10px 30px rgba(28, 22, 58, .06);
+  --shadow-lg: 0 18px 40px rgba(108, 79, 240, .28);
+}
+
+// ── 다크 테마 (대시보드 우상단 토글로 data-theme 전환) ──
+[data-theme='dark'] {
+  --bg: #14121f;
+  --card: #1d1a2e;
+  --card2: #252137;
+  --line: rgba(255, 255, 255, .10);
+
+  --text: #f1eefb;
+  --muted: #a8a4c2;
+  --faint: #726e8c;
+
+  --v2: #b1a0ff;
+  --vl: #2c2550;
+  --vll: rgba(124, 92, 252, .12);
+
+  --green: #2fbf66;
+  --greenbg: rgba(34, 197, 94, .12);
+  --greenbg2: rgba(34, 197, 94, .22);
+  --orangebg: rgba(234, 127, 45, .12);
+  --orangebg2: rgba(234, 127, 45, .22);
+  --bluebg: rgba(59, 116, 244, .14);
+  --pinkbg: rgba(224, 72, 154, .14);
+
+  --seg: #7c5cfc;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, .45), 0 12px 32px rgba(0, 0, 0, .4);
+}

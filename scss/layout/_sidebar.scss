@@ -1,0 +1,180 @@
+// ============================================================
+//  사이드바 (대시보드 좌측 내비게이션)
+// ============================================================
+
+.sidebar {
+  width: 246px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(176deg, #7d5dfc 0%, #6446e6 52%, #5733d6 100%);
+  transition: width .22s ease;
+
+  .sidebar__logo {
+    padding: 4px 6px 22px;
+
+    img {
+      height: 34px;
+      width: auto;
+    }
+  }
+
+  // ── 내비게이션 ──
+  .sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+
+  .sidebar__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 13px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, .74);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+    &.is-active {
+      background: rgba(255, 255, 255, .18);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .14);
+    }
+  }
+
+  // ── 하단 (언어 선택·가이드) ──
+  .sidebar__bottom {
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .sidebar__lang {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 13px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .1);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .sidebar__guide {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 13px;
+    border-radius: 11px;
+    color: rgba(255, 255, 255, .72);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  // 언어 라벨(아이콘 + 현재 언어)
+  .sidebar__lang-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  // 언어 드롭다운(위로 펼침)은 행 전체 너비로
+  .sidebar__lang .dropdown__menu {
+    left: 0;
+    right: 0;
+  }
+
+  // ── 접힘 상태 (톱바 menu_open 토글) ──
+  &.is-collapsed {
+    width: 78px;
+    overflow: hidden;
+
+    .sidebar__logo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        height: 32px;
+        width: 42px;
+        object-fit: cover;
+        object-position: left center;
+      }
+    }
+
+    .sidebar__item,
+    .sidebar__lang,
+    .sidebar__guide {
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+      width: 44px;
+      height: 44px;
+      margin: 0 auto;
+    }
+
+    // 첫 아이콘만 남기고 텍스트·화살표 숨김
+    .sidebar__item > :not(.msr),
+    .sidebar__guide > :not(.msr),
+    .sidebar__lang > :not(.sidebar__lang-label) {
+      display: none;
+    }
+
+    .sidebar__lang-label {
+      gap: 0;
+
+      > :not(.msr) {
+        display: none;
+      }
+    }
+  }
+}
+
+// ── 모바일(≤780px) 드로어 + 배경 ──
+@media (max-width: 780px) {
+  .sidebar {
+    display: none;
+
+    &.is-open {
+      display: flex;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      height: 100dvh;
+      z-index: 220;
+      width: 246px;
+      box-shadow: 0 0 60px rgba(0, 0, 0, .4);
+    }
+  }
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 12, 30, .45);
+  z-index: 210;
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+}

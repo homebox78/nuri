@@ -1,0 +1,48 @@
+// ============================================================
+//  @font-face — 모든 폰트는 로컬 서빙 (assets/fonts/, CDN 미사용)
+//
+//  언어별 본문 폰트 (사용 웨이트: 400 / 500 / 600 / 700 / 800)
+//    한국어   Noto Sans KR   영어  Noto Sans
+//    日本語   Noto Sans JP   简体  Noto Sans SC   繁體  Noto Sans TC
+//  아이콘: Material Symbols Rounded (가변 폰트 1파일)
+// ============================================================
+
+$font-dir: '../assets/fonts';
+
+// (패밀리명, 파일 접두어) 목록 — 웨이트별 woff2를 일괄 선언
+$families: (
+  ('Noto Sans',    'noto-sans-v42-latin'),
+  ('Noto Sans KR', 'noto-sans-kr-v39-korean_latin'),
+  ('Noto Sans JP', 'noto-sans-jp-v56-japanese_latin'),
+  ('Noto Sans SC', 'noto-sans-sc-v40-chinese-simplified_latin'),
+  ('Noto Sans TC', 'noto-sans-tc-v39-chinese-traditional_latin'),
+);
+
+$weights: (
+  (400, 'regular'),
+  (500, '500'),
+  (600, '600'),
+  (700, '700'),
+  (800, '800'),
+);
+
+@each $family, $prefix in $families {
+  @each $weight, $suffix in $weights {
+    @font-face {
+      font-family: $family;
+      font-style: normal;
+      font-weight: $weight;
+      font-display: swap;
+      src: url('#{$font-dir}/#{$prefix}-#{$suffix}.woff2') format('woff2');
+    }
+  }
+}
+
+// ── 아이콘 폰트 ──
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('#{$font-dir}/material-symbols-rounded.woff2') format('woff2');
+}

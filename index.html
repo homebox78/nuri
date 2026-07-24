@@ -2,11 +2,99 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=누리 로그인.dc.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ── SEO ── -->
+<title>로그인 · 누리 NURI — 실시간 번역 수업 시스템</title>
+<meta name="description" content="누리(NURI)는 군서미래국제학교의 실시간 번역 수업 시스템입니다. 선생님의 수업을 학생의 언어로 전달합니다.">
+<meta property="og:title" content="누리 NURI — 실시간 번역 수업 시스템">
+<meta property="og:description" content="선생님의 수업을, 학생의 언어로. 국제학교 실시간 번역 수업 시스템">
+<meta property="og:type" content="website">
+<meta property="og:image" content="uploads/logo.png">
+
+<!-- ── 아이콘 · 스타일 ── -->
 <link rel="icon" type="image/png" href="uploads/icon.png">
-<title>누리 NURI</title>
+<link rel="apple-touch-icon" href="uploads/icon.png">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<a href="누리 로그인.dc.html">누리 로그인으로 이동</a>
+
+<div class="page-login">
+
+  <!-- 배경 블롭 애니메이션 -->
+  <div class="blob blob--b" aria-hidden="true"></div>
+  <div class="blob blob--a" aria-hidden="true"></div>
+  <div class="blob blob--c" aria-hidden="true"></div>
+
+  <!-- ═══════════ 헤더 (로고) ═══════════ -->
+  <header class="login-header">
+    <img src="uploads/logo.png" alt="NURI">
+  </header>
+
+  <!-- ═══════════ 본문 ═══════════ -->
+  <main class="login-main">
+    <div class="login-columns">
+
+      <!-- 좌측 · 일러스트 + 헤드라인 -->
+      <section class="login-intro">
+        <img src="uploads/login-illustration.png" alt="번역 수업 일러스트">
+        <h2 class="login-intro__headline" data-i18n="headline">선생님의 수업을,<br>학생의 언어로.</h2>
+        <p class="login-intro__sub" data-i18n="hsub">국제학교 실시간 번역 수업 시스템</p>
+      </section>
+
+      <!-- 우측 · 로그인 폼 -->
+      <section class="login-card">
+        <span class="login-card__chip">NURI · LIVE CLASS</span>
+
+        <div class="login-card__heading">
+          <h1 data-i18n="title">로그인</h1>
+          <p data-i18n="sub">오늘의 수업이 기다리고 있습니다</p>
+        </div>
+
+        <form id="login-form" autocomplete="on">
+          <!-- 아이디 -->
+          <label class="form-label" for="login-id" data-i18n="id">아이디</label>
+          <input class="input" id="login-id" name="id" placeholder="아이디 입력" data-i18n-ph="idph">
+
+          <!-- 비밀번호 (보기 토글 포함) -->
+          <label class="form-label" for="login-pw" data-i18n="pw">비밀번호</label>
+          <div class="input-group" id="pw-field">
+            <input id="login-pw" name="password" type="password" placeholder="비밀번호 입력" data-i18n-ph="pwph">
+            <span class="msr msr-20 input-group__icon" id="pw-eye" role="button" aria-label="비밀번호 표시">visibility_off</span>
+          </div>
+
+          <!-- 아이디·비밀번호 저장 -->
+          <label class="checkbox is-checked" id="save-check">
+            <span class="checkbox__box"><span class="msr">check</span></span>
+            <span data-i18n="save">아이디·비밀번호 저장</span>
+          </label>
+
+          <!-- 로그인 버튼 -->
+          <button type="submit" class="btn btn--primary login-card__submit" data-i18n="login">로그인</button>
+        </form>
+
+        <p class="login-card__help" data-i18n="help">계정이 없으면 담임 선생님 또는 관리자에게 문의하세요</p>
+      </section>
+    </div>
+
+    <!-- 언어 선택 -->
+    <nav class="login-langs" aria-label="언어 선택">
+      <span class="login-langs__item is-active" data-lang="ko" lang="ko">한국어</span>
+      <span class="login-langs__sep">·</span>
+      <span class="login-langs__item" data-lang="en" lang="en">English</span>
+      <span class="login-langs__sep">·</span>
+      <span class="login-langs__item" data-lang="ja" lang="ja">日本語</span>
+      <span class="login-langs__sep">·</span>
+      <span class="login-langs__item" data-lang="zh-Hans" lang="zh-Hans">简体中文</span>
+      <span class="login-langs__sep">·</span>
+      <span class="login-langs__item" data-lang="zh-Hant" lang="zh-Hant">繁體中文</span>
+    </nav>
+  </main>
+
+  <!-- ═══════════ 푸터 ═══════════ -->
+  <footer class="login-footer">© 2026 군서미래국제학교 · 누리 NURI</footer>
+</div>
+
+<script src="js/login.js"></script>
 </body>
 </html>
