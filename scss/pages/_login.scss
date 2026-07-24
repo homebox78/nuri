@@ -83,12 +83,12 @@
     gap: 28px;
     align-items: stretch;
     width: 100%;
-    max-width: 800px;
+    max-width: 838px;
   }
 
-  // 좌측 · 일러스트 + 헤드라인
+  // 좌측 · 일러스트 + 헤드라인 (일러스트 폭 확보용으로 비율 상향)
   .login-intro {
-    flex: 1;
+    flex: 1.18;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@
     // ── 애니메이션 일러스트 (login_img.gif) ──
     .login-art {
       width: 100%;
-      max-width: 362px;
+      max-width: 416px;
       height: auto;
     }
 
