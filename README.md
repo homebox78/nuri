@@ -1,6 +1,6 @@
 # 누리 NURI
 
-군서미래국제학교 **실시간 번역 수업 시스템** UI.
+**실시간 번역 수업 시스템** UI.
 선생님의 수업을, 학생의 언어로.
 
 ## 실행
@@ -39,8 +39,8 @@
 | 언어 | lang | 폰트 |
 |---|---|---|
 | 한국어 | `ko` | Noto Sans KR |
-| English | `en` | Noto Sans |
-| 日本語 | `ja` | Noto Sans JP |
+| English | `en` | Roboto |
+| 日本語 | `ja` | M PLUS 1p |
 | 简体中文 | `zh-Hans` | Noto Sans SC |
 | 繁體中文 | `zh-Hant` | Noto Sans TC |
 
