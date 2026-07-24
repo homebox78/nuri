@@ -240,18 +240,91 @@
     padding: 0 0 24px;
   }
 
-  // ── 반응형 ──
-  @media (max-width: 760px) {
+  // ══════════ 반응형 ══════════
+
+  // 태블릿 — 2열 유지하되 일러스트를 줄여 폼 폭 확보
+  @media (max-width: 900px) {
     .login-columns {
-      flex-direction: column;
+      gap: 18px;
+      max-width: 680px;
     }
 
     .login-intro {
-      padding: 0 20px;
+      padding: 12px;
 
       img {
-        max-width: 260px;
+        max-width: 280px;
       }
+
+      .login-intro__headline {
+        font-size: 22px;
+        margin-top: 16px;
+      }
+    }
+
+    .login-card {
+      padding: 34px 28px;
+    }
+  }
+
+  // 모바일 — 좌측 일러스트·슬로건을 감추고 로그인 폼만 노출
+  @media (max-width: 720px) {
+    .login-header {
+      padding: 20px 22px;
+
+      img {
+        height: 32px;
+      }
+    }
+
+    .login-main {
+      padding: 4px 22px 28px;
+    }
+
+    .login-intro {
+      display: none;
+    }
+
+    .login-columns {
+      max-width: 440px;
+    }
+
+    .login-card {
+      flex: 1;
+      padding: 30px 24px;
+      border-radius: 22px;
+
+      .login-card__heading {
+        margin: 14px 0 22px;
+
+        h1 {
+          font-size: 27px;
+        }
+      }
+    }
+
+    .login-langs {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+      font-size: 13px;
+    }
+
+    .login-footer {
+      font-size: 11.5px;
+      padding: 0 22px 20px;
+    }
+  }
+
+  // 소형 단말 — 여백 최소화
+  @media (max-width: 400px) {
+    .login-main {
+      padding: 4px 14px 22px;
+    }
+
+    .login-card {
+      padding: 26px 18px;
     }
   }
 }
