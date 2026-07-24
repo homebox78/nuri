@@ -88,6 +88,7 @@
 
   // 좌측 · 일러스트 + 헤드라인 (일러스트 폭 확보용으로 비율 상향)
   .login-intro {
+    position: relative;
     flex: 1.18;
     padding: 20px;
     display: flex;
@@ -95,6 +96,21 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    // 일러스트 뒤 배경을 GIF 배경색(#ece9f4)과 맞춰 사각 경계를 없앰
+    // 가장자리는 페이지 배경으로 부드럽게 페이드
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(115% 78% at 50% 34%, #ece9f4 0%, #ece9f4 52%, transparent 78%);
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
 
     // ── 애니메이션 일러스트 (login_img.gif) ──
     .login-art {
@@ -268,7 +284,9 @@
 
   // 모바일 — 좌측 일러스트·슬로건을 감추고 로그인 폼만 노출
   @media (max-width: 720px) {
+    // 로고를 가운데로
     .login-header {
+      justify-content: center;
       padding: 20px 22px;
 
       img {
@@ -284,12 +302,15 @@
       display: none;
     }
 
+    // 화면보다 좁아지면 카드가 줄어들도록 (뷰포트 초과 방지)
     .login-columns {
       max-width: 440px;
+      min-width: 0;
     }
 
     .login-card {
       flex: 1;
+      min-width: 0;
       padding: 30px 24px;
       border-radius: 22px;
 
