@@ -18,7 +18,8 @@
       id: '아이디', idph: '아이디 입력',
       pw: '비밀번호', pwph: '비밀번호 입력',
       save: '아이디·비밀번호 저장', login: '로그인',
-      help: '계정이 없으면 담임 선생님 또는 관리자에게 문의하세요'
+      help: '계정이 없으면 담임 선생님 또는 관리자에게 문의하세요',
+      iderr: '아이디를 입력하세요', pwerr: '비밀번호를 입력하세요'
     },
     en: {
       headline: "Every lesson, in every student's language.",
@@ -27,7 +28,8 @@
       id: 'ID', idph: 'Enter your ID',
       pw: 'Password', pwph: 'Enter your password',
       save: 'Save ID & password', login: 'Log in',
-      help: 'No account? Please contact your homeroom teacher or admin.'
+      help: 'No account? Please contact your homeroom teacher or admin.',
+      iderr: 'Please enter your ID', pwerr: 'Please enter your password'
     },
     ja: {
       headline: '先生の授業を、生徒の言語で。',
@@ -36,7 +38,8 @@
       id: 'ID', idph: 'IDを入力',
       pw: 'パスワード', pwph: 'パスワードを入力',
       save: 'IDとパスワードを保存', login: 'ログイン',
-      help: 'アカウントがない場合は担任または管理者にお問い合わせください'
+      help: 'アカウントがない場合は担任または管理者にお問い合わせください',
+      iderr: 'IDを入力してください', pwerr: 'パスワードを入力してください'
     },
     'zh-Hans': {
       headline: '让老师的课，走进每位学生的语言。',
@@ -45,7 +48,8 @@
       id: '账号', idph: '输入账号',
       pw: '密码', pwph: '输入密码',
       save: '记住账号和密码', login: '登录',
-      help: '没有账号？请联系班主任或管理员'
+      help: '没有账号？请联系班主任或管理员',
+      iderr: '请输入账号', pwerr: '请输入密码'
     },
     'zh-Hant': {
       headline: '讓老師的課，走進每位學生的語言。',
@@ -54,7 +58,8 @@
       id: '帳號', idph: '輸入帳號',
       pw: '密碼', pwph: '輸入密碼',
       save: '記住帳號和密碼', login: '登入',
-      help: '沒有帳號？請聯絡班導師或管理員'
+      help: '沒有帳號？請聯絡班導師或管理員',
+      iderr: '請輸入帳號', pwerr: '請輸入密碼'
     }
   };
 
@@ -109,9 +114,35 @@
     save.classList.toggle('is-checked');
   });
 
-  /* ── 로그인 → 대시보드 이동 (데모: 검증 없이 이동) ── */
+  /* ── 입력 검증: 빈 필드에 에러 표시 + 흔들림, 입력 시 해제 ── */
+  var idInput = $('#login-id');
+  var idError = $('#id-error');
+  var pwError = $('#pw-error');
+
+  function setError(field, msgEl, on) {
+    field.classList.toggle('is-error', on);
+    msgEl.classList.toggle('is-visible', on);
+    if (on) {
+      field.classList.remove('is-shaking');
+      void field.offsetWidth; // 재적용을 위한 리플로우
+      field.classList.add('is-shaking');
+    }
+  }
+
+  idInput.addEventListener('input', function () { setError(idInput, idError, false); });
+  pw.addEventListener('input', function () { setError(pwField, pwError, false); });
+
+  /* ── 로그인: 검증 통과 시 대시보드 이동 (데모: 인증 없음) ── */
   $('#login-form').addEventListener('submit', function (e) {
     e.preventDefault();
+
+    var idEmpty = idInput.value.trim() === '';
+    var pwEmpty = pw.value.trim() === '';
+    setError(idInput, idError, idEmpty);
+    setError(pwField, pwError, pwEmpty);
+
+    if (idEmpty) { idInput.focus(); return; }
+    if (pwEmpty) { pw.focus(); return; }
     location.href = 'dashboard.html';
   });
 })();

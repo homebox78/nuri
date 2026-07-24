@@ -69,6 +69,48 @@
   }
 }
 
+// ── 에러 상태 (.is-error를 .input / .input-group에 부여) ──
+.input.is-error,
+.input-group.is-error {
+  border-color: var(--red);
+
+  &:focus,
+  &.is-focused {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px var(--redbg);
+  }
+}
+
+// 에러 메시지 — 필드 바로 아래에 배치, .is-visible일 때만 표시
+.form-error {
+  display: none;
+  align-items: center;
+  gap: 5px;
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--red);
+
+  .msr {
+    font-size: 15px;
+  }
+
+  &.is-visible {
+    display: flex;
+  }
+}
+
+// 검증 실패 시 흔들림 (JS가 부여 후 제거)
+.is-shaking {
+  animation: field-shake .3s ease;
+}
+
+@keyframes field-shake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-5px); }
+  75%      { transform: translateX(5px); }
+}
+
 // 커스텀 체크박스 (label.checkbox > .checkbox__box + 텍스트)
 .checkbox {
   display: flex;

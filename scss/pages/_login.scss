@@ -161,12 +161,13 @@
       }
     }
 
-    .input {
+    // 필드 래퍼 (라벨 + 인풋 + 에러 메시지)
+    .login-field {
       margin-bottom: 18px;
-    }
 
-    .input-group {
-      margin-bottom: 20px;
+      &--pw {
+        margin-bottom: 20px;
+      }
     }
 
     .checkbox {
