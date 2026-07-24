@@ -26,6 +26,12 @@ html[lang='zh-Hant'] {
   --font-sans: 'Noto Sans TC', 'Noto Sans KR', -apple-system, system-ui, sans-serif;
 }
 
+// 한국어일 때만 자간 축소 — 다른 언어(en/ja/zh)는 기본 자간 유지
+html[lang='ko'] body,
+.font-ko {
+  letter-spacing: -.025rem;
+}
+
 // 개별 언어 텍스트를 강제 지정할 때 (예: 자막 언어 탭)
 .font-ko { font-family: 'Noto Sans KR', sans-serif; }
 .font-en { font-family: 'Noto Sans', sans-serif; }
