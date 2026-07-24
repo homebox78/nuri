@@ -90,7 +90,7 @@
   // 카드 배경과 GIF에 같은 흰색 오버레이(--art-veil)를 씌워
   // GIF 배경색(#ece9f4)을 밝게 올리면서 사각 경계는 카드 안에서 안 보이게 유지
   .login-intro {
-    --art-veil: rgba(255, 255, 255, .5);
+    --art-veil: rgba(255, 255, 255, .3);
 
     flex: 1.18;
     padding: 32px;
