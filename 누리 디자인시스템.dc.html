@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="icon" type="image/png" href="uploads/icon.png">
+<link rel="apple-touch-icon" href="uploads/icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#f4f2fd;--card:#ffffff;--card2:#f7f6fe;--line:rgba(28,22,58,.09);--text:#1f1b32;--muted:#6c6885;--faint:#9d99b6;--v:#7c5cfc;--v2:#6a45f0;--v3:#5a33dc;--vl:#ece7ff;--vl2:#ded3ff;--vll:#f6f3ff;--shadow-sm:0 1px 2px rgba(28,22,58,.06);--shadow:0 1px 2px rgba(28,22,58,.05),0 10px 30px rgba(28,22,58,.06);--shadow-lg:0 18px 40px rgba(108,79,240,.28);--green:#16a34a;--greenbg:#e6f7ec;--orange:#ea7f2d;--orangebg:#fdf0e3;--blue:#3b74f4;--bluebg:#e7effe;--pink:#e0489a;--pinkbg:#fce6f2;--red:#f5476b;--redbg:#fde7ec}
+body{margin:0;background:var(--bg);font-family:'Noto Sans KR',Pretendard,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:var(--text)}
+a{color:var(--v);text-decoration:none}a:hover{color:var(--v2)}
+font-display:swap}
+@keyframes nuri-spin{to{transform:rotate(360deg)}}
+@keyframes nuri-shimmer{0%{background-position:-360px 0}100%{background-position:360px 0}}
+</style>
+</helmet>
+
+<div style="max-width:1160px;margin:0 auto;padding:48px 40px 80px">
+
+  <!-- HEADER -->
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px">
+    <img src="uploads/LOGO.png" alt="NURI" style="height:44px;width:auto">
+    <div style="padding-left:16px;border-left:1px solid var(--line)">
+      <div style="font-family:'Noto Sans KR',sans-serif;font-size:26px;font-weight:800;letter-spacing:.03em">DESIGN SYSTEM</div>
+    </div>
+  </div>
+  <p style="font-size:15px;color:var(--muted);margin:0 0 40px;max-width:640px">누리 플랫폼의 색·타이포·컴포넌트·인터랙션 규칙입니다. 모든 화면은 이 토큰과 상태 규칙을 따릅니다.</p>
+
+  <!-- COLOR -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">01 · 컬러</h2><span style="font-size:13px;color:var(--faint)">Primary / Neutral / Semantic</span></div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">PRIMARY — 바이올렛</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:22px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:76px;background:#5a33dc"></div><div style="padding:11px 13px"><div style="font-size:12.5px;font-weight:700">Violet 700</div><div style="font-size:11.5px;color:var(--faint)">#5A33DC · --v3</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:76px;background:#6a45f0"></div><div style="padding:11px 13px"><div style="font-size:12.5px;font-weight:700">Violet 600</div><div style="font-size:11.5px;color:var(--faint)">#6A45F0 · --v2</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:76px;background:#7c5cfc"></div><div style="padding:11px 13px"><div style="font-size:12.5px;font-weight:700">Violet 500</div><div style="font-size:11.5px;color:var(--faint)">#7C5CFC · --v</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:76px;background:#ece7ff"></div><div style="padding:11px 13px"><div style="font-size:12.5px;font-weight:700">Violet 100</div><div style="font-size:11.5px;color:var(--faint)">#ECE7FF · --vl</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:76px;background:#f6f3ff;border-bottom:1px solid var(--line)"></div><div style="padding:11px 13px"><div style="font-size:12.5px;font-weight:700">Violet 50</div><div style="font-size:11.5px;color:var(--faint)">#F6F3FF · --vll</div></div></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">NEUTRAL</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:22px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:64px;background:#1f1b32"></div><div style="padding:10px 12px"><div style="font-size:12px;font-weight:700">Text</div><div style="font-size:11px;color:var(--faint)">#1F1B32</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:64px;background:#6c6885"></div><div style="padding:10px 12px"><div style="font-size:12px;font-weight:700">Muted</div><div style="font-size:11px;color:var(--faint)">#6C6885</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:64px;background:#9d99b6"></div><div style="padding:10px 12px"><div style="font-size:12px;font-weight:700">Faint</div><div style="font-size:11px;color:var(--faint)">#9D99B6</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:64px;background:#f7f6fe;border-bottom:1px solid var(--line)"></div><div style="padding:10px 12px"><div style="font-size:12px;font-weight:700">Surface 2</div><div style="font-size:11px;color:var(--faint)">#F7F6FE</div></div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)"><div style="height:64px;background:#f4f2fd;border-bottom:1px solid var(--line)"></div><div style="padding:10px 12px"><div style="font-size:12px;font-weight:700">Background</div><div style="font-size:11px;color:var(--faint)">#F4F2FD</div></div></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">SEMANTIC — 상태·강조</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;box-shadow:var(--shadow-sm)"><span style="width:26px;height:26px;border-radius:8px;background:var(--green)"></span><div><div style="font-size:12.5px;font-weight:700">Success</div><div style="font-size:11px;color:var(--faint)">이동 수업·완료</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;box-shadow:var(--shadow-sm)"><span style="width:26px;height:26px;border-radius:8px;background:var(--orange)"></span><div><div style="font-size:12.5px;font-weight:700">Warning</div><div style="font-size:11px;color:var(--faint)">중요·자료</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;box-shadow:var(--shadow-sm)"><span style="width:26px;height:26px;border-radius:8px;background:var(--blue)"></span><div><div style="font-size:12.5px;font-weight:700">Info</div><div style="font-size:11px;color:var(--faint)">발표·영상</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;box-shadow:var(--shadow-sm)"><span style="width:26px;height:26px;border-radius:8px;background:var(--pink)"></span><div><div style="font-size:12.5px;font-weight:700">Accent</div><div style="font-size:11px;color:var(--faint)">모드·강조</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;box-shadow:var(--shadow-sm)"><span style="width:26px;height:26px;border-radius:8px;background:var(--red)"></span><div><div style="font-size:12.5px;font-weight:700">Danger</div><div style="font-size:11px;color:var(--faint)">알림·삭제</div></div></div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">02 · 타이포그래피</h2><span style="font-size:13px;color:var(--faint)">Pretendard · 언어별 Noto Sans</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm)">
+        <div style="font-size:11.5px;font-weight:700;color:var(--v);letter-spacing:.1em;margin-bottom:14px">DISPLAY</div>
+        <div style="font-family:'Noto Sans KR',sans-serif;font-size:34px;font-weight:800;word-break:keep-all;line-height:1.2">안녕하세요 김민정 선생님 👋</div>
+        <div style="font-size:12.5px;color:var(--faint);margin-top:14px">히어로 인사말 등 감성 헤드라인에만 사용</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm)">
+        <div style="font-size:11.5px;font-weight:700;color:var(--v);letter-spacing:.1em;margin-bottom:14px">UI · PRETENDARD</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;align-items:baseline;gap:12px"><span style="width:96px;font-size:11.5px;color:var(--faint)">Heading / 800</span><span style="font-size:21px;font-weight:800">오늘의 수업</span></div>
+          <div style="display:flex;align-items:baseline;gap:12px"><span style="width:96px;font-size:11.5px;color:var(--faint)">Title / 700</span><span style="font-size:16px;font-weight:700">내 수업 카드</span></div>
+          <div style="display:flex;align-items:baseline;gap:12px"><span style="width:96px;font-size:11.5px;color:var(--faint)">Body / 500</span><span style="font-size:14px;font-weight:500">본문 텍스트 예시입니다.</span></div>
+          <div style="display:flex;align-items:baseline;gap:12px"><span style="width:96px;font-size:11.5px;color:var(--faint)">Caption / 600</span><span style="font-size:11.5px;font-weight:600;color:var(--muted);white-space:nowrap">보조 라벨 · 시간</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:11.5px;font-weight:700;color:var(--faint);margin:22px 0 12px">언어별 폰트 · 선택 언어에 따라 자동 전환</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-size:11px;font-weight:700;color:var(--v);margin-bottom:10px">한국어 · Noto Sans KR</div><div style="font-family:'Noto Sans KR',sans-serif;font-size:22px;font-weight:800">안녕하세요</div><div style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--muted);margin-top:6px">오늘의 수업</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-size:11px;font-weight:700;color:var(--v);margin-bottom:10px">English · Noto Sans</div><div style="font-family:'Noto Sans',sans-serif;font-size:22px;font-weight:800">Hello</div><div style="font-family:'Noto Sans',sans-serif;font-size:13px;color:var(--muted);margin-top:6px">Today's class</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-size:11px;font-weight:700;color:var(--v);margin-bottom:10px">日本語 · Noto Sans JP</div><div style="font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:800">こんにちは</div><div style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--muted);margin-top:6px">今日の授業</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-size:11px;font-weight:700;color:var(--v);margin-bottom:10px">简体中文 · Noto Sans SC</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:22px;font-weight:800">你好</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--muted);margin-top:6px">今天的课程</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm)"><div style="font-size:11px;font-weight:700;color:var(--v);margin-bottom:10px">繁體中文 · Noto Sans TC</div><div style="font-family:'Noto Sans TC',sans-serif;font-size:22px;font-weight:800">你好</div><div style="font-family:'Noto Sans TC',sans-serif;font-size:13px;color:var(--muted);margin-top:6px">今天的課程</div></div>
+    </div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">03 · 버튼 · 상태</h2><span style="font-size:13px;color:var(--faint)">Primary · Soft(3색) · Ghost · Danger · Small · Segmented · Icon · Tile · Quick · 직접 호버</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm)">
+      <div style="display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start">
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">PRIMARY</span>
+          <button style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:none;border-radius:12px;background:var(--v);color:#fff;font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 8px 20px rgba(124,92,252,.35);transition:all .15s ease" style-hover="background:var(--v2);transform:translateY(-1px);box-shadow:0 12px 26px rgba(124,92,252,.45)" style-active="transform:translateY(0);box-shadow:0 4px 12px rgba(124,92,252,.4)"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">play_arrow</span>수업 시작</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">SOFT</span>
+          <button style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:none;border-radius:12px;background:var(--vl);color:var(--v2);font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--vl2);color:var(--v3)" style-active="transform:translateY(0);background:var(--vl2)">교실 입장</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">GHOST</span>
+          <button style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--text);font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--card2);border-color:var(--v)" style-active="background:var(--vll)">전체 시간표</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">DANGER</span>
+          <button style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:none;border-radius:12px;background:var(--red);color:#fff;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 8px 20px rgba(245,71,107,.3);transition:all .15s ease" style-hover="background:#e02a53;transform:translateY(-1px)" style-active="transform:translateY(0)">수업 종료</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">ICON</span>
+          <button style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--muted);cursor:pointer;transition:all .15s ease" style-hover="background:var(--vl);color:var(--v2);border-color:var(--v)" style-active="background:var(--vl2)"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">notifications</span></button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">DISABLED</span>
+          <button disabled style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:none;border-radius:12px;background:var(--card2);color:var(--faint);font-family:inherit;font-weight:700;font-size:14px;cursor:not-allowed;border:1px solid var(--line)">비활성</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">SOFT · 컬러별 (카드 CTA)</span>
+          <div style="display:flex;gap:8px">
+            <button style="padding:11px 17px;border:none;border-radius:11px;background:var(--vl);color:var(--v2);font-family:inherit;font-weight:700;font-size:13.5px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--vl2);color:var(--v3)">교실 입장</button>
+            <button style="padding:11px 17px;border:none;border-radius:11px;background:var(--greenbg);color:var(--green);font-family:inherit;font-weight:700;font-size:13.5px;cursor:pointer;transition:all .15s ease" style-hover="background:#d6f0df">이동 입장</button>
+            <button style="padding:11px 17px;border:none;border-radius:11px;background:var(--orangebg);color:var(--orange);font-family:inherit;font-weight:700;font-size:13.5px;cursor:pointer;transition:all .15s ease" style-hover="background:#fbe3cd">자료 관리</button>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">SMALL · 표 액션</span>
+          <button style="padding:8px 16px;border:none;border-radius:9px;background:var(--v);color:#fff;font-family:inherit;font-weight:700;font-size:12.5px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--v2)">시작</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">SEGMENTED · 테마 토글</span>
+          <div data-single="pill" style="display:inline-flex;align-items:center;gap:2px;padding:4px;border-radius:11px;background:var(--card2);border:1px solid var(--line)"><span style="width:34px;height:34px;border-radius:8px;background:var(--v);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">light_mode</span></span><span style="width:34px;height:34px;border-radius:8px;color:var(--faint);display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">dark_mode</span></span></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">ICON · 뱃지</span>
+          <span style="position:relative;width:44px;height:44px;border-radius:12px;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);cursor:pointer;transition:all .15s ease" style-hover="background:var(--vl);color:var(--v2)"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">notifications</span><span style="position:absolute;top:-4px;right:-4px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--red);color:#fff;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--card)">3</span></span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">TILE / CHIP · 4상태</span>
+          <div style="display:flex;gap:8px">
+            <span style="padding:9px 14px;border-radius:9px;background:var(--card2);border:1px solid var(--line);font-size:12.5px;font-weight:600;cursor:pointer">기본</span>
+            <span style="padding:9px 14px;border-radius:9px;background:var(--v);color:#fff;font-size:12.5px;font-weight:700;cursor:pointer">선택</span>
+            <span style="padding:9px 14px;border-radius:9px;background:var(--vll);color:var(--v2);font-size:12.5px;font-weight:700;cursor:pointer">소프트</span>
+            <span style="padding:9px 14px;border-radius:9px;background:var(--card2);border:1px dashed var(--line);font-size:12.5px;font-weight:600;cursor:pointer">점선</span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">QUICK · 타일</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 20px;border-radius:14px;background:var(--card2);cursor:pointer;transition:all .15s ease" style-hover="background:var(--vll)"><span style="width:36px;height:36px;border-radius:10px;background:var(--vl);color:var(--v2);display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">mic</span></span><span style="font-size:12px;font-weight:600;white-space:nowrap">마이크 테스트</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BADGES / STATUS -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">04 · 배지 · 상태 칩</h2><span style="font-size:13px;color:var(--faint)">Soft 배경 + 짙은 텍스트, radius 999</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;background:var(--greenbg);color:var(--green);font-size:12.5px;font-weight:700"><span style="width:7px;height:7px;border-radius:50%;background:var(--green)"></span>진행 중</span>
+      <span style="padding:5px 12px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:12.5px;font-weight:700">예정</span>
+      <span style="padding:5px 12px;border-radius:999px;background:var(--orangebg);color:var(--orange);font-size:12.5px;font-weight:700">진행 전</span>
+      <span style="padding:5px 12px;border-radius:999px;background:var(--orangebg);color:var(--orange);font-size:12.5px;font-weight:700">중요</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:var(--redbg);color:var(--red);font-size:12.5px;font-weight:700"><span style="width:6px;height:6px;border-radius:50%;background:var(--red)"></span>LIVE</span>
+      <span style="padding:5px 11px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:11.5px;font-weight:700">중국어(간체)</span>
+      <span style="padding:5px 12px;border-radius:999px;background:var(--bluebg);color:var(--blue);font-size:12.5px;font-weight:700">영상 준비</span>
+    </div>
+  </section>
+
+  <!-- CARD / ELEVATION -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">05 · 카드 · 엘리베이션</h2><span style="font-size:13px;color:var(--faint)">radius 18 · 3단계 그림자</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-sm)"><div style="font-size:14px;font-weight:700">Level 1 · SM</div><div style="font-size:12.5px;color:var(--muted);margin-top:4px">기본 정보 카드 · 리스트</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)"><div style="font-size:14px;font-weight:700">Level 2 · MD</div><div style="font-size:12.5px;color:var(--muted);margin-top:4px">주요 액션 카드 · 대시보드</div></div>
+      <div style="background:linear-gradient(120deg,var(--vll),var(--vl));border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-lg)"><div style="font-size:14px;font-weight:700">Level 3 · LG</div><div style="font-size:12.5px;color:var(--muted);margin-top:4px">히어로 · 강조 배너</div></div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">06 · 폼 컨트롤</h2><span style="font-size:13px;color:var(--faint)">포커스 시 바이올렛 보더</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:7px">인풋</div><input placeholder="학생 이름 입력" style="width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:var(--card2);font-family:inherit;font-size:13.5px;color:var(--text);outline:none;transition:all .15s ease" style-focus="border-color:var(--v);background:var(--card);box-shadow:0 0 0 3px var(--vl)"></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:7px">검색</div><div style="display:flex;align-items:center;gap:8px;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:var(--card2);color:var(--faint);font-size:13.5px"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">search</span>수업·학생 검색</div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:7px">셀렉트</div><div style="display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:var(--card2);font-size:13.5px;font-weight:600;cursor:pointer">한국어<span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:var(--faint)">expand_more</span></div></div>
+    </div>
+  </section>
+
+  <!-- MOTION -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">07 · 인터랙션 원칙</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)"><div style="font-size:22px;font-weight:800;color:var(--v)">.15s</div><div style="font-size:13px;font-weight:700;margin-top:6px">트랜지션</div><div style="font-size:12px;color:var(--muted);margin-top:3px">all · ease. 호버·포커스 공통 속도.</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)"><div style="font-size:22px;font-weight:800;color:var(--v)">−1px</div><div style="font-size:13px;font-weight:700;margin-top:6px">호버 상승</div><div style="font-size:12px;color:var(--muted);margin-top:3px">주요 버튼·카드는 살짝 떠오름.</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)"><div style="font-size:22px;font-weight:800;color:var(--v)">1단계</div><div style="font-size:13px;font-weight:700;margin-top:6px">색 강도</div><div style="font-size:12px;color:var(--muted);margin-top:3px">호버 시 배경을 한 톤만 진하게.</div></div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)"><div style="font-size:22px;font-weight:800;color:var(--v)">3px</div><div style="font-size:13px;font-weight:700;margin-top:6px">포커스 링</div><div style="font-size:12px;color:var(--muted);margin-top:3px">바이올렛 100(--vl) 링으로 접근성.</div></div>
+    </div>
+  </section>
+
+  <!-- 08 FORM CONTROLS -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">08 · 폼 컨트롤</h2><span style="font-size:13px;color:var(--faint)">Checkbox · Radio · Switch · Toggle · Slider · Textarea · OTP</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">CHECKBOX</div><div style="display:flex;flex-direction:column;gap:11px">
+        <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500"><span data-chk="1" style="width:20px;height:20px;border-radius:6px;background:var(--v);display:flex;align-items:center;justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>전체 학생 선택</label>
+        <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500"><span data-chk="1" style="width:20px;height:20px;border-radius:6px;background:var(--v);display:flex;align-items:center;justify-content:center"><span style="width:10px;height:2.5px;border-radius:2px;background:#fff"></span></span>일부 선택됨</label>
+        <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500;color:var(--muted)"><span data-chk="0" style="width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line);background:var(--card2)"></span>미선택</label>
+      </div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">RADIO</div><div data-single="radio" style="display:flex;flex-direction:column;gap:11px">
+        <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500"><span style="width:20px;height:20px;border-radius:50%;border:2px solid var(--v);display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:50%;background:var(--v)"></span></span>한국어</label>
+        <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500;color:var(--muted)"><span style="width:20px;height:20px;border-radius:50%;border:2px solid var(--line)"></span>English</label>
+        <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500;color:var(--muted)"><span style="width:20px;height:20px;border-radius:50%;border:2px solid var(--line)"></span>中文</label>
+      </div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">SWITCH</div><div style="display:flex;flex-direction:column;gap:12px">
+        <label style="display:flex;align-items:center;gap:11px;font-size:13.5px;font-weight:500"><span data-sw="1" style="width:40px;height:23px;border-radius:999px;background:var(--v);position:relative;transition:all .15s ease"><span style="position:absolute;top:2.5px;right:2.5px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25)"></span></span>자막 자동 번역</label>
+        <label style="display:flex;align-items:center;gap:11px;font-size:13.5px;font-weight:500;color:var(--muted)"><span data-sw="0" style="width:40px;height:23px;border-radius:999px;background:#d9d5ea;position:relative"><span style="position:absolute;top:2.5px;left:2.5px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)"></span></span>녹화 자동 시작</label>
+      </div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">TOGGLE GROUP</div><div data-single="pill" style="display:inline-flex;padding:4px;border-radius:11px;background:var(--card2);border:1px solid var(--line);gap:2px"><span style="padding:7px 14px;border-radius:8px;background:var(--card);color:var(--v2);font-size:12.5px;font-weight:700;box-shadow:var(--shadow-sm)">월</span><span style="padding:7px 14px;border-radius:8px;color:var(--muted);font-size:12.5px;font-weight:600">주</span><span style="padding:7px 14px;border-radius:8px;color:var(--muted);font-size:12.5px;font-weight:600">월간</span></div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">SLIDER</div><div style="padding:8px 0"><div style="position:relative;height:6px;border-radius:999px;background:var(--vl)"><div style="position:absolute;left:0;top:0;bottom:0;width:62%;border-radius:999px;background:var(--v)"></div><div style="position:absolute;left:62%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--v);box-shadow:0 2px 6px rgba(124,92,252,.4)"></div></div></div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">INPUT OTP</div><div style="display:flex;gap:8px">
+        <span style="width:38px;height:44px;border-radius:10px;border:1.5px solid var(--v);background:var(--card);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;box-shadow:0 0 0 3px var(--vl)">7</span>
+        <span style="width:38px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700">2</span>
+        <span style="width:38px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--faint)">•</span>
+        <span style="width:38px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--faint)">•</span>
+      </div></div>
+      <div style="grid-column:span 2"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">TEXTAREA · FIELD (오류 상태)</div><textarea placeholder="공지 내용을 입력하세요" style="width:100%;height:64px;padding:11px 13px;border:1px solid var(--red);border-radius:11px;background:var(--card);font-family:inherit;font-size:13.5px;color:var(--text);resize:none;outline:none;box-shadow:0 0 0 3px var(--redbg)"></textarea><div style="font-size:11.5px;color:var(--red);font-weight:600;margin-top:6px">필수 항목입니다.</div></div>
+    </div>
+  </section>
+
+  <!-- 09 DATA DISPLAY -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">09 · 데이터 표시</h2><span style="font-size:13px;color:var(--faint)">Avatar · Progress · Table · Pagination · Tooltip · Kbd</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">AVATAR</div><div style="display:flex;align-items:center;gap:14px">
+        <span style="position:relative;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#7c5cfc);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">김<span style="position:absolute;right:0;bottom:0;width:12px;height:12px;border-radius:50%;background:var(--green);border:2.5px solid var(--card)"></span></span>
+        <div style="display:flex"><span style="width:38px;height:38px;border-radius:50%;background:#a78bfa;border:2.5px solid var(--card);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px">미</span><span style="width:38px;height:38px;border-radius:50%;background:#34c3aa;border:2.5px solid var(--card);margin-left:-12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px">왕</span><span style="width:38px;height:38px;border-radius:50%;background:var(--card2);border:2.5px solid var(--card);margin-left:-12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;font-size:12px">+6</span></div>
+      </div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">PROGRESS</div><div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div style="height:8px;border-radius:999px;background:var(--vl)"><div style="width:68%;height:100%;border-radius:999px;background:var(--v)"></div></div><div style="font-size:11.5px;color:var(--muted);margin-top:6px">번역 정확도 68%</div></div><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="19" fill="none" stroke="var(--vl)" stroke-width="6"/><circle cx="23" cy="23" r="19" fill="none" stroke="var(--v)" stroke-width="6" stroke-linecap="round" stroke-dasharray="119.4" stroke-dashoffset="38" transform="rotate(-90 23 23)"/></svg></div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">KBD · TOOLTIP</div><div style="display:flex;align-items:center;gap:12px"><span style="display:inline-flex;gap:4px"><span style="padding:3px 8px;border-radius:6px;background:var(--card2);border:1px solid var(--line);box-shadow:0 1.5px 0 var(--line);font-size:12px;font-weight:700">⌘</span><span style="padding:3px 8px;border-radius:6px;background:var(--card2);border:1px solid var(--line);box-shadow:0 1.5px 0 var(--line);font-size:12px;font-weight:700">K</span></span><span style="position:relative;padding:7px 12px;border-radius:8px;background:#1f1b32;color:#fff;font-size:12px;font-weight:600">수업 시작<span style="position:absolute;left:22px;bottom:-5px;width:10px;height:10px;background:#1f1b32;transform:rotate(45deg)"></span></span></div></div>
+      <div style="grid-column:span 2"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">TABLE</div><div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:60px 1fr 90px;gap:8px;padding:10px 14px;background:var(--card2);font-size:11.5px;font-weight:700;color:var(--muted)"><span>교시</span><span>수업 주제</span><span>상태</span></div>
+        <div style="display:grid;grid-template-columns:60px 1fr 90px;gap:8px;padding:12px 14px;border-top:1px solid var(--line);font-size:13px;align-items:center"><span style="font-weight:700">1교시</span><span>자기소개 표현</span><span><span style="padding:3px 9px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:11px;font-weight:700">예정</span></span></div>
+        <div style="display:grid;grid-template-columns:60px 1fr 90px;gap:8px;padding:12px 14px;border-top:1px solid var(--line);font-size:13px;align-items:center"><span style="font-weight:700">3교시</span><span>가족 소개하기</span><span><span style="padding:3px 9px;border-radius:999px;background:var(--greenbg);color:var(--green);font-size:11px;font-weight:700">진행 중</span></span></div>
+      </div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">PAGINATION</div><div data-single="pill" style="display:flex;align-items:center;gap:6px"><span data-skip style="width:32px;height:32px;border-radius:9px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_left</span></span><span style="width:32px;height:32px;border-radius:9px;background:var(--v);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">1</span><span style="width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer">2</span><span style="width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer">3</span><span data-skip style="width:32px;height:32px;border-radius:9px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span></span></div></div>
+    </div>
+  </section>
+
+  <!-- 10 FEEDBACK -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">10 · 피드백</h2><span style="font-size:13px;color:var(--faint)">Alert · Toast · Empty · Skeleton · Spinner</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="display:flex;gap:11px;padding:14px 16px;border-radius:12px;background:var(--bluebg);border:1px solid rgba(59,116,244,.2)"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:var(--blue);flex:none;margin-top:1px">info</span><div><div style="font-size:13.5px;font-weight:700">안내</div><div style="font-size:12.5px;color:var(--muted);margin-top:2px">학생 등록 언어에 따라 자막이 자동 설정됩니다.</div></div></div>
+        <div style="display:flex;gap:11px;padding:14px 16px;border-radius:12px;background:var(--greenbg);border:1px solid rgba(22,163,74,.2)"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:var(--green);flex:none;margin-top:1px">check_circle</span><div><div style="font-size:13.5px;font-weight:700">완료</div><div style="font-size:12.5px;color:var(--muted);margin-top:2px">수업 영상이 성공적으로 저장되었습니다.</div></div></div>
+        <div style="display:flex;gap:11px;padding:14px 16px;border-radius:12px;background:var(--redbg);border:1px solid rgba(245,71,107,.2)"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:var(--red);flex:none;margin-top:1px">warning</span><div><div style="font-size:13.5px;font-weight:700">주의</div><div style="font-size:12.5px;color:var(--muted);margin-top:2px">카메라를 시작하지 못해 카메라 없이 수업을 시작했습니다.</div></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)"><span style="width:34px;height:34px;border-radius:10px;background:var(--greenbg);color:var(--green);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">check</span></span><div style="flex:1"><div style="font-size:13px;font-weight:700">자료 업로드 완료</div><div style="font-size:11.5px;color:var(--muted)">가족소개_표현.pdf</div></div><span style="color:var(--faint);cursor:pointer;font-size:16px">×</span></div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line)"><div style="width:26px;height:26px;border-radius:50%;border:3px solid var(--vl);border-top-color:var(--v);animation:nuri-spin .7s linear infinite;flex:none"></div><div style="flex:1;display:flex;flex-direction:column;gap:7px"><div style="height:11px;width:70%;border-radius:6px;background:linear-gradient(90deg,var(--card2) 25%,#efedfb 37%,var(--card2) 63%);background-size:720px 100%;animation:nuri-shimmer 1.3s linear infinite"></div><div style="height:11px;width:45%;border-radius:6px;background:linear-gradient(90deg,var(--card2) 25%,#efedfb 37%,var(--card2) 63%);background-size:720px 100%;animation:nuri-shimmer 1.3s linear infinite"></div></div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:22px;border-radius:12px;border:1.5px dashed var(--line);background:var(--card2)"><div style="width:42px;height:42px;border-radius:12px;background:var(--vl);color:var(--v2);display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">groups</span></div><div style="font-size:13.5px;font-weight:700">아직 입장한 학생이 없습니다</div><div style="font-size:12px;color:var(--muted)">학생이 입장하면 여기에 표시됩니다.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 NAVIGATION -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">11 · 내비게이션</h2><span style="font-size:13px;color:var(--faint)">Tabs · Breadcrumb · Accordion · Stepper</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:1fr 1fr;gap:26px">
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">TABS</div>
+        <div data-single="tab" style="display:flex;gap:22px;border-bottom:1px solid var(--line)"><span style="padding-bottom:11px;font-size:13.5px;font-weight:700;color:var(--v);border-bottom:2px solid var(--v)">개요</span><span style="padding-bottom:11px;font-size:13.5px;font-weight:600;color:var(--muted);cursor:pointer">학생</span><span style="padding-bottom:11px;font-size:13.5px;font-weight:600;color:var(--muted);cursor:pointer">자료</span><span style="padding-bottom:11px;font-size:13.5px;font-weight:600;color:var(--muted);cursor:pointer">활동</span></div>
+        <div style="margin-top:16px"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">BREADCRUMB</div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)"><span>홈</span><span style="color:var(--faint)">/</span><span>학생 관리</span><span style="color:var(--faint)">/</span><span style="color:var(--text);font-weight:700">김하늘</span></div></div>
+        <div style="margin-top:20px"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">STEPPER</div><div style="display:flex;align-items:center"><span style="width:26px;height:26px;border-radius:50%;background:var(--v);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">✓</span><span style="flex:1;height:2px;background:var(--v);margin:0 6px"></span><span style="width:26px;height:26px;border-radius:50%;background:var(--v);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">2</span><span style="flex:1;height:2px;background:var(--line);margin:0 6px"></span><span style="width:26px;height:26px;border-radius:50%;background:var(--card2);border:1px solid var(--line);color:var(--faint);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">3</span></div></div>
+      </div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">ACCORDION</div>
+        <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+          <div data-acc style="padding:14px 16px;background:var(--card2);display:flex;align-items:center;justify-content:space-between"><span style="font-size:13.5px;font-weight:700">수업은 어떻게 시작하나요?</span><span data-chev style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:var(--v);transition:transform .15s ease">expand_less</span></div>
+          <div style="padding:4px 16px 15px;font-size:12.5px;color:var(--muted);line-height:1.55;background:var(--card2)">홈에서 [수업 시작]을 누르면 카메라와 녹화가 시작되고, 학생에게 실시간 자막이 전송됩니다.</div>
+          <div data-acc style="padding:14px 16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between"><span style="font-size:13.5px;font-weight:700">자막 언어는 어떻게 바꾸나요?</span><span data-chev style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:var(--faint);transition:transform .15s ease">expand_more</span></div>
+          <div style="display:none;padding:4px 16px 15px;font-size:12.5px;color:var(--muted);line-height:1.55;background:var(--card2)">상단 언어 메뉴 또는 수업 하단 [언어] 버튼에서 발화 언어와 자막 번역 언어를 선택합니다.</div>
+          <div data-acc style="padding:14px 16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between"><span style="font-size:13.5px;font-weight:700">용어집은 어디서 관리하나요?</span><span data-chev style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:var(--faint);transition:transform .15s ease">expand_more</span></div>
+          <div style="display:none;padding:4px 16px 15px;font-size:12.5px;color:var(--muted);line-height:1.55;background:var(--card2)">상단 [용어집] 메뉴에서 교과 전문용어의 번역을 등록·수정하면 수업 자막에 그대로 반영됩니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 OVERLAY -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">12 · 오버레이</h2><span style="font-size:13px;color:var(--faint)">Dialog · Dropdown · Popover · Command</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start">
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">DIALOG</div><div style="border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow);background:var(--card)"><div style="font-size:15px;font-weight:800">수업을 종료할까요?</div><div style="font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5">녹화가 저장되고 학생 화면이 종료됩니다.</div><div style="display:flex;gap:8px;margin-top:16px;justify-content:flex-end"><button style="padding:9px 15px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer">취소</button><button style="padding:9px 15px;border-radius:10px;border:none;background:var(--red);color:#fff;font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer">종료</button></div></div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">DROPDOWN MENU</div><div style="border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:var(--shadow);background:var(--card)"><div style="padding:9px 12px;border-radius:8px;font-size:13px;font-weight:600;background:var(--vll);color:var(--v2);cursor:pointer">내 프로필</div><div style="padding:9px 12px;border-radius:8px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer">환경 설정</div><div style="padding:9px 12px;border-radius:8px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer">사용 가이드</div><div style="height:1px;background:var(--line);margin:5px 8px"></div><div style="padding:9px 12px;border-radius:8px;font-size:13px;font-weight:500;color:var(--red);cursor:pointer">로그아웃</div></div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">COMMAND</div><div style="border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)"><div style="display:flex;align-items:center;gap:8px;padding:11px 13px;border-bottom:1px solid var(--line);color:var(--faint);font-size:13px"><span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">search</span>명령 검색…</div><div style="padding:6px"><div style="padding:8px 10px;border-radius:8px;font-size:12.5px;font-weight:600;background:var(--vll);color:var(--v2);display:flex;align-items:center;gap:9px">▶ 수업 시작</div><div style="padding:8px 10px;border-radius:8px;font-size:12.5px;color:var(--text);display:flex;align-items:center;gap:9px">＋ 학생 추가</div><div style="padding:8px 10px;border-radius:8px;font-size:12.5px;color:var(--text);display:flex;align-items:center;gap:9px">🌐 자막 언어</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- 13 COMMUNICATION -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">13 · 커뮤니케이션</h2><span style="font-size:13px;color:var(--faint)">Message · Calendar</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:1fr 1fr;gap:26px">
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">MESSAGE · 자막 버블</div><div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:9px;align-items:flex-end"><span style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#7c5cfc);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">김</span><div style="max-width:76%"><div style="padding:10px 14px;border-radius:14px 14px 14px 4px;background:var(--card2);font-size:13px;line-height:1.5">오늘은 광합성의 원리를 배워봅시다.</div><div style="font-size:10.5px;color:var(--faint);margin-top:3px">선생님 · 09:02</div></div></div>
+        <div style="display:flex;gap:9px;align-items:flex-end;flex-direction:row-reverse"><div style="max-width:76%"><div style="padding:10px 14px;border-radius:14px 14px 4px 14px;background:var(--v);color:#fff;font-size:13px;line-height:1.5">今天我们来学习光合作用。</div><div style="font-size:10.5px;color:var(--faint);margin-top:3px;text-align:right">중국어 자막 · 09:02</div></div></div>
+      </div></div>
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">CALENDAR</div><div style="border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--card)"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px"><span style="font-size:13.5px;font-weight:700">2025년 7월</span><div style="display:flex;gap:6px"><span style="color:var(--faint);cursor:pointer">‹</span><span style="color:var(--faint);cursor:pointer">›</span></div></div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;font-size:11px;color:var(--faint);margin-bottom:4px"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;font-size:12px">
+        <span style="padding:6px 0;color:var(--faint)">20</span><span style="padding:6px 0">21</span><span style="padding:6px 0">22</span><span style="padding:6px 0;background:var(--v);color:#fff;border-radius:8px;font-weight:700">23</span><span style="padding:6px 0">24</span><span style="padding:6px 0">25</span><span style="padding:6px 0;color:#e0483f">26</span>
+        <span style="padding:6px 0">27</span><span style="padding:6px 0">28</span><span style="padding:6px 0">29</span><span style="padding:6px 0">30</span><span style="padding:6px 0">31</span><span style="padding:6px 0;color:var(--faint)">1</span><span style="padding:6px 0;color:var(--faint)">2</span>
+      </div></div></div>
+    </div>
+  </section>
+
+  <!-- 14 APP · CONTROL & MEDIA -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">14 · 앱 · 컨트롤 & 미디어</h2><span style="font-size:13px;color:var(--faint)">Control Dock · Media Stage · 상태</span></div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow-sm)">
+        <div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:14px">CONTROL DOCK · 수업 하단 툴바</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+          <div style="display:flex;gap:20px">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer"><span style="width:48px;height:48px;border-radius:50%;background:var(--redbg);color:var(--red);display:flex;align-items:center;justify-content:center;transition:all .15s ease"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">mic_off</span></span><span style="font-size:11.5px;font-weight:600;color:var(--red);white-space:nowrap">음소거 해제</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer"><span style="width:48px;height:48px;border-radius:50%;background:var(--card2);color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .15s ease" style-hover="background:var(--vl);color:var(--v2)"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">videocam</span></span><span style="font-size:11.5px;font-weight:600;color:var(--muted);white-space:nowrap">비디오</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer"><span style="width:48px;height:48px;border-radius:50%;background:var(--card2);color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .15s ease" style-hover="background:var(--vl);color:var(--v2)"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">screen_share</span></span><span style="font-size:11.5px;font-weight:600;color:var(--muted);white-space:nowrap">자료 공유</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer"><span style="width:48px;height:48px;border-radius:50%;background:var(--v);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(124,92,252,.4);transition:all .15s ease"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">edit</span></span><span style="font-size:11.5px;font-weight:700;color:var(--v2);white-space:nowrap">판서</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer"><span style="width:48px;height:48px;border-radius:50%;background:var(--card2);color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .15s ease" style-hover="background:var(--vl);color:var(--v2)"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">group</span></span><span style="font-size:11.5px;font-weight:600;color:var(--muted);white-space:nowrap">참여자</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer"><span style="width:48px;height:48px;border-radius:50%;background:var(--card2);color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .15s ease" style-hover="background:var(--vl);color:var(--v2)"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">language</span></span><span style="font-size:11.5px;font-weight:600;color:var(--muted);white-space:nowrap">언어</span></div>
+          </div>
+          <button style="display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border:none;border-radius:13px;background:var(--v);color:#fff;font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;box-shadow:0 10px 24px rgba(124,92,252,.4);transition:all .15s ease" style-hover="background:var(--v2);transform:translateY(-1px)"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">play_arrow</span>수업 시작</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:16px">
+        <div style="background:#0d0b16;border:1px solid var(--line);border-radius:16px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(255,255,255,.55)"><span style="font-family:'Material Symbols Rounded';font-size:34px;line-height:1">videocam</span><div style="font-size:13.5px;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap">수업 시작을 누르면 카메라와 녹화가 시작됩니다</div><div style="font-size:11.5px;white-space:nowrap">MEDIA STAGE · 빈 상태</div></div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:10px"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--redbg);color:var(--red);font-size:11.5px;font-weight:700"><span style="width:7px;height:7px;border-radius:50%;background:var(--red)"></span>REC</span><span style="font-size:12.5px;color:var(--muted)">연결 끊김</span></div>
+          <button style="display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px;border-radius:12px;border:1.5px solid var(--red);background:var(--card);color:var(--red);font-family:inherit;font-weight:800;font-size:13.5px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--redbg)"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">logout</span>나가기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 APP · OVERLAY & LANGUAGE -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">15 · 앱 · 언어 & 오버레이</h2><span style="font-size:13px;color:var(--faint)">Settings Modal · 언어 칩 · Dropdown · Segmented</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px"><div style="display:flex;align-items:center;gap:9px;font-size:15px;font-weight:800;white-space:nowrap"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:var(--v)">language</span>언어 설정</div><span style="color:var(--faint);cursor:pointer;font-size:18px">×</span></div>
+        <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">내 발화 언어 (음성 인식)</div>
+        <div data-single="pill" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          <span style="padding:8px 15px;border-radius:999px;background:var(--v);color:#fff;font-size:13px;font-weight:700">한국어</span>
+          <span style="padding:8px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:600;cursor:pointer">English</span>
+          <span style="padding:8px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:600;cursor:pointer">中文</span>
+          <span style="padding:8px 15px;border-radius:999px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:600;cursor:pointer">자동 감지</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">자막 번역 언어</div>
+        <div data-multi="soft" style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="padding:8px 15px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:13px;font-weight:700">영어 ✓</span>
+          <span style="padding:8px 15px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:13px;font-weight:700">일본어 ✓</span>
+          <span style="padding:8px 15px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:13px;font-weight:700">베트남어 ✓</span>
+          <span style="padding:8px 15px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:13px;font-weight:700">중국어(간체) ✓</span>
+        </div>
+        <div style="font-size:11.5px;color:var(--faint);margin-top:14px">학생 등록 언어에 따라 자동 설정됩니다</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">SEGMENTED · 탭 토글</div>
+          <div data-single="pill" style="display:flex;gap:8px;margin-bottom:12px"><span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:var(--v);color:#fff;font-size:13px;font-weight:700"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">closed_caption</span>자막</span><span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer">강의 요약</span></div>
+          <div data-single="dark" style="display:inline-flex;padding:3px;border-radius:999px;background:var(--card2);border:1px solid var(--line);gap:2px"><span style="padding:6px 14px;border-radius:999px;color:var(--muted);font-size:12.5px;font-weight:600;cursor:pointer">원문</span><span style="padding:6px 14px;border-radius:999px;background:#1f1b32;color:#fff;font-size:12.5px;font-weight:700">영어</span></div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">LANGUAGE DROPDOWN</div>
+          <div data-single="list" style="border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:var(--shadow);background:var(--card);max-width:220px"><div style="padding:9px 12px;border-radius:8px;font-size:13px;font-weight:700;background:var(--vll);color:var(--v2)">한국어</div><div style="padding:9px 12px;border-radius:8px;font-size:13px;color:var(--text);cursor:pointer">English</div><div style="padding:9px 12px;border-radius:8px;font-size:13px;color:var(--text);cursor:pointer">日本語</div><div style="padding:9px 12px;border-radius:8px;font-size:13px;color:var(--text);cursor:pointer">简体中文</div><div style="padding:9px 12px;border-radius:8px;font-size:13px;color:var(--text);cursor:pointer">繁體中文</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16 APP · LIST & ROW -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">16 · 앱 · 리스트 & 로우</h2><span style="font-size:13px;color:var(--faint)">자막 · 녹화 · 학생 · 서브페이지 헤더</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">TRANSCRIPT · 자막 행</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;gap:12px;padding:10px 12px;border-radius:10px;background:var(--vll)"><span style="font-size:12px;font-weight:700;color:var(--v2);flex:none;width:38px">00:03</span><div><div style="font-size:11.5px;font-weight:700;color:var(--v2)">선생님</div><div style="font-size:13.5px;margin-top:2px">안녕하세요</div></div></div>
+          <div style="display:flex;gap:12px;padding:10px 12px;border-radius:10px;cursor:pointer" style-hover="background:var(--card2)"><span style="font-size:12px;font-weight:700;color:var(--faint);flex:none;width:38px">00:11</span><div><div style="font-size:11.5px;font-weight:700;color:var(--muted)">선생님</div><div style="font-size:13.5px;margin-top:2px;color:var(--muted)">도사로 시작했습니다</div></div></div>
+          <div style="display:flex;gap:12px;padding:10px 12px;border-radius:10px;cursor:pointer" style-hover="background:var(--card2)"><span style="font-size:12px;font-weight:700;color:var(--faint);flex:none;width:38px">00:25</span><div><div style="font-size:11.5px;font-weight:700;color:var(--muted)">선생님</div><div style="font-size:13.5px;margin-top:2px;color:var(--muted)">조사도 시작했습니다.</div></div></div>
+        </div>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">RECORDING · 녹화 행</div>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:13px;padding:12px;border-radius:11px;cursor:pointer" style-hover="background:var(--card2)"><span style="width:34px;height:34px;border-radius:9px;background:var(--vl);color:var(--v2);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">play_arrow</span></span><div style="flex:1;min-width:0"><div style="font-size:13.5px;font-weight:700">1학년 1반 수업</div><div style="font-size:11.5px;color:var(--faint)">2026-07-23 10:39 · 김민정 · 3.4MB</div></div><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:var(--faint)">chevron_right</span></div>
+          <div style="display:flex;align-items:center;gap:13px;padding:12px;border-radius:11px;border-top:1px solid var(--line);cursor:pointer" style-hover="background:var(--card2)"><span style="width:34px;height:34px;border-radius:9px;background:var(--vl);color:var(--v2);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">play_arrow</span></span><div style="flex:1;min-width:0"><div style="font-size:13.5px;font-weight:700">1학년 1반 수업</div><div style="font-size:11.5px;color:var(--faint)">2026-07-23 08:27 · 김민정 · 6.8MB</div></div><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:var(--faint)">chevron_right</span></div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 2;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">STUDENT ROW · 학생 관리 행</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;align-items:center;gap:14px;padding:12px;border-radius:12px" style-hover="background:var(--card2)"><span style="width:38px;height:38px;border-radius:11px;background:var(--vl);color:var(--v2);display:flex;align-items:center;justify-content:center;font-weight:800;flex:none">김</span><div style="flex:1;min-width:0;display:flex;align-items:baseline;gap:8px"><span style="font-size:14px;font-weight:700">김하늘</span><span style="font-size:12px;color:var(--faint)">s103</span></div><div style="display:flex;align-items:center;justify-content:space-between;gap:6px;width:130px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card2);font-size:12.5px;font-weight:600">한국어<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:var(--faint)">expand_more</span></div><button style="padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-family:inherit;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s ease" style-hover="border-color:var(--v);color:var(--v2)">이름</button><button style="padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-family:inherit;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s ease" style-hover="border-color:var(--v);color:var(--v2)">비번</button><button style="padding:8px 12px;border:1px solid rgba(245,71,107,.35);border-radius:9px;background:var(--card);font-family:inherit;font-size:12px;font-weight:700;color:var(--red);cursor:pointer;transition:all .15s ease" style-hover="background:var(--redbg)">비활성</button></div>
+          <div style="display:flex;align-items:center;gap:14px;padding:12px;border-radius:12px;opacity:.55"><span style="width:38px;height:38px;border-radius:11px;background:var(--card2);color:var(--faint);display:flex;align-items:center;justify-content:center;font-weight:800;flex:none">테</span><div style="flex:1;min-width:0;display:flex;align-items:baseline;gap:8px"><span style="font-size:14px;font-weight:700;color:var(--faint)">테스트학생</span><span style="font-size:12px;color:var(--faint)">s105</span></div><div style="display:flex;align-items:center;justify-content:space-between;gap:6px;width:130px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card2);font-size:12.5px;font-weight:600;color:var(--faint)">태국어<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:var(--faint)">expand_more</span></div><span style="padding:8px 12px;font-size:12px;color:var(--faint)">이름</span><span style="padding:8px 12px;font-size:12px;color:var(--faint)">비번</span><button style="padding:8px 14px;border:none;border-radius:9px;background:var(--v);color:#fff;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer">활성화</button></div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 2;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0;box-shadow:var(--shadow-sm);overflow:hidden"><div style="font-size:11.5px;font-weight:700;color:var(--faint);padding:18px 18px 0">SUB-PAGE HEADER · 서브페이지 상단바 & 추가 폼</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;margin:12px 18px 0;border:1px solid var(--line);border-radius:12px">
+          <div style="display:flex;align-items:center;gap:12px"><span style="display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;cursor:pointer"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">arrow_back_ios_new</span>돌아가기</span><span style="color:var(--line)">|</span><span style="font-size:13px;color:var(--muted)">학생 관리</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600">🌐 한국어</span><span style="font-size:13px;color:var(--v);font-weight:600;cursor:pointer">로그아웃</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:0;margin:16px 18px 20px">
+          <div style="display:flex;align-items:center;gap:7px;padding:12px 14px;border-radius:11px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:700"><span style="color:var(--faint);font-weight:600">발급 아이디</span>10101</div>
+          <input placeholder="비밀번호" style="flex:1;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--card2);font-family:inherit;font-size:13.5px;outline:none;transition:all .15s ease" style-focus="border-color:var(--v);background:var(--card);box-shadow:0 0 0 3px var(--vl)">
+          <input placeholder="이름" style="flex:1;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--card2);font-family:inherit;font-size:13.5px;outline:none;transition:all .15s ease" style-focus="border-color:var(--v);background:var(--card);box-shadow:0 0 0 3px var(--vl)">
+          <div style="flex:1;min-width:0;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--card2);font-size:13.5px;color:var(--faint);cursor:pointer">모국어(필수)<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:var(--faint)">expand_more</span></div>
+          <button style="padding:12px 22px;border:none;border-radius:11px;background:var(--v);color:#fff;font-family:inherit;font-weight:800;font-size:13.5px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--v2);transform:translateY(-1px)">추가</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 17 FILE UPLOAD -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">17 · 파일 업로드</h2><span style="font-size:13px;color:var(--faint)">Dropzone · 업로드 목록 · 상태</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">DROPZONE</div>
+        <div style="border:1.5px dashed var(--v);border-radius:16px;background:var(--vll);padding:34px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--vl)">
+          <span style="width:52px;height:52px;border-radius:15px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--v2);box-shadow:var(--shadow-sm)"><span style="font-family:'Material Symbols Rounded';font-size:28px;line-height:1">upload_file</span></span>
+          <div style="font-size:14px;font-weight:700">파일을 끌어다 놓거나 <span style="color:var(--v)">클릭해 업로드</span></div>
+          <div style="font-size:12px;color:var(--muted)">PPT · PDF · 한글 · 동영상 · 최대 200MB</div>
+        </div>
+      </div>
+
+      <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">UPLOAD LIST · 진행 · 완료 · 오류</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:var(--card)"><span style="width:38px;height:38px;border-radius:10px;background:var(--orangebg);color:var(--orange);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">picture_as_pdf</span></span><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">가족소개_표현.pdf</span><span style="font-size:11.5px;color:var(--v);font-weight:700;flex:none">64%</span></div><div style="height:6px;border-radius:999px;background:var(--vl);margin-top:7px"><div style="width:64%;height:100%;border-radius:999px;background:var(--v)"></div></div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:var(--card)"><span style="width:38px;height:38px;border-radius:10px;background:var(--bluebg);color:var(--blue);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">slideshow</span></span><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700">광합성_수업.pptx</div><div style="font-size:11.5px;color:var(--green);font-weight:600;margin-top:2px">업로드 완료 · 12.4MB</div></div><span style="color:var(--green);flex:none"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">check_circle</span></span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid rgba(245,71,107,.3);border-radius:12px;background:var(--redbg)"><span style="width:38px;height:38px;border-radius:10px;background:var(--card);color:var(--red);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">error</span></span><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700">대용량영상.mp4</div><div style="font-size:11.5px;color:var(--red);font-weight:600;margin-top:2px">용량 초과 · 다시 시도</div></div><span style="color:var(--faint);cursor:pointer;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">close</span></span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 18 MORE COMPONENTS -->
+  <section style="margin-bottom:40px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">18 · 추가 컴포넌트</h2><span style="font-size:13px;color:var(--faint)">Banner · Tag · Stepper · KPI · Rating · Divider · Notification</span></div>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <!-- Banner -->
+      <div style="display:flex;align-items:center;gap:13px;padding:14px 18px;border-radius:14px;background:linear-gradient(100deg,var(--vl),var(--vll));border:1px solid var(--line)"><span style="width:34px;height:34px;border-radius:10px;background:var(--card);color:var(--v2);display:flex;align-items:center;justify-content:center;flex:none;box-shadow:var(--shadow-sm)"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">campaign</span></span><div style="flex:1;min-width:0"><span style="font-size:13.5px;font-weight:700">새 학기 시간표가 업데이트되었습니다.</span> <span style="font-size:12.5px;color:var(--muted)">지금 확인해 보세요.</span></div><button style="padding:8px 15px;border:none;border-radius:9px;background:var(--v);color:#fff;font-family:inherit;font-weight:700;font-size:12.5px;cursor:pointer;transition:all .15s ease" style-hover="background:var(--v2)">확인</button><span style="color:var(--faint);cursor:pointer;display:flex"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">close</span></span></div>
+
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+
+        <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">TAG · 삭제 가능</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="display:inline-flex;align-items:center;gap:5px;padding:6px 8px 6px 12px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:12.5px;font-weight:600">영어<span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1;cursor:pointer">close</span></span>
+            <span style="display:inline-flex;align-items:center;gap:5px;padding:6px 8px 6px 12px;border-radius:999px;background:var(--greenbg);color:var(--green);font-size:12.5px;font-weight:600">일본어<span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1;cursor:pointer">close</span></span>
+            <span style="display:inline-flex;align-items:center;gap:5px;padding:6px 8px 6px 12px;border-radius:999px;background:var(--bluebg);color:var(--blue);font-size:12.5px;font-weight:600">베트남어<span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1;cursor:pointer">close</span></span>
+          </div>
+        </div>
+
+        <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">TAG INPUT</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 11px;border:1px solid var(--line);border-radius:11px;background:var(--card2)"><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 6px 4px 10px;border-radius:999px;background:var(--vl);color:var(--v2);font-size:12px;font-weight:600">광합성<span style="font-family:'Material Symbols Rounded';font-size:14px;line-height:1;cursor:pointer">close</span></span><span style="font-size:13px;color:var(--faint)">용어 추가…</span></div>
+        </div>
+
+        <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">NUMBER STEPPER</div>
+          <div style="display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:11px;overflow:hidden"><span style="width:38px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--v2);cursor:pointer;transition:all .15s ease" style-hover="background:var(--vll)"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">remove</span></span><span style="width:48px;text-align:center;font-size:15px;font-weight:700;border-left:1px solid var(--line);border-right:1px solid var(--line);line-height:40px">12</span><span style="width:38px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--v2);cursor:pointer;transition:all .15s ease" style-hover="background:var(--vll)"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">add</span></span></div>
+        </div>
+
+        <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">KPI · 추세</div>
+          <div style="display:flex;gap:12px">
+            <div style="flex:1;padding:14px;border-radius:14px;background:var(--card2);border:1px solid var(--line)"><div style="font-size:11.5px;color:var(--muted)">실시간 자막</div><div style="display:flex;align-items:baseline;gap:6px;margin-top:4px"><span style="font-size:22px;font-weight:800">1,240</span><span style="display:inline-flex;align-items:center;font-size:12px;font-weight:700;color:var(--green)"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">arrow_upward</span>12%</span></div></div>
+            <div style="flex:1;padding:14px;border-radius:14px;background:var(--card2);border:1px solid var(--line)"><div style="font-size:11.5px;color:var(--muted)">번역 요청</div><div style="display:flex;align-items:baseline;gap:6px;margin-top:4px"><span style="font-size:22px;font-weight:800">5</span><span style="display:inline-flex;align-items:center;font-size:12px;font-weight:700;color:var(--red)"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">arrow_downward</span>3%</span></div></div>
+          </div>
+        </div>
+
+        <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">RATING</div>
+          <div style="display:flex;gap:2px;color:#f5b301"><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1;font-variation-settings:'FILL' 1">star</span><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1;font-variation-settings:'FILL' 1">star</span><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1;font-variation-settings:'FILL' 1">star</span><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1;font-variation-settings:'FILL' 1">star</span><span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1;color:var(--line)">star</span></div>
+        </div>
+
+        <div><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">DIVIDER · 라벨</div>
+          <div style="display:flex;align-items:center;gap:12px"><div style="flex:1;height:1px;background:var(--line)"></div><span style="font-size:12px;font-weight:600;color:var(--faint)">또는</span><div style="flex:1;height:1px;background:var(--line)"></div></div>
+        </div>
+
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm)"><div style="font-size:11.5px;font-weight:700;color:var(--faint);margin-bottom:12px">NOTIFICATION · 알림 아이템</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;align-items:center;gap:13px;padding:12px;border-radius:11px;background:var(--vll)"><span style="width:38px;height:38px;border-radius:11px;background:var(--vl);color:var(--v2);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">translate</span></span><div style="flex:1;min-width:0"><div style="font-size:13.5px;font-weight:600">김민수 학생이 번역 요청을 보냈습니다.</div><div style="font-size:11.5px;color:var(--faint);margin-top:2px">방금 전</div></div><span style="width:8px;height:8px;border-radius:50%;background:var(--v);flex:none"></span></div>
+          <div style="display:flex;align-items:center;gap:13px;padding:12px;border-radius:11px" style-hover="background:var(--card2)"><span style="width:38px;height:38px;border-radius:11px;background:var(--bluebg);color:var(--blue);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">play_circle</span></span><div style="flex:1;min-width:0"><div style="font-size:13.5px;font-weight:600">2교시 수업 영상이 준비되었습니다.</div><div style="font-size:11.5px;color:var(--faint);margin-top:2px">1시간 전</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 19 SIDEBAR TOGGLE -->
+  <section>
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><h2 style="font-size:19px;font-weight:800;margin:0;white-space:nowrap">19 · 사이드바 토글</h2><span style="font-size:13px;color:var(--faint)">펼침 ↔ 접힘 · 토글 버튼</span></div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:26px;flex-wrap:wrap">
+
+      <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">TOGGLE 버튼</span>
+        <button style="width:44px;height:44px;border-radius:12px;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);cursor:pointer;transition:all .15s ease" style-hover="background:var(--vl);color:var(--v2)"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1">menu_open</span></button>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">펼침 · 246px</span>
+        <div style="width:186px;border-radius:14px;background:linear-gradient(176deg,#7d5dfc,#5733d6);padding:14px 12px;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;background:rgba(255,255,255,.18);color:#fff;font-size:12.5px;font-weight:700"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">home</span>홈</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;color:rgba(255,255,255,.75);font-size:12.5px;font-weight:500"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">cast_for_education</span>내 교실</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;color:rgba(255,255,255,.75);font-size:12.5px;font-weight:500"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">swap_horiz</span>이동 수업</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11.5px;font-weight:700;color:var(--faint)">접힘 · 78px</span>
+        <div style="width:60px;border-radius:14px;background:linear-gradient(176deg,#7d5dfc,#5733d6);padding:14px 0;display:flex;flex-direction:column;gap:6px;align-items:center">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.18);color:#fff;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">home</span></div>
+          <div style="width:38px;height:38px;border-radius:10px;color:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">cast_for_education</span></div>
+          <div style="width:38px;height:38px;border-radius:10px;color:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">swap_horiz</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const CHK='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>';
+    const $$=s=>Array.from(document.querySelectorAll(s));
+    $$('[data-sw]').forEach(el=>{el.style.cursor='pointer';el.addEventListener('click',()=>{const on=el.getAttribute('data-sw')==='1';el.setAttribute('data-sw',on?'0':'1');el.style.background=on?'#d9d5ea':'var(--v)';const k=el.firstElementChild;if(k){k.style.right=on?'auto':'2.5px';k.style.left=on?'2.5px':'auto';}});});
+    $$('[data-chk]').forEach(el=>{el.style.cursor='pointer';el.addEventListener('click',()=>{const on=el.getAttribute('data-chk')==='1';el.setAttribute('data-chk',on?'0':'1');el.style.background=on?'var(--card2)':'var(--v)';el.style.border=on?'1.5px solid var(--line)':'none';el.innerHTML=on?'':CHK;});});
+    const sty=(it,k,on)=>{
+      if(k==='tab'){it.style.color=on?'var(--v)':'var(--muted)';it.style.fontWeight=on?'700':'600';it.style.borderBottom=on?'2px solid var(--v)':'2px solid transparent';}
+      else if(k==='dark'){it.style.background=on?'#1f1b32':'transparent';it.style.color=on?'#fff':'var(--muted)';it.style.fontWeight=on?'700':'600';}
+      else if(k==='soft'){it.style.background=on?'var(--vl)':'var(--card2)';it.style.color=on?'var(--v2)':'var(--text)';it.style.border=on?'1px solid transparent':'1px solid var(--line)';}
+      else if(k==='list'){it.style.background=on?'var(--vll)':'transparent';it.style.color=on?'var(--v2)':'var(--text)';it.style.fontWeight=on?'700':'500';}
+      else if(k==='radio'){const c=it.firstElementChild;if(c){c.style.border='2px solid '+(on?'var(--v)':'var(--line)');c.innerHTML=on?'<span style="width:10px;height:10px;border-radius:50%;background:var(--v)"></span>':'';}it.style.color=on?'var(--text)':'var(--muted)';}
+      else{it.style.background=on?'var(--v)':'var(--card2)';it.style.color=on?'#fff':'var(--muted)';it.style.border=on?'1px solid transparent':'1px solid var(--line)';it.style.boxShadow=on?'0 1px 2px rgba(28,22,58,.06)':'none';}
+    };
+    $$('[data-single]').forEach(g=>{const k=g.getAttribute('data-single');const items=Array.from(g.children).filter(c=>!c.hasAttribute('data-skip'));items.forEach(it=>{it.style.cursor='pointer';it.addEventListener('click',()=>{items.forEach(o=>sty(o,k,false));sty(it,k,true);});});});
+    $$('[data-multi]').forEach(g=>{const k=g.getAttribute('data-multi');Array.from(g.children).forEach(it=>{it.style.cursor='pointer';if(!it.hasAttribute('data-on'))it.setAttribute('data-on',(it.getAttribute('style')||'').includes('--vl')?'1':'0');it.addEventListener('click',()=>{const on=it.getAttribute('data-on')==='1';it.setAttribute('data-on',on?'0':'1');sty(it,k,!on);});});});
+    $$('[data-acc]').forEach(h=>{h.style.cursor='pointer';h.addEventListener('click',()=>{const b=h.nextElementSibling;if(!b)return;const open=b.style.display!=='none';b.style.display=open?'none':'block';const c=h.querySelector('[data-chev]');if(c)c.style.transform=open?'rotate(180deg)':'rotate(0deg)';});});
+  }
+}
+</script>
+</body>
+</html>
