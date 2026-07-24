@@ -163,9 +163,9 @@
     // 살짝 위로 끌어올려 배치 (위로 나간 만큼 아래에서 크롭)
     &__img {
       position: absolute;
-      top: -12px;
+      top: -8px;
       right: 0;
-      height: calc(100% + 12px);
+      height: calc(100% + 8px);
       width: 270px;
       object-fit: cover;
       object-position: right top;
