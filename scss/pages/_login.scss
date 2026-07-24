@@ -287,11 +287,13 @@
   }
 
   // 모바일 — 좌측 일러스트·슬로건을 감추고 로그인 폼만 노출
+  // 콘텐츠 블록에 zoom 0.9를 걸어 폰트·패딩·마진·테두리를 일괄 10% 축소
   @media (max-width: 720px) {
-    // 로고를 가운데로
+    // 로고를 가운데로 (zoom으로 로고·여백도 10% 축소)
     .login-header {
       justify-content: center;
       padding: 20px 22px;
+      zoom: .9;
 
       img {
         height: 32px;
@@ -307,9 +309,11 @@
     }
 
     // 화면보다 좁아지면 카드가 줄어들도록 (뷰포트 초과 방지)
+    // zoom 0.9로 카드 내부 전체 10% 축소
     .login-columns {
       max-width: 440px;
       min-width: 0;
+      zoom: .9;
     }
 
     .login-card {
@@ -333,11 +337,13 @@
       gap: 10px;
       margin-top: 22px;
       font-size: 13px;
+      zoom: .9;
     }
 
     .login-footer {
       font-size: 11.5px;
       padding: 0 22px 20px;
+      zoom: .9;
     }
   }
 
