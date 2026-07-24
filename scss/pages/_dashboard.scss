@@ -236,6 +236,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform .25s cubic-bezier(.34, 1.56, .64, 1);
 
       &--green {
         background: var(--greenbg);
@@ -246,6 +247,11 @@
         background: var(--orangebg);
         color: var(--orange);
       }
+    }
+
+    // 카드 호버 시 아이콘이 살짝 튀어오르며 기울어짐
+    &__card:hover &__icon {
+      transform: translateY(-3px) rotate(-6deg) scale(1.06);
     }
 
     &__title {
@@ -565,9 +571,15 @@
       border-radius: 12px;
       background: var(--card2);
       cursor: pointer;
+      transition: background .15s ease;
 
       &:hover {
         background: var(--vll);
+      }
+
+      // 타일 호버 시 아이콘이 튀어오르며 기울어짐
+      &:hover .dash-quick__icon {
+        transform: translateY(-3px) rotate(-6deg) scale(1.08);
       }
     }
 
@@ -580,6 +592,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform .25s cubic-bezier(.34, 1.56, .64, 1);
 
       &--blue  { background: var(--bluebg);  color: var(--blue); }
       &--green { background: var(--greenbg); color: var(--green); }
@@ -2721,6 +2734,12 @@
 @media (max-width: 780px) {
   .page-dashboard {
     overflow-x: hidden;
+
+    // 아코디언을 접어 콘텐츠가 짧아져도 페이지가 늘어나 하단 여백이 생기지 않도록
+    // (라이브 수업은 플레이어가 높이를 채워야 하므로 제외)
+    .dash-page:not(.dash-page--live) {
+      flex: 0 1 auto;
+    }
 
     // 콘텐츠(톱바 + 페이지)를 일괄 10% 축소
     .dash-main {

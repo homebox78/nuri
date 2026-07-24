@@ -42,6 +42,29 @@
     color: var(--faint);
     font-size: 13px;
     width: 280px;
+    transition: all .15s ease;
+
+    // 포커스 시 바이올렛 보더 (디자인시스템 입력 규칙과 동일)
+    &:focus-within {
+      border-color: var(--v);
+      box-shadow: 0 0 0 3px var(--vl);
+      background: var(--card);
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+
+      &::placeholder {
+        color: var(--faint);
+      }
+    }
   }
 
   .topbar__divider {
