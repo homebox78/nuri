@@ -151,12 +151,19 @@
     // 이미지가 우측을 차지하므로 콘텐츠 영역은 그만큼 안쪽으로
     padding-right: calc(270px + 34px);
 
-    // CTA — 세로 스택에서 빼내 이미지 왼쪽에 배치 (히어로 높이 절감)
+    // CTA — 좌측 텍스트 옆에 배치, 은은한 펄스로 시선 유도
     &__cta {
       gap: 9px;
       flex: none;
       align-self: center;
-      margin-left: auto;
+      margin-left: 28px;
+      margin-right: auto; // space-between이 우측으로 밀지 않도록 텍스트 옆에 고정
+      animation: cta-pulse 2.6s ease-in-out infinite;
+
+      // 호버 시에는 펄스를 멈추고 기존 버튼 호버 효과 사용
+      &:hover {
+        animation: none;
+      }
     }
 
     // 이미지는 절대배치로 우측에 고정 — 히어로 높이는 텍스트가 결정, 넘치는 만큼 크롭
@@ -998,9 +1005,16 @@
     }
   }
 
+  // 다시보기는 한 화면에 맞춤 (세로 스크롤 없음)
+  .dash-page[data-page='replay'] {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+  }
+
   .dash-replay {
     display: flex;
     gap: 16px;
+    flex: 1;
     min-height: 0;
 
     &__main {
@@ -1009,6 +1023,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      overflow: hidden;
     }
 
     &__meta {
@@ -1028,13 +1043,15 @@
     }
   }
 
-  // ── 플레이어 ──
+  // ── 플레이어 (16:9 기준, 화면이 낮으면 세로만 줄어듦) ──
   .dash-player {
     position: relative;
     border-radius: 18px;
     overflow: hidden;
     background: #0f0d1a;
     aspect-ratio: 16 / 9;
+    flex: 0 1 auto;
+    min-height: 220px;
     border: 1px solid var(--line);
 
     &__scrim {
@@ -1143,42 +1160,6 @@
   }
 
   // ── 녹화된 수업 목록 ──
-  .dash-recbox {
-    padding: 0;
-    overflow: hidden;
-
-    &__head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    &__title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 800;
-
-      .msr {
-        color: var(--v);
-      }
-    }
-
-    &__count {
-      font-size: 12px;
-      color: var(--faint);
-      font-weight: 600;
-    }
-
-    &__scroll {
-      max-height: 230px;
-      overflow: auto;
-    }
-  }
-
   .dash-rec {
     display: flex;
     align-items: center;
@@ -1274,6 +1255,27 @@
       &.is-active {
         display: flex;
       }
+    }
+
+    // 녹화된 수업 탭 (좌측 카드에서 이동)
+    &__rec {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      overflow: auto;
+      min-height: 0;
+
+      &.is-active {
+        display: flex;
+      }
+    }
+
+    &__rec-count {
+      padding: 10px 16px 8px;
+      font-size: 12px;
+      color: var(--faint);
+      font-weight: 600;
+      border-bottom: 1px solid var(--line);
     }
 
     &__bullets {
@@ -2661,5 +2663,18 @@
         flex: 1 1 100%;
       }
     }
+  }
+}
+
+// ── 히어로 CTA 펄스 (그림자 확산 + 미세 확대) ──
+@keyframes cta-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 24px rgba(124, 92, 252, .4);
+  }
+
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 14px 34px rgba(124, 92, 252, .62);
   }
 }
