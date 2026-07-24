@@ -117,7 +117,8 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: rgba(255, 255, 255, .15);
+        // 흰색 베일에 배경 톤의 연보라를 아주 살짝 섞음
+        background: rgba(233, 224, 252, .18);
         pointer-events: none;
       }
     }
