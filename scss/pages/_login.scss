@@ -96,10 +96,25 @@
     justify-content: center;
     text-align: center;
 
-    img {
+    // ── 애니메이션 일러스트 (인라인 SVG) ──
+    .login-art {
       width: 100%;
       max-width: 362px;
       height: auto;
+
+      // 파트별 클래스는 SVG 빌드 시 주입됨 (uploads/login_img.svg 참조)
+      .a-dot,
+      .a-bar {
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .a-dot     { animation: a-pulse 3.2s ease-in-out infinite; }
+      .a-bar     { animation: a-eq 1.6s ease-in-out infinite; }
+      .a-arrow-l { animation: a-slide-l 2.4s ease-in-out infinite; }
+      .a-arrow-r { animation: a-slide-r 2.4s ease-in-out infinite; }
+      .a-float-l { animation: a-float 6s ease-in-out infinite; }
+      .a-float-r { animation: a-float 6s ease-in-out infinite; animation-delay: -3s; }
     }
 
     .login-intro__headline {
@@ -239,6 +254,32 @@
       }
     }
   }
+}
+
+// ── 일러스트 파트 애니메이션 ──
+@keyframes a-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.14); }
+}
+
+@keyframes a-eq {
+  0%, 100% { transform: scaleY(1); }
+  50%      { transform: scaleY(.55); }
+}
+
+@keyframes a-slide-l {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50%      { transform: translateX(-12px); opacity: .5; }
+}
+
+@keyframes a-slide-r {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50%      { transform: translateX(12px); opacity: .5; }
+}
+
+@keyframes a-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
 }
 
 @keyframes blob-a {
